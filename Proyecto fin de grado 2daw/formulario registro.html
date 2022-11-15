@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Formulario Registro</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/fregistro.js"></script>
+    <style>
+        .jumbotron {
+            background: rgb(191, 240, 221);
+        }
+
+        h3 {
+            margin: 20px;
+        }
+
+        h5 {
+            margin: 5px;
+        }
+
+        fieldset {
+            padding-bottom: 10px;
+        }
+
+        .custom-control {
+            margin-left: 20px;
+        }
+
+        form {
+            margin: 20px;
+        }
+
+        .container {
+            border: 1px solid rgb(119, 165, 172);
+            margin-top: 30px;
+        }
+
+        button {
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <form class="form-group" name="formulario" id="formulario">
+        <nav class="navbar-expand-sm navbar-dark" style="background: #34ad0f;height: 40px;border-radius: 7px ">
+            <ul class="navbar-nav">
+                <div class="row">
+                    <a class="nav-link" style="margin-left: 40px;" href="home.html"><i
+                            class="fas fa-home"></i>Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="La saga.html"><i class="far fa-info-alt"></i>La saga</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="videojuegos.html"><i class="far fa-calendar-alt"></i>Videojuegos</a>
+                    </li>
+                </div>
+            </ul>
+        </nav>
+    </form>
+
+    <div class="jumbotron text-center">
+        <h1>Formulario de Registro:</h1>
+        <p>Los campos obligatorios se marcan con *.</p>
+
+    </div>
+
+    <form class="form-registro" name="form" id="enviar">
+        <div class="container" id="datosPersona">
+            <h5 class="font-italic text-center">Datos personales</h5>
+            <div class="form-group">
+                <label for="email">Email: *</label>
+                <input type="mail" class="form-control" id="email" name="email">
+            </div>
+            <div class="form-group">
+                <label for="pwd">Password: *</label>
+                <input type="password" class="form-control" id="pwd" name="pwd">
+            </div>
+        </div>
+        <div class="col-md-12 text-center">
+            <button type="submit" class="btn btn-outline-success" id="btn">Registrarse
+            </button>
+            <label>¿Tienes ya cuenta?<a href="login.html"> Inicia sesion</a></label>
+        </div>
+    </form>
+</body>
+
+</html>

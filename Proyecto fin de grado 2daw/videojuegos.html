@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Tienda de Informática y Videojuegos online</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <style>
+        .jumbotron {
+            background: rgb(191, 240, 221);
+        }
+
+        .custom-control {
+            margin-left: 20px;
+        }
+
+        nav {
+            margin: 14px;
+        }
+
+        .container {
+            border: 1px solid rgb(119, 165, 172);
+            margin-top: 30px;
+        }
+
+        .nav-item {
+            margin-left: 20px;
+        }
+
+        .card-text {
+            padding-top: 16em;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar-expand-sm navbar-dark" style="background: #34ad0f; height: 40px; border-radius: 7px ">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" style="margin-left: 20px;" href="home.html"><i class="fas fa-home"></i>Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="La saga.html"><i class="fa fa-info-circle"></i>La saga</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="login.html"><i class="fas fa-sign-in-alt"></i>Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="carrito.html">Carrito<span class="badge bg-success"
+                            id="carrito">0</span></a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="card img-fluid" style="width: 86%;">
+                    <img class="card-img-top" src="img/star-wars-jedi-fallen-order.jpg" alt="Card image">
+                    <div class="card-img-overlay">
+                        <h4 class="card-text text-danger">Para PC es un juego de acción y aventuras basado en la popular
+                            y
+                            duradera franquicia de películas del mismo nombre.
+                            Cronológicamente, el juego se sitúa justo después de los eventos del Episodio III (La
+                            Venganza de
+                            los Sith) y cuenta con un conocido elenco de héroes, villanos, droides y Jedis, todos
+                            luchando por el éxito de sus misiones.</h4>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#fallen-order"
+                    style="display: flex; margin-top: 20px; width: 50%;">Info</button>
+                <button type="button" class="btn btn-info boton" data-id="1" data-precio="30"
+                    data-titulo="Jedi Fallen Order" style="display: flex; margin-top: 20px; width: 50%;">Añadir</button>
+            </div>
+
+            <div class="modal" id="fallen-order">
+                <div class="modal-dialog ">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Jedi Fallen Order</h4>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+
+                        <div class="modal-body">
+                            <ul class="nav nav-tabs">
+                                <li class="nav-item">
+                                    <a class="nav-link" data-bs-toggle="collapse"
+                                        data-bs-target="#Requisitos">Requisitos</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-bs-toggle="collapse" data-bs-target="#Acerca">Acerca de</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-bs-toggle="collapse" data-bs-target="#Jugabilidad">Tipo de
+                                        Jugabilidad</a>
+                                </li>
+                            </ul>
+
+                            <div>
+                                <div class="embed-responsive embed-responsive-4by3 p-2 ">
+                                    <iframe class="embed-responsive-item"
+                                        src="https://www.youtube-nocookie.com/embed/xIl2z5wwjdA"
+                                        title="YouTube video player" 
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen></iframe>
+                                </div>
+                                <div class="table-responsive-sm">
+                                    <table class="table table-bordered">
+                                        <thead style="text-align: center;">
+                                            <tr>
+                                                <th>Configuracion</th>
+                                                <th>Configuracion Recomendada</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>SO: 64-bit Windows 7/8.1/10 </td>
+                                                <td>SO: 64-bit Windows 7/8.1/10 </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Procesador: AMD FX-6100/Intel i3-3220 or Equivalent</td>
+                                                <td>Procesador: AMD Ryzen 7 1700/Intel i7-6700K or Equivalent</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Memoria: 8 GB de RAM</td>
+                                                <td>Memoria: 16 GB de RAM</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Gráficos: AMD Radeon HD 7750, NVIDIA GeForce GTX 650 or Equivalent
+                                                </td>
+                                                <td>G AMD RX Vega 56, Nvidia GTX 1070/GTX1660Ti or Equivalent</td>
+                                            </tr>
+                                            <tr>
+                                                <td>DirectX: Versión 11</td>
+                                                <td>DirectX: Versión 11</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Almacenamiento: 55 GB de espacio disponible</td>
+                                                <td>Almacenamiento: 55 GB de espacio disponible</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div id="Acerca">
+                                <p style="font-size: 26px;">Un joven aprendiz de Jedi (a quienes se conoce como
+                                    Padawans)
+                                    se ve obligado a huir del Imperio Galáctico como consecuencia de la Orden 66,
+                                    una purga de la Orden Jedi a lo largo de toda la galaxia. La verdadera identidad del
+                                    joven
+                                    Jedi cuyo nombre es Cal Kestis queda de manifiesto cuando éste utiliza la fuerza
+                                    para salvar la
+                                    vida de un amigo luego de ocurrir un accidente. Siguiendo el viejo dicho que reza
+                                    ‘Ninguna
+                                    buena acción queda sin castigo…’, se corre la voz acerca de la verdadera identidad
+                                    del
+                                    joven, información que llega hasta los oídos de los inquisidores del Imperio,
+                                    quienes comienzan una
+                                    feroz persecución, decididos a atrapar a cualquier sobreviviente de la orden Jedi.
+
+                                    La misión de Cal ahora consiste en encontrar un lugar seguro para esconderse,
+                                    evitando ser
+                                    capturado por el Imperio. Por el camino, se encontrará con muchos rostros
+                                    reconocibles al
+                                    instante para los fanáticos asiduos de la franquicia - entre los que se encuentran
+                                    personajes como Saw Gerrera (hábilmente vocalizado por el actor Forrest Whittaker) y
+                                    Cere
+                                    (cuya actuación de voz es llevada a cabo por la maravillosa Debra Wilson) - además
+                                    de
+                                    recibir información valiosa y consejos que le ayudarán a conseguir sus objetivos.
+                                </p>
+                            </div>
+
+                            <div id="Jugabilidad">
+                                <p>El juego no es un mundo abierto que te ofrezca la posibilidad de explorar libremente
+                                    por
+                                    donde desees. En cambio, dispones de un mapa de juego y misiones que debes
+                                    completar, aunque
+                                    no necesariamente tendrás que adherirte a un único frente de progreso a la vez. Esto
+                                    significa que puedes montarte en tu nave espacial y viajar a cualquiera de las áreas
+                                    desbloqueadas del mapa - más áreas del mapa se irán desbloqueando a medida que
+                                    progreses -
+                                    para llevar la misión correspondiente de esa área, hasta completarla o hasta que te
+                                    sientas
+                                    en apuros.
+
+                                    De suceder esto último, tan solo tendrás que volver a tu nave y saltar hacia un
+                                    planeta
+                                    distinto para aumentar y desarrollar las habilidades de las que careces en ese
+                                    momento,
+                                    enfocándote en misiones más sencillas (o tal vez, simplemente, en otro orden) antes
+                                    de
+                                    volver e intentar con aquella que te pareció difícil. Así que, aunque no se trate de
+                                    un
+                                    mundo abierto como tal, podría decirse que el juego ofrece una jugabilidad híbrida,
+                                    compuesta por elementos de tipo lineal a la vez que ofrece cierto margen de libertad
+                                    al
+                                    jugador </p>
+                            </div>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <div class="card img-fluid" style="width: 86%;">
+                    <img class="card-img-top" src="img/scuadrons.jpg" alt="Card image">
+                    <div class="card-img-overlay">
+                        <h4 class="card-text text-danger d-flex">Para PC es un juego de acción y aventuras basado en la
+                            popular
+                            y
+                            duradera franquicia de películas del mismo nombre.
+                            Cronológicamente, el juego se sitúa justo después de los eventos del Episodio III (La
+                            Venganza de
+                            los Sith) y cuenta con un conocido elenco de héroes, villanos, droides y Jedis, todos
+                            luchando por el éxito de sus misiones.</h4>
+                    </div>
+                </div>
+                
+                <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#scuadrons"
+                    style="display: flex; margin-top: 20px; width: 50%;">Info</button>
+                <button type="button" class="btn btn-info boton" data-id="2" data-precio="25"
+                    data-titulo="Star Wars Scuadrons" style="display: flex; margin-top: 20px; width: 50%;">Añadir</button>
+            </div>
+
+            <div class="modal" id="scuadrons">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Star Wars: Scuadrons</h4>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+
+                        <div class="modal-body">
+                            <ul class="nav nav-tabs">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Requisitos</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Acerca del juego</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">¿Jugabilidad lineal o
+                                        no lineal?</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <div class="card img-fluid" style="width: 86%;">
+                    <img class="card-img-top" src="img/star wars battlefront 2.jpg" alt="Card image">
+                    <div class="card-img-overlay">
+                        <h4 class="card-text text-danger">Para PC es un juego de acción y aventuras basado en la popular
+                            y
+                            duradera franquicia de películas del mismo nombre.
+                            Cronológicamente, el juego se sitúa justo después de los eventos del Episodio III (La
+                            Venganza de
+                            los Sith) y cuenta con un conocido elenco de héroes, villanos, droides y Jedis, todos
+                            luchando por el éxito de sus misiones.</h4>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#battlefront2"
+                    style="display: flex; margin-top: 20px; width: 50%;">Info</button>
+                <button type="button" class="btn btn-info boton" data-id="1" data-precio="30"
+                    data-titulo="Jedi Fallen Order" style="display: flex; margin-top: 20px; width: 50%;">Añadir</button>
+            </div>
+
+            <div class="modal" id="battlefront2">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Star Wars: Battlefront 2</h4>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+
+                        <div class="modal-body">
+                            <ul class="nav nav-tabs">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Requisitos</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Acerca del juego</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">¿Jugabilidad lineal o
+                                        no lineal?</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="card img-fluid" style="width: 86%;">
+                        <img class="card-img-top" src="img/star wars battlefront .jpg" alt="Card image">
+                        <div class="card-img-overlay">
+                            <h4 class="card-text text-danger">Para PC es un juego de acción y aventuras basado en la
+                                popular y
+                                duradera franquicia de películas del mismo nombre.
+                                Cronológicamente, el juego se sitúa justo después de los eventos del Episodio III (La
+                                Venganza de
+                                los Sith) y cuenta con un conocido elenco de héroes, villanos, droides y Jedis, todos
+                                luchando por el éxito de sus misiones.</h4>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#Battlefront"
+                        style="display: flex; margin-top: 20px; width: 50%;">Info</button>
+                    <button type="button" class="btn btn-info boton" data-id="1" data-precio="30"
+                        data-titulo="Jedi Fallen Order"
+                        style="display: flex; margin-top: 20px; width: 50%;">Añadir</button>
+                </div>
+
+                <div class="modal" id="Battlefront">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Star Wars: Battlefront</h4>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            </div>
+
+                            <div class="modal-body">
+                                <ul class="nav nav-tabs">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Requisitos</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Acerca del juego</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">¿Jugabilidad lineal o
+                                            no lineal?</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="card img-fluid" style="width: 86%;">
+                        <img class="card-img-top" src="img/elite dangerous.jpg" alt="Card image">
+                        <div class="card-img-overlay">
+                            <h4 class="card-text text-danger">Para PC es un juego de acción y aventuras basado en la
+                                popular y
+                                duradera franquicia de películas del mismo nombre.
+                                Cronológicamente, el juego se sitúa justo después de los eventos del Episodio III (La
+                                Venganza de
+                                los Sith) y cuenta con un conocido elenco de héroes, villanos, droides y Jedis, todos
+                                luchando por el éxito de sus misiones.</h4>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#Elite"
+                        style="display: flex; margin-top: 20px; width: 50%;">Info</button>
+                    <button type="button" class="btn btn-info boton" data-id="1" data-precio="30"
+                        data-titulo="Elite Dangerous"
+                        style="display: flex; margin-top: 20px; width: 50%;">Añadir</button>
+                </div>
+
+                <div class="modal" id="Elite">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Elite Dangerous</h4>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            </div>
+
+                            <div class="modal-body">
+                                <ul class="nav nav-tabs">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Requisitos</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Acerca del juego</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">¿Jugabilidad lineal o
+                                            no lineal?</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="card img-fluid" style="width: 86%;">
+                        <img class="card-img-top" src="img/No Man's Sky 2.jpg" alt="Card image">
+                        <div class="card-img-overlay">
+                            <h4 class="card-text text-danger">Para PC es un juego de acción y aventuras basado en la
+                                popular y
+                                duradera franquicia de películas del mismo nombre.
+                                Cronológicamente, el juego se sitúa justo después de los eventos del Episodio III (La
+                                Venganza de
+                                los Sith) y cuenta con un conocido elenco de héroes, villanos, droides y Jedis, todos
+                                luchando por el éxito de sus misiones.</h4>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#Sky"
+                        style="display: flex; margin-top: 20px; width: 50%;">Info</button>
+                    <button type="button" class="btn btn-info boton" data-id="1" data-precio="30"
+                        data-titulo="No Man's Sky" style="display: flex; margin-top: 20px; width: 50%;">Añadir</button>
+                </div>
+
+                <div class="modal" id="Sky">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">No Man's Sky</h4>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            </div>
+
+                            <div class="modal-body">
+                                <ul class="nav nav-tabs">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Requisitos</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Acerca del juego</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">¿Jugabilidad lineal o
+                                            no lineal?</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+<script src="js/carrito.js"></script>
+
+</html>

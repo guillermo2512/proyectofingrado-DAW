@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Pagina</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <style>
+        .jumbotron {
+            background: rgb(255, 140, 0);
+            color: white;
+        }
+
+        h3 {
+            margin: 20px;
+        }
+
+        h5 {
+            margin: 5px;
+        }
+
+        fieldset {
+            padding-bottom: 10px;
+        }
+
+        .custom-control {
+            margin-left: 20px;
+        }
+
+        form {
+            margin: 20px;
+        }
+
+        .container {
+            border: 1px solid rgb(119, 165, 172);
+            margin-top: 30px;
+        }
+
+        button {
+            margin: 20px;
+        }
+
+        #Compra
+        {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="jumbotron text-center">
+        <h1>Sistema de pago:</h1>
+        <p>Los campos obligatorios se marcan con *.</p>
+
+    </div>
+
+    <form class="form-group" name="compras" id="compras">
+
+        <div class="container" id="datosPersona">
+            <h5 class="font-italic text-center">Datos personales</h5>
+            <div class="form-group">
+                <label for="nombre">Nombre: *</label>
+                <input type="text" class="form-control" id="nombre" name="nombre" required>
+            </div>
+            <div class="form-group">
+                <label for="apellidos">Apellidos: *</label>
+                <input type="text" class="form-control" id="apellidos" name="apellidos" required>
+            </div>
+            <div class="form-group">
+                <label for="mail1">Email: *</label>
+                <input type="mail" class="form-control" id="mail1" name="mail1" required>
+            </div>
+        </div>
+        <div class="container" id="Compra">
+            <h5 class="font-italic text-center">Compra</h5>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Producto</th>
+                        <th>Precio</th>
+                        <th>Cantidad</th>
+                    </tr>
+                </thead>
+                <tbody id="productos">
+                    
+                </tbody>
+            </table>
+        </div>
+
+        <div class="container" id="Direcciondeenvio">
+            <h5 class="font-italic text-center">Direccion de envio</h5>
+            <div class="form-group">
+                <label for="direccion">Direccion: *</label>
+                <input type="text" class="form-control" id="direccion" name="direccion" required>
+            </div>
+            <div class="form-group">
+                <label for="codigopostal">Codigo postal: *</label>
+                <input type="text" class="form-control" id="codigopostal" name="codigopostal" required>
+            </div>
+        </div>
+
+        <div class="container">
+            <h5 class="font-italic text-center">Formato de pago</h5>
+            <div id="tarjeta" class="form-group">
+                <label for="npay">Número de tarjeta: *</label>
+                <input type="text" class="form-control" id="npay" name="npay">
+            </div>
+            <div id="fechacad" class="form-group">
+                <label for="fechacad">Fecha de caducidad: *</label>
+                <input type="text" class="form-control" id="fechacad" name="Fecha de caducidad:">
+            </div>
+
+            <div id="CCV" class="form-group">
+                <label for="text">CVV *</label>
+                <input type="text" class="form-control" id="CCV" name="CCV">
+            </div>
+        </div>
+        <div class="col-md-12 text-center">
+            <button type="submit" class="btn btn-outline-success" id="btn">Validar el pago
+            </button>
+        </div>
+    </form>
+</body>
+<script src="js/compras.js"></script>
+
+</html>
