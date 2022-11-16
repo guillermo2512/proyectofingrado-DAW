@@ -10,7 +10,6 @@ function login() {
     enviar.email = document.getElementById("email").value;
     enviar.psw = document.getElementById("pwd").value;
 
-
     document.getElementById("boton").disabled = true;
 
     var myJSON = JSON.stringify(enviar);
@@ -25,9 +24,17 @@ function login() {
                 form.reset();
             }
             else {
+                var json = JSON.parse(this.response);
+                var usuario = new Object();
+                usuario.email = json.nombre;
+                usuario.nombre = json.email;
+                
+                var userjson = JSON.stringify(usuario);
+
+                localStorage.setItem("usuario", userjson);
+
                 window.location("http://localhost/Proyecto%20fin%20de%20grado/home.html");
-                alert("Bienvenido ", document.getElementById("mail1").value);
-                localStorage.setItem("usuario", document.getElementById("email").value);
+                alert("Bienvenido ", document.getElementById("nombre").value);
             }
         }
     };

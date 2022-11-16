@@ -48,7 +48,12 @@ class Login
                 return false;
             }
 
-            if ($consulta->rowCount() > 0);
+            if ($consulta->rowCount() > 0)
+            {
+                $almacen = $consulta->fetchAll();
+                $envios = json_encode($almacen);
+                echo $envios;
+            }
             else {
                 $resp = false;
                 $envio = json_encode($resp);

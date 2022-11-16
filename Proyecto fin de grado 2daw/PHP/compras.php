@@ -15,18 +15,17 @@ class Comprar {
     }
 
 
-    public function enviar_ajax($Nombre, $Apellidos, $Email, $Articulo, $Precio, $Direccion, $Codigo_postal)
+    public function enviar_ajax($Nombre, $Apellidos, $Email, $carrito, $Direccion, $Codigo_postal)
     {
         $this->getconecBD();
         try {
-            $consulta = $this->conexion->prepare("INSERT INTO clientes (Nombre, Apellidos, Email, Articulo, Precio, Direccion, Codigo_postal) VALUES (?, ?, ?, ?, ?, ?, ?)");
+            $consulta = $this->conexion->prepare("INSERT INTO clientes (Nombre, Apellidos, Email, carrito, Direccion, Codigo_postal) VALUES (?, ?, ?, ?, ?, ?)");
             $consulta->bindparam(1, $Nombre);
             $consulta->bindparam(2, $Apellidos);
             $consulta->bindparam(3, $Email);
-            $consulta->bindparam(4, $Articulo);
-            $consulta->bindparam(5, $Precio);
-            $consulta->bindparam(6, $Direccion);
-            $consulta->bindparam(7, $Codigo_postal);
+            $consulta->bindparam(4, $carrito);
+            $consulta->bindparam(5, $Direccion);
+            $consulta->bindparam(6, $Codigo_postal);
             if (!$consulta->execute()) {
                 print_r($consulta->errorInfo());
                 return false;
@@ -39,7 +38,7 @@ class Comprar {
 }
 
 $condb = new Comprar();
-$condb -> enviar_ajax($enviar->Nombre, $enviar->Apellidos, $enviar->DN, $enviar->Email, $enviar->Articulo, $enviar->Precio, $enviar->Direccion, $enviar->Codigo_postal);
+$condb -> enviar_ajax($enviar->nombre, $enviar->apellidos, $enviar->Email, $enviar->productos, $enviar->direccion, $enviar->codigo_postal);
 
 
 ?>

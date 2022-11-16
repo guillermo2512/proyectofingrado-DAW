@@ -40,7 +40,7 @@
                                     <th>Cantidad</th>
                                 </tr>
                             </thead>
-                            <tbody id="tblCarrito">
+                            <tbody id="tCarrito">
 
                             </tbody>
                         </table>
@@ -49,15 +49,15 @@
                 <div class="col-md-5 ms-auto">
                     <h4>Total a Pagar: <span id="total_pagar">0.00€</span></h4>
                     <div class="d-grid gap-2">
-                        <button class="btn btn-warning" type="button" id="btnVaciar">Vaciar Carrito</button>
+                        <button class="btn btn-warning" type="reset" id="Vaciar">Vaciar Carrito</button>
                     </div>
+                <button class="btn btn-primary" type="button" id="pagar">Pagar</button>
                 </div>
             </div>
         </div>
     </section>
 </body>
 <script>
-    //Cuando el usuario valla a pasar por caja hacerle pasar primero por el login 
     var html = "";
     var total = 0.00;
     if (localStorage.getItem("articulos") != null) {
@@ -72,15 +72,30 @@
                 </tr>`;
         });
         document.getElementById("total_pagar").innerHTML = total;
-        document.getElementById("tblCarrito").innerHTML = html;
+        document.getElementById("tCarrito").innerHTML = html;
+    }
 
-        function vaciarcarrito()
+    document.getElementById("Vaciar").addEventListener("click",vaciarcarrito);
+
+    function vaciarcarrito()
+    {
+        localStorage.removeItem("articulos");
+        document.body.reset();
+    }
+
+    document.getElementById("pagar").addEventListener("click",pagar);
+
+    function pagar()
+    {
+        if (localStorage.getItem("usuario") != null)
         {
-            localStorage.removeItem("articulos");
-            var html = "";
-            var total = 0.00;
+            window.location("http://localhost/Proyecto%20fin%20de%20grado/pago.html");
+        }
+        else{
+            window.location("http://localhost/Proyecto%20fin%20de%20grado/login.html");
         }
     }
+
 </script>
 
 </html>

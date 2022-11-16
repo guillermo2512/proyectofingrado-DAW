@@ -3,11 +3,13 @@ function cargareventos(ev) {
     if (document.readyState == "interactive") 
     {
         document.getElementById("email").addEventListener("change", validarEmail);
+        document.getElementById("nombre").addEventListener("change", validarNombre);
         document.getElementById("boton").addEventListener("click", registro);
     }
 }
 
 var regexmail = new RegExp("^[^@]+@[^@]+\.[a-zA-Z]{2,}$");
+var regexnombre = /^[A-Za-z]+$/;
 
 function validarEmail() {
     const email = document.getElementById("email");
@@ -23,8 +25,21 @@ function validarEmail() {
     }
 }
 
+function validarNombre() 
+{
+    if (regexnombre.test(nombre.value) === false) {
+        nombre.classList.remove("alert", "alert-success");
+        nombre.classList.add("alert", "alert-danger");
+        nombre.value = "";
+        nombre.placeholder = "El nombre solo puede contener letras.";
+    } else {
+        nombre.classList.remove("alert", "alert-danger");
+        nombre.classList.add("alert", "alert-success");
+        nombre.placeholder = "";
+    }
+}
+
 function registro() {
-    document.getElementById("email").addEventListener("change", validarEmail);
     var enviar1 = new Object();
     enviar1.email = document.getElementById("email").value;
 
@@ -43,7 +58,8 @@ function registro() {
             else {
                 var enviar2 = new Object();
                 enviar2.email = document.getElementById("email").value;
-                enviar2.psw = document.getElementById("pwd").value;
+                enviar2.pass = document.getElementById("pwd").value;
+                enviar2.nombre = document.getElementById("nombre").value;
 
                 document.getElementById("boton").disabled = true;
 
@@ -61,8 +77,8 @@ function registro() {
                             alert('Error al registrarse');
                         }
                         else{
-                            window.location("http://localhost/Proyecto%20fin%20de%20grado/home.html");
                             alert('El registro se ha completo satisfactoriamente');
+                            window.location("http://localhost/Proyecto%20fin%20de%20grado/login.html");
                         }
                     }
                 }
