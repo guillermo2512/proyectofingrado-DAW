@@ -1,7 +1,7 @@
 document.addEventListener("readystatechange", cargareventos, false);
 function cargareventos(ev) {
     if (document.readyState == "interactive") {
-        document.getElementById("boton").addEventListener("click", mostar);
+        mostar();
     }
 }
 
@@ -11,17 +11,17 @@ function mostar()
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) 
         {
-            var almacen = JSON.parse(this.responseText);
-
-            alert(almacen);
-
+            var recoger = JSON.parse(this.responseText);
             
-            //document.getElementById("precio").innerHTML = almacen.precio;
-
-            //var datos = document.querySelectorAll('button.boton');
+            document.getElementById("1").dataset.id = 1;
+            
         }
     };
+
+    xhttp.open("GET", "PHP/mostrarproductos.php");
+    xhttp.send();
 }
+
 
 
 

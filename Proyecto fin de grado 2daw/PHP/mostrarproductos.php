@@ -24,7 +24,8 @@ class Comprar {
                 return false;
             }
 
-            $almacen = $consulta->fetchAll();
+            $almacen = $consulta->fetchAll();   
+
             $envio = json_encode($almacen);
             echo $envio;
 
@@ -36,6 +37,7 @@ class Comprar {
 
 $condb = new Comprar();
 $condb -> enviar_ajax();
+
 
 
 ?>

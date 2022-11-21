@@ -46,56 +46,17 @@
                         </table>
                     </div>
                 </div>
-                <div class="col-md-5 ms-auto">
+                <div class="container">
                     <h4>Total a Pagar: <span id="total_pagar">0.00€</span></h4>
-                    <div class="d-grid gap-2">
-                        <button class="btn btn-warning" type="reset" id="Vaciar">Vaciar Carrito</button>
+                    <div class="d-flex justify-content-between">
+                        <button class="btn btn-danger" type="button" id="Vaciar">Vaciar Carrito</button>
+                        <button class="btn btn-success" type="button" id="pagar">Pagar</button>
                     </div>
-                <button class="btn btn-primary" type="button" id="pagar">Pagar</button>
                 </div>
             </div>
         </div>
     </section>
 </body>
-<script>
-    var html = "";
-    var total = 0.00;
-    if (localStorage.getItem("articulos") != null) {
-        var array = JSON.parse(localStorage.getItem('articulos'));
-        array.forEach(element => {
-            total = total + element.precio;
-            html += `
-                <tr>
-                    <td>` + element.id + `</td>
-                    <td>` + element.titulo + `</td>
-                    <td>` + element.precio +  `</td>
-                </tr>`;
-        });
-        document.getElementById("total_pagar").innerHTML = total;
-        document.getElementById("tCarrito").innerHTML = html;
-    }
-
-    document.getElementById("Vaciar").addEventListener("click",vaciarcarrito);
-
-    function vaciarcarrito()
-    {
-        localStorage.removeItem("articulos");
-        document.body.reset();
-    }
-
-    document.getElementById("pagar").addEventListener("click",pagar);
-
-    function pagar()
-    {
-        if (localStorage.getItem("usuario") != null)
-        {
-            window.location("http://localhost/Proyecto%20fin%20de%20grado/pago.html");
-        }
-        else{
-            window.location("http://localhost/Proyecto%20fin%20de%20grado/login.html");
-        }
-    }
-
-</script>
+<script src="js/carrito2.js"></script>
 
 </html>
