@@ -27,7 +27,12 @@ class Login
                 return false;
             }
             
-            if ($consulta->rowCount() > 0); 
+            if ($consulta->rowCount() >= 0)
+            {
+                $resp = true;
+                $envio = json_encode($resp);
+                echo $envio;
+            }
             else 
             {
                 $resp = false;

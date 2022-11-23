@@ -7,8 +7,7 @@ function cargareventos(ev) {
     }
 }
 
-function mostrarcarrito() 
-{
+function mostrarcarrito() {
     var html = "";
     var total = 0;
     var acomualdor = 0;
@@ -17,12 +16,13 @@ function mostrarcarrito()
         array.forEach(element => {
             acomualdor = parseInt(element.precio);
             total += acomualdor;
+            //<td>` + element.cantidad + `</td>
             html += `
             <tr>
                 <td>` + element.id + `</td>
                 <td>` + element.titulo + `</td>
                 <td>` + element.precio + "€" + `</td>
-                <td>` + element.cantidad + `</td>
+                
             </tr>`;
         });
         document.getElementById("total_pagar").innerHTML = total + "€";
@@ -35,11 +35,17 @@ function vaciarcarrito() {
 }
 
 function pagar() {
-    if (localStorage.getItem("usuario") != null) {
-        window.location("http://localhost/Proyecto%20fin%20de%20grado/pago.html");
+    if (localStorage.getItem("articulos") != null) {
+        if (localStorage.getItem("usuario") != null) {
+            window.location = "http://localhost/Proyecto%20fin%20de%20grado%20definitivo/pago.html";
+        }
+        else {
+            window.location = "http://localhost/Proyecto%20fin%20de%20grado%20definitivo/login.html";
+        }
     }
-    else {
-        window.location("http://localhost/Proyecto%20fin%20de%20grado/login.html");
+    else
+    {
+        alert("Debe de haber algo en el carrito");
     }
 }
 

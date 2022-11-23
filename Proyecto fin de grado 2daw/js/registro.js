@@ -78,7 +78,7 @@ function registro() {
                         }
                         else{
                             alert('El registro se ha completo satisfactoriamente');
-                            window.location("http://localhost/Proyecto%20fin%20de%20grado/login.html");
+                            window.location = "http://localhost/Proyecto%20fin%20de%20grado/login.html";
                         }
                     }
                 }

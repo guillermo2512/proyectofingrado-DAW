@@ -21,7 +21,7 @@ Buttons.forEach(function (item)
             id: id,
             precio: precio,
             titulo: titulo,
-            cantidad: 1
+            //cantidad: 1
         }
         articulos.push(articulo);
 

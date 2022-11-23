@@ -20,13 +20,17 @@ class Comprar {
     {
         $this->getconecBD();
         try {
-            $consulta = $this->conexion->prepare("INSERT INTO usuarios VALUES (?, ?, ?)");
+            $consulta = $this->conexion->prepare("INSERT INTO usuarios(Nombre, Contrasena, Email) VALUES (?, ?, ?)");
             $consulta->bindparam(1, $mail);
 			$consulta->bindparam(2, $pass);
-            $consulta->bindparam(2, $nombre);
-            if (!$consulta->execute()) {
+            $consulta->bindparam(3, $nombre);
+
+            if (!$consulta->execute()) 
+            {
                 print_r($consulta->errorInfo());
-                return false;
+                $resp = false;
+                $envio = json_encode($resp);
+                echo $envio;
             }
 
         } catch (PDOException $e) {
