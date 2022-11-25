@@ -95,18 +95,18 @@
                         <div class="modal-body">
                             <ul class="nav nav-tabs">
                                 <li class="nav-item">
-                                    <a class="nav-link" data-bs-toggle="collapse"
+                                    <a class="nav-link active" data-bs-toggle="collapse"
                                         data-bs-target="#Requisitos">Requisitos</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" data-bs-toggle="collapse" data-bs-target="#Acerca">Acerca de</a>
+                                    <a class="nav-link navbar-toggle" data-bs-toggle="collapse" data-bs-target="#Acerca">Acerca de</a>
                                 </li>
                                 <li class="nav-item"> 
-                                    <a class="nav-link" data-bs-toggle="collapse" data-bs-target="#Jugabilidad">Tipo de Jugabilidad</a>
+                                    <a class="nav-link navbar-toggle" data-bs-toggle="collapse" data-bs-target="#Jugabilidad">Tipo de Jugabilidad</a>
                                 </li>
                             </ul>
 
-                            <div>
+                            <div id="Requisitos">
                                 <div class="embed-responsive embed-responsive-4by3 p-2 ">
                                     <iframe class="embed-responsive-item"
                                         src="https://www.youtube-nocookie.com/embed/xIl2z5wwjdA"
@@ -153,7 +153,7 @@
                                 </div>
                             </div>
 
-                            <div id="Acerca">
+                            <div class="collapse navbar-collapse" id="Acerca">
                                 <p style="font-size: 26px;">Un joven aprendiz de Jedi (a quienes se conoce como
                                     Padawans)
                                     se ve obligado a huir del Imperio Galáctico como consecuencia de la Orden 66,
@@ -180,7 +180,7 @@
                                 </p>
                             </div>
 
-                            <div id="Jugabilidad">
+                            <div class="collapse navbar-collapse" id="Jugabilidad">
                                 <p>El juego no es un mundo abierto que te ofrezca la posibilidad de explorar libremente
                                     por donde desees. En cambio, dispones de un mapa de juego y misiones que debes
                                     completar, aunque no necesariamente tendrás que adherirte a un único frente de
@@ -211,7 +211,7 @@
                     </div>
                 </div>
             </div>
-
+            
             <div class="col-sm-4">
                 <div class="card img-fluid" style="width: 86%;">
                     <img class="card-img-top" src="img/scuadrons.jpg" alt="Card image">
@@ -246,8 +246,8 @@
 
                 <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#scuadrons"
                     style="display: flex; margin-top: 20px; width: 50%;">Info</button>
-                <button type="button" id="2" class="btn btn-info boton" data-id="1" data-precio="30"
-                    data-titulo="Jedi Fallen Order" style="display: flex; margin-top: 20px; width: 50%;">Añadir</button>
+                <button type="button" id="2" class="btn btn-info boton" data-id="2" data-precio="30"
+                    data-titulo="scuadrons" style="display: flex; margin-top: 20px; width: 50%;">Añadir</button>
             </div>
 
             <div class="modal" id="scuadrons">
@@ -261,18 +261,18 @@
                         <div class="modal-body">
                             <ul class="nav nav-tabs">
                                 <li class="nav-item">
-                                    <a class="nav-link" data-bs-toggle="collapse"
+                                    <a class="nav-link active" data-bs-toggle="collapse"
                                         data-bs-target="#Requisitos">Requisitos</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" data-bs-toggle="collapse" data-bs-target="#Acerca">Acerca de</a>
+                                    <a class="nav-link navbar-toggle" data-bs-toggle="collapse" data-bs-target="#Acerca">Acerca de</a>
                                 </li>
                             </ul>
 
-                            <div>
+                            <div id="Requisitos">
                                 <div class="embed-responsive embed-responsive-4by3 p-2 ">
                                     <iframe class="embed-responsive-item"
-                                        src="https://www.youtube-nocookie.com/embed/xIl2z5wwjdA"
+                                        src="https://www.youtube.com/embed/w0eRkhR1z6A"
                                         title="YouTube video player"
                                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                         allowfullscreen></iframe>
@@ -387,7 +387,7 @@
                 </div>
                 <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#battlefront2"
                     style="display: flex; margin-top: 20px; width: 50%;">Info</button>
-                <button type="button" id="3" class="btn btn-info boton" data-id="" data-precio="" data-titulo=""
+                <button type="button" id="3" class="btn btn-info boton" data-id="3" data-precio="40" data-titulo="battlefront2"
                     style="display: flex; margin-top: 20px; width: 50%;">Añadir</button>
             </div>
 
@@ -414,10 +414,10 @@
                                 </li>
                             </ul>
 
-                            <div>
+                            <div id="Requisitos">
                                 <div class="embed-responsive embed-responsive-4by3 p-2 ">
                                     <iframe class="embed-responsive-item"
-                                        src="https://www.youtube-nocookie.com/embed/xIl2z5wwjdA"
+                                        src="https://www.youtube.com/embed/_q51LZ2HpbE"
                                         title="YouTube video player"
                                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                         allowfullscreen></iframe>
@@ -597,7 +597,7 @@
                                     </li>
                                 </ul>
 
-                                <div>
+                                <div id="Requisitos">
                                     <div class="embed-responsive embed-responsive-4by3 p-2 ">
                                         <iframe class="embed-responsive-item"
                                             src="https://www.youtube-nocookie.com/embed/xIl2z5wwjdA"
@@ -703,10 +703,10 @@
                                     </li>
                                 </ul>
 
-                                <div>
+                                <div id="Requisitos">
                                     <div class="embed-responsive embed-responsive-4by3 p-2 ">
                                         <iframe class="embed-responsive-item"
-                                            src="https://www.youtube-nocookie.com/embed/xIl2z5wwjdA"
+                                            src="https://www.youtube.com/embed/YESNObZJTgQ"
                                             title="YouTube video player"
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                             allowfullscreen></iframe>
@@ -866,10 +866,10 @@
                                     </li>
                                 </ul>
 
-                                <div>
+                                <div id="Requisitos">
                                     <div class="embed-responsive embed-responsive-4by3 p-2 ">
                                         <iframe class="embed-responsive-item"
-                                            src="https://www.youtube-nocookie.com/embed/xIl2z5wwjdA"
+                                            src="https://www.youtube.com/embed/aCgWabJssVI"
                                             title="YouTube video player"
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                             allowfullscreen></iframe>
@@ -970,5 +970,8 @@
         </div>
 </body>
 <script src="js/carrito.js"></script>
+<script>
+    
+</script>
 
 </html>
