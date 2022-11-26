@@ -9,12 +9,14 @@ if (localStorage.getItem("articulos") != null) {
     var articulos = JSON.parse(localStorage.getItem('articulos'));
 }
 
+
 var Buttons = document.querySelectorAll('button.boton');
 
 Buttons.forEach(function (item) 
 {
     item.addEventListener('click', function () 
     { 
+
         const id = parseInt(item.dataset.id);
         const precio = item.dataset.precio;
         const titulo = item.dataset.titulo;
@@ -103,6 +105,11 @@ Buttons.forEach(function (item)
         mostrarindice();
     });
 });
+
+function modal()
+{
+    
+}
 
 function mostrarindice(){
     if (localStorage.getItem("articulos") != null) {

@@ -15,12 +15,15 @@ function mostar()
             
             document.getElementById("1").dataset.id = 1;
             
+            
         }
     };
 
     xhttp.open("GET", "PHP/mostrarproductos.php");
     xhttp.send();
 }
+
+
 
 
 
