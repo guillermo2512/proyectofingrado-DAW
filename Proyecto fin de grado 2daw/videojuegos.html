@@ -10,7 +10,8 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
         integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="js/mostrar.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.16/dist/sweetalert2.all.min.js"></script>
+    <!--<script src="js/mostrar.js"></script>-->
     <style>
         .jumbotron {
             background: rgb(191, 240, 221);
@@ -54,7 +55,7 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="carrito.html"><i class="fa fa-fw fa-cart-plus"></i>Carrito<span
-                            class="badge bg-success" id="carrito">0</span></a>
+                            class="badge bg-primary" id="carrito">0</span></a>
                 </li>
             </ul>
         </nav>
@@ -67,12 +68,12 @@
                     <img class="card-img-top" src="img/star-wars-jedi-fallen-order.jpg" alt="Card image"
                     style="height: 91%;">
                     <div class="card-img-overlay">
-                        <!--<h4 class="card-text text-danger">Para PC es un juego de acción y aventuras basado en la popular
+                        <h4 class="card-text text-danger">Para PC es un juego de acción y aventuras basado en la popular
                             y duradera franquicia de películas del mismo nombre.
                             Cronológicamente, el juego se sitúa justo después de los eventos del Episodio III (La
                             Venganza de los Sith)
                             y cuenta con un conocido elenco de héroes, villanos, droides y Jedis, todos luchando por el
-                            éxito de sus misiones.</h4>-->
+                            éxito de sus misiones.</h4>
                     </div>
                     <div class="card-footer">
                         <h3>Precio: <p id="precio" style="display: inline-flex;">50€</p>
@@ -97,21 +98,21 @@
                         <div class="modal-body">
                             <ul class="nav nav-tabs">
                                 <li class="nav-item">
-                                    <a class="nav-link noactive collapsed" id="" data-bs-toggle="collapse"
-                                        data-bs-target="#Requisitos">Requisitos</a>
+                                    <a class="nav-link active" data-bs-toggle="collapse"
+                                        data-bs-target="#Requisitos" aria-expanded="true" aria-controls="Requisitos">Requisitos</a>      
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link navbar-toggle" data-bs-toggle="collapse"
-                                        data-bs-target="#Acerca">Acerca de</a>
+                                    <a class="nav-link" data-bs-toggle="collapse"
+                                        data-bs-target="#Acerca" aria-expanded="false" aria-controls="Acerca">Acerca de</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link navbar-toggle" data-bs-toggle="collapse"
-                                        data-bs-target="#Jugabilidad">Tipo de Jugabilidad</a>
+                                    <a class="nav-link" data-bs-toggle="collapse"
+                                        data-bs-target="#Jugabilidad" aria-expanded="false" aria-controls="Jugabilidad">Tipo de Jugabilidad</a>
                                 </li>
                             </ul>
 
-                            <div id="Requisitos">
-                                <div class="embed-responsive embed-responsive-4by3 p-2 ">
+                            <div class="collapse show" id="Requisitos">
+                                <div class="embed-responsive embed-responsive p-2 ">
                                     <iframe class="embed-responsive-item"
                                         src="https://www.youtube-nocookie.com/embed/xIl2z5wwjdA"
                                         title="YouTube video player"
@@ -157,7 +158,7 @@
                                 </div>
                             </div>
 
-                            <div class="collapse navbar-collapse" id="Acerca">
+                            <div class="collapse" id="Acerca">
                                 <p style="font-size: 26px;">Un joven aprendiz de Jedi (a quienes se conoce como
                                     Padawans)
                                     se ve obligado a huir del Imperio Galáctico como consecuencia de la Orden 66,
@@ -184,7 +185,7 @@
                                 </p>
                             </div>
 
-                            <div class="collapse navbar-collapse" id="Jugabilidad">
+                            <div class="collapse" id="Jugabilidad">
                                 <p>El juego no es un mundo abierto que te ofrezca la posibilidad de explorar libremente
                                     por donde desees. En cambio, dispones de un mapa de juego y misiones que debes
                                     completar, aunque no necesariamente tendrás que adherirte a un único frente de
@@ -220,7 +221,7 @@
                 <div class="card img-fluid" style="height: 80%;">
                     <img class="card-img-top" src="img/scuadrons.jpg" alt="Card image" style="height: 91%;">
                     <div class="card-img-overlay">
-                        <!--<h4 class="card-text text-danger d-flex">Domina el arte del combate con cazas estelares en la
+                        <h4 class="card-text text-danger d-flex" style=" padding-top: 0em;">Domina el arte del combate con cazas estelares en la
                             auténtica de pilotaje
                             de STAR WARS™: Squadrons. Abróchate el cinturón y siente la adrenalina de los combates
                             espaciales
@@ -240,7 +241,7 @@
                             facciones,
                             líderes emblemáticos y emergentes de ambos bandos lucharán por la galaxia. La Nueva
                             República lucha
-                            por la libertad. El Imperio exige orden.</h4>-->
+                            por la libertad. El Imperio exige orden.</h4>
                     </div>
                     <div class="card-footer">
                         <h3>Precio: <p id="precio" style="display: inline-flex;">35€</p>
@@ -248,7 +249,7 @@
                     </div>
                 </div>
 
-                <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#fallen-order"
+                <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#scuadrons"
                     style="display: flex; margin-top: 20px; width: 49%; float: left;">Info</button>
                 <button type="button" id="2" class="btn btn-info boton" data-id="2" data-precio="30"
                     data-titulo="Scuadrons"
@@ -267,15 +268,15 @@
                             <ul class="nav nav-tabs">
                                 <li class="nav-item">
                                     <a class="nav-link active" data-bs-toggle="collapse"
-                                        data-bs-target="#Requisitos">Requisitos</a>
+                                        data-bs-target="#Requisitos" aria-expanded="true" aria-controls="Requisitos">Requisitos</a>      
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link navbar-toggle" data-bs-toggle="collapse"
-                                        data-bs-target="#Acerca">Acerca de</a>
+                                    <a class="nav-link" data-bs-toggle="collapse"
+                                    data-bs-target="#Acerca" aria-expanded="false" aria-controls="Acerca">Acerca de</a>
                                 </li>
                             </ul>
 
-                            <div id="Requisitos">
+                            <div class="collapse show" id="Requisitos">
                                 <div class="embed-responsive embed-responsive-4by3 p-2 ">
                                     <iframe class="embed-responsive-item"
                                         src="https://www.youtube.com/embed/w0eRkhR1z6A" title="YouTube video player"
@@ -328,7 +329,7 @@
                                 </div>
                             </div>
 
-                            <div id="Acerca">
+                            <div class="collapse" id="Acerca">
                                 <p style="font-size: 26px;"><strong>Pilotos, preséntense</strong> planifica escaramuzas
                                     con tu escuadrón en la sala de reuniones antes de volar
                                     a campos de batalla dinámicos por toda la galaxia. Lucha en intensos combates
@@ -391,7 +392,7 @@
                         </h3>
                     </div>
                 </div>
-                <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#fallen-order"
+                <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#battlefront2"
                     style="display: flex; margin-top: 20px; width: 49%; float: left;">Info</button>
                 <button type="button" id="3" class="btn btn-info boton" data-id="3" data-precio="30"
                     data-titulo="battlefront2"
@@ -409,19 +410,20 @@
                         <div class="modal-body">
                             <ul class="nav nav-tabs">
                                 <li class="nav-item">
+                                    <a class="nav-link active" data-bs-toggle="collapse"
+                                        data-bs-target="#Requisitos" aria-expanded="true" aria-controls="Requisitos">Requisitos</a>
+                                </li>
+                                <li class="nav-item">
                                     <a class="nav-link" data-bs-toggle="collapse"
-                                        data-bs-target="#Requisitos">Requisitos</a>
+                                    data-bs-target="#Acerca" aria-expanded="false" aria-controls="Acerca">Acerca de</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" data-bs-toggle="collapse" data-bs-target="#Acerca">Acerca de</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" data-bs-toggle="collapse" data-bs-target="#Jugabilidad">Cajas de
+                                    <a class="nav-link" data-bs-toggle="collapse" data-bs-target="#Jugabilidad" aria-expanded="false" aria-controls="Jugabilidad">Cajas de
                                         Botín</a>
                                 </li>
                             </ul>
 
-                            <div id="Requisitos">
+                            <div class="collapse show" id="Requisitos">
                                 <div class="embed-responsive embed-responsive-4by3 p-2 ">
                                     <iframe class="embed-responsive-item"
                                         src="https://www.youtube.com/embed/_q51LZ2HpbE" title="YouTube video player"
@@ -474,7 +476,7 @@
                                 </div>
                             </div>
 
-                            <div id="Acerca">
+                            <div class="collapse" id="Acerca">
                                 <p style="font-size: 26px;">El jugador tiene la posibilidad de elegir entre una gran
                                     variedad de personajes jugables, todos muy conocidos y queridos,
                                     que forman parte de la franquicia de películas del mismo nombre.
@@ -513,7 +515,7 @@
                                 </p>
                             </div>
 
-                            <div id="Jugabilidad">
+                            <div class="collapse" id="Jugabilidad">
                                 <p>¿Las llamadas Cajas de Botín (o Lootboxes) son, tal como se escucha, cajas llenas de
                                     artículos de valor, los cuales pueden ser utilizados en el juego.
                                     Estas pueden ser obtenidas a cambio de dinero real por
@@ -603,21 +605,18 @@
                         <div class="modal-body">
                             <ul class="nav nav-tabs">
                                 <li class="nav-item">
-                                    <a class="nav-link" data-bs-toggle="collapse"
-                                        data-bs-target="#Requisitos">Requisitos</a>
+                                    <a class="nav-link active" data-bs-toggle="collapse"
+                                        data-bs-target="#Requisitos" aria-expanded="true" aria-controls="Requisitos">Requisitos</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" data-bs-toggle="collapse" data-bs-target="#Acerca">Acerca
-                                        de</a>
+                                    <a class="nav-link" data-bs-toggle="collapse" data-bs-target="#Acerca" aria-expanded="false" aria-controls="Acerca">Acerca de</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" data-bs-toggle="collapse" data-bs-target="#Jugabilidad">Tipo
-                                        de
-                                        Jugabilidad</a>
+                                    <a class="nav-link" data-bs-toggle="collapse" data-bs-target="#Jugabilidad" aria-expanded="false" aria-controls="Jugabilidad">Tipo de Jugabilidad</a>
                                 </li>
                             </ul>
 
-                            <div id="Requisitos">
+                            <div class="collapse show" id="Requisitos">
                                 <div class="embed-responsive embed-responsive-4by3 p-2 ">
                                     <iframe class="embed-responsive-item"
                                         src="https://www.youtube-nocookie.com/embed/xIl2z5wwjdA"
@@ -665,12 +664,12 @@
                                 </div>
                             </div>
 
-                            <div id="Acerca">
+                            <div class="collapse" id="Acerca">
                                 <p style="font-size: 26px;">
                                 </p>
                             </div>
 
-                            <div id="Jugabilidad">
+                            <div class="collapse" id="Jugabilidad">
                                 <p></p>
                             </div>
                         </div>
@@ -686,18 +685,18 @@
                 <div class="card img-fluid" style="margin-top: 15px; height: 79%;">
                     <img class="card-img-top" src="img/elite dangerous.jpg" alt="Card image" style="height: 100%;">
                     <div class="card-img-overlay">
-                        <!--<h4 class="card-text text-danger">Este título te presenta la Vía Láctea en escala 1:1 con todo su conjunto de
+                        <h4 class="card-text text-danger">Este título te presenta la Vía Láctea en escala 1:1 con todo su conjunto de
                                 sistemas estelares, planetas y lunas. Al principio tendrás tu nave y un poco de dinero, y a partir
                                 de allí te abrirás paso, por la vía legal o ilegal, llevando a cabo actividades de comercio,
                                 piratería, asesino a sueldo o caza-recompensas. Videojuego de simulación especial que nos ofrece
-                                toda la libertad del mundo para que exploremos los confines del universo del modo que deseemos.</h4>-->
+                                toda la libertad del mundo para que exploremos los confines del universo del modo que deseemos.</h4>
                     </div>
                     <div class="card-footer">
                         <h3>Precio: <p id="precio" style="display: inline-flex;">26€</p>
                         </h3>
                     </div>
                 </div>
-                <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#fallen-order"
+                <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#Elite"
                     style="display: flex; margin-top: 20px; width: 49%; float: left;">Info</button>
                 <button type="button" id="5" class="btn btn-info boton" data-id="5" data-precio="30" data-titulo="Elite"
                     style="display: flex; margin-top: 20px; width: 49%; float: left; margin-left: 0.4em;">Añadir</button>
@@ -714,16 +713,15 @@
                         <div class="modal-body">
                             <ul class="nav nav-tabs">
                                 <li class="nav-item">
-                                    <a class="nav-link" data-bs-toggle="collapse"
-                                        data-bs-target="#Requisitos">Requisitos</a>
+                                    <a class="nav-link active" data-bs-toggle="collapse"
+                                        data-bs-target="#Requisitos" aria-expanded="true" aria-controls="Requisitos">Requisitos</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" data-bs-toggle="collapse" data-bs-target="#Acerca">Acerca
-                                        de</a>
+                                    <a class="nav-link" data-bs-toggle="collapse" data-bs-target="#Acerca" aria-expanded="true" aria-controls="Acerca">Acerca de</a>
                                 </li>
                             </ul>
 
-                            <div id="Requisitos">
+                            <div class="collapse show" id="Requisitos">
                                 <div class="embed-responsive embed-responsive-4by3 p-2 ">
                                     <iframe class="embed-responsive-item"
                                         src="https://www.youtube.com/embed/YESNObZJTgQ" title="YouTube video player"
@@ -779,7 +777,7 @@
                                 </div>
                             </div>
 
-                            <div id="Acerca">
+                            <div class="collapse" id="Acerca">
                                 <p style="font-size: 26px;">Tras comenzar con solo una pequeña nave estelar y unos
                                     pocos créditos, el jugador hará todo lo que
                                     esté en su mano para obtener las habilidades, conocimientos, riqueza y poder
@@ -894,7 +892,7 @@
                         </h3>
                     </div>
                 </div>
-                <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#fallen-order"
+                <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#Sky"
                     style="display: flex; margin-top: 20px; width: 49%; float: left;">Info</button>
                 <button type="button" id="6" class="btn btn-info boton" data-id="6" data-precio="30"
                     data-titulo="No man`s sky"
@@ -912,20 +910,18 @@
                         <div class="modal-body">
                             <ul class="nav nav-tabs">
                                 <li class="nav-item">
-                                    <a class="nav-link" data-bs-toggle="collapse"
-                                        data-bs-target="#Requisitos">Requisitos</a>
+                                    <a class="nav-link active" data-bs-toggle="collapse"
+                                        data-bs-target="#Requisitos" aria-expanded="true" aria-controls="Requisitos">Requisitos</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" data-bs-toggle="collapse" data-bs-target="#Acerca">Acerca
-                                        de</a>
+                                    <a class="nav-link" data-bs-toggle="collapse" data-bs-target="#Acerca" aria-expanded="false" aria-controls="Acerca">Acerca de</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" data-bs-toggle="collapse" data-bs-target="#Jugabilidad">Modos de
-                                        Juego</a>
+                                    <a class="nav-link" data-bs-toggle="collapse" data-bs-target="#Jugabilidad" aria-expanded="false" aria-controls="Jugabilidad">Modos de Juego</a>
                                 </li>
                             </ul>
 
-                            <div id="Requisitos">
+                            <div class="collapse show" id="Requisitos">
                                 <div class="embed-responsive embed-responsive-4by3 p-2 ">
                                     <iframe class="embed-responsive-item"
                                         src="https://www.youtube.com/embed/aCgWabJssVI" title="YouTube video player"
@@ -971,7 +967,7 @@
                                 </div>
                             </div>
 
-                            <div id="Acerca">
+                            <div class="collapse" id="Acerca">
                                 <p style="font-size: 26px;"> Cuando se lanzó al público en 2016, el juego fue
                                     aclamado como algo único y maravilloso, aunque los
                                     críticos se quejaron debido a que muchas de las funciones prometidas no estaban
@@ -996,7 +992,7 @@
                                 </p>
                             </div>
 
-                            <div id="Jugabilidad">
+                            <div class="collapse" id="Jugabilidad">
                                 <p>Principalmente, se trata de un juego de exploración y construcción de mundos, con
                                     suficientes
                                     misiones interesantes para mantener el interés alto. Los jugadores pueden elegir
@@ -1051,7 +1047,6 @@
                 </div>
             </div>
         </div>
-    </div>
     </div>
 </body>
 <script src="js/carrito.js"></script>

@@ -11,18 +11,20 @@ function mostrarcarrito() {
     var html = "";
     var total = 0;
     var acomualdor = 0;
+    var totaliza = 0;
     if (localStorage.getItem("articulos") != null) {
         var array = JSON.parse(localStorage.getItem('articulos'));
         array.forEach(element => {
             acomualdor = parseInt(element.precio);
-            total += acomualdor;
+            totaliza = acomualdor*element.cantidad
+            total += totaliza;
             //<td>` + element.cantidad + `</td>
             html += `
             <tr>
                 <td>` + element.id + `</td>
                 <td>` + element.titulo + `</td>
                 <td>` + element.precio + "€" + `</td>
-                
+                <td>` + element.cantidad + `</td>
             </tr>`;
         });
         document.getElementById("total_pagar").innerHTML = total + "€";

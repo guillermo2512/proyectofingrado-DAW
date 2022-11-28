@@ -5,61 +5,34 @@
     <title>Tienda de Informática y Videojuegos online</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
         integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <style>
-        .jumbotron {
-            background: rgb(191, 240, 221);
-            margin: 20px;
-        }
-
         .custom-control {
             margin-left: 20px;
         }
-
-        form {
-            margin: 20px;
+        .nav-item{
+            padding-left: 26px;
         }
-
-        .nav-item {
-            margin-left: 20px;
-        }
-
     </style>
 </head>
 
 <body>
     <header>
-        <form action="">
-            <nav class="navbar-expand-sm navbar-dark"
-                style="background: #34ad0f;height: 60px;border-radius: 7px; font-size:  32px;">
-                <ul class="navbar-nav">
-                    <div class="row">
-                        <li class="nav-item">
-                            <a class="nav-link" href="home.html" style=" color: black;"><i
-                                class="fas fa-home"></i>Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="login.html"
-                                style=" display: flex; margin-left: 48em; color: black;">
-                                <i class="fa fa-user-circle"></i>Login</a>
-                        </li>
-                    </div>
-                </ul>
-            </nav>
-        </form>
-        <div class="jumbotron">
+        <nav class="navbar-expand-sm navbar-dark"  style="background: #34ad0f; font-size: 24px;">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" style="color: black;" href="home.html"><i class="fas fa-home"></i>Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="color: black;" href="login.html"><i class="fas fa-sign-in-alt"></i>Login</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="shadow-lg p-4 mb-4" style="background: rgb(191, 240, 221); border-radius: 20px; margin: 20px;">        
             <h1>Bienvenidos al apartado saga en el se explica todo lo relacionado con ella.</h1>
             <h2>La saga esta dividida en 3 trilogias: La trilogia original, las precuelas, las secuelas;
                 ademas de un monton de series, libros y peliculas fuera de las trilogias
@@ -72,62 +45,89 @@
         </div>
     </header>
 
-    <div class="form-group">
-        <div class="controls col-md-offset-4 col-md-8 ">
-            <a href="Series.html"><img src="img/Mandalorian.jpg" alt="madalorian"></a>
-            <a href="#" data-toggle="modal"
-            data-target="#myModal">series
-        </div>
-    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-6">
+                <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#series"
+                    style="display: flex; width: 49%; float: left; margin-right: 0.8em;">Informacion general</button>
+                <a type="button" href="Series.html" class="btn btn-info" style="display: flex;  width: 49%;">Series</a>
 
-    <div id="myModal" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">
-                    </h4>
-                </div>
-                <div class="modal-body">
-                    Las series son una gran fuente de informacion sobre la saga ya que se situan entre episodios y rellenan lo que paso entre ellos.</br>
-                    Las tres series mas importantes por su situacion son: The clone war por pertenecer a las precuelas entre los episodios 2 y 3,
-                    Rebels por pertenecer a la trilogia original entre los episodios 3 y 4, The Mandalorian por pertenecer a las secuelas entre los episodios 6 y 7.
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <div class="card img-fluid" style="height: 66%; margin-top: 10px;">
+                    <img class="card-img-top h-100" src="img/Mandalorian.jpg" alt="Card image">
                 </div>
             </div>
-        </div>
-    </div>
 
-    <div class="form-group">
-        <div class="controls col-md-offset-4 col-md-8 ">
-            <a href="peliculas.html"><img src="img/star war episodio 2.jpg" alt="episodio2"></a>
-            <a href="#" data-toggle="modal"
-            data-target="#myModalp">Peliculas
-        </div>
-    </div>
+            <div class="modal" id="series">
+                <div class="modal-dialog ">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Series</h4>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
 
-    <div id="myModalp" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">
-                    </h4>
+                        <div class="modal-body">
+                            Las series son una gran fuente de informacion sobre la saga ya que se situan entre episodios y
+                            rellenan lo que paso entre ellos.</br>
+                            Las tres series mas importantes por su situacion son: The clone war por pertenecer a las
+                            precuelas
+                            entre los episodios 2 y 3,
+                            Rebels por pertenecer a la trilogia original entre los episodios 3 y 4, The Mandalorian por
+                            pertenecer a las secuelas entre los episodios 6 y 7.
+                        </div>    
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                        </div>
+
+                    </div>
                 </div>
-                <div class="modal-body">
-                    Las 9 pelicualas se dividen en 3 trilogias y son el eje central de la saga 6 peliculas las correspondientes a las 2 primeras trilogias son creadas y dirigidas por
-                    George Lucas y las ultimas 3 es decir la ultima trilogia corresponde a disney tras la venta de la saga.</br>
-                    Precuelas: formada por los episodios I,II,III; Episodio I Amenaza fantasma, Episodio II Guerra de los Clones,
-                    Episodio III La Venganza de los Shits.</br>
-                    Trilogia original: formada por los episodios IV,V,VI; Episodio IV Una nueva Esperanza, Episodio V Imperio
-                    Contrataca, Episodio VI Retorno del Jedi.</br>
-                    Secuelas: formada por los episodios VII,VIII,IX; Episodio VII El despertar de la Fuerza, Episodio VIII Los Ultimos Jedi,
-                    Episodio IX Ascenso de skywalker</br>.
+            </div>
+
+            <div class="col-6">
+                <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#peliculas" style="display: flex; width: 49%; float: left; margin-right: 0.8em;">Informacion general</button>
+                <a type="button" href="peliculas.html" class="btn btn-info" style="display: flex; width: 49%;">Peliculas</a>
+
+                <div class="card img-fluid" style="height: 66%; margin-top: 10px;">
+                    <img class="card-img-top h-100" src="img/star war episodio 2.jpg" alt="Card image">
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+
+            <div class="modal" id="peliculas">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Peliculas</h4>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+
+                        <div class="modal-body">
+                            Las 9 pelicualas se dividen en 3 trilogias y son el eje central de la saga 6 peliculas las
+                            correspondientes a las 2 primeras trilogias son creadas y dirigidas por
+                            George Lucas y las ultimas 3 es decir la ultima trilogia corresponde a disney tras la venta
+                            de
+                            la
+                            saga.</br>
+                            Precuelas: formada por los episodios I,II,III; Episodio I Amenaza fantasma, Episodio II
+                            Guerra
+                            de
+                            los Clones,
+                            Episodio III La Venganza de los Shits.</br>
+                            Trilogia original: formada por los episodios IV,V,VI; Episodio IV Una nueva Esperanza,
+                            Episodio
+                            V
+                            Imperio
+                            Contrataca, Episodio VI Retorno del Jedi.</br>
+                            Secuelas: formada por los episodios VII,VIII,IX; Episodio VII El despertar de la Fuerza,
+                            Episodio
+                            VIII Los Ultimos Jedi,
+                            Episodio IX Ascenso de skywalker</br>.
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </div>

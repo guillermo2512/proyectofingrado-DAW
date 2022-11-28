@@ -11,16 +11,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="js/login.js"></script>
     <style>
-        .jumbotron {
-            background: rgb(191, 240, 221);
-        }
-
         .custom-control {
             margin-left: 20px;
-        }
-
-        form {
-            margin: 20px;
         }
 
         .container {
@@ -34,40 +26,47 @@
     </style>
 </head>
 
-<body>
-    <form action="">
-        <nav class="navbar-expand-sm navbar-dark"
-            style="background: #48b128;height: 40px;border-radius: 7px; font-size:  20px;">
-            <ul class="navbar-nav">
-                <div class="row">
-                    <li class="nav-item">
-                        <a class="nav-link" href="home.html" style=" display: flex; color: black;">
-                            <i class="fas fa-home"></i>Home</a>
-                    </li>
-                </div>
-            </ul>
-        </nav>
-    </form>
+<body style="background-color: #508bfc;">
+    <nav class="navbar-expand-sm navbar-dark"
+        style="background: #48b128;height: 40px; font-size:  20px;">
+        <ul class="navbar-nav">
+            <div class="row">
+                <li class="nav-item">
+                    <a class="nav-link" href="home.html" style=" display: flex; color: black;">
+                        <i class="fas fa-home"></i>Home</a>
+                </li>
+            </div>
+        </ul>
+    </nav>
 
-    <div class="container-fluid" style="margin-left: 36em;">
-        <div class="row">
-            <div class="col-md-4">
-                <div class="panel panel-default">
-                    <div class="panel-body">
-                        <form class="form-registro" autocomplete="off">
-                            <div class="form-group">
-                                <label for="email">Email</label>
-                                <input type="text" class="form-control" id="email" name="email"
-                                    placeholder="Enter Email">
-                            </div>
-                            <div class="form-group">
-                                <label for="pwd">Contraseña</label>
-                                <input type="password" class="form-control" id="pwd" name="pwd"
-                                    placeholder="Enter Password">
-                            </div>
-                            <button type="submit" class="btn btn-primary" id="boton" style="background: #26dd63">Entrar</button>
-                            <label>¿No tienes cuenta?<a href="formulario registro.html"> createla</a></label>
-                        </form>
+    <div class="container-fluid" style="padding-top: 15em;">
+        <div class="row d-flex justify-content-center align-items-center">
+            <div class="col-md-3">
+                <div class="card shadow-2-strong" style="border-radius: 1rem;">
+                    <div class="card-body p-5 text-center">
+
+                        <h2 class="mb-5">Login</h2>
+
+                        <div class="form-outline mb-4">
+                            <input type="email" class="form-control form-control-lg" id="email" name="email"
+                                placeholder="Enter your Email">
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <input type="password" class="form-control form-control-lg" id="pwd" name="pwd"
+                                placeholder="Enter your Password">
+                        </div>
+
+                        <button class="btn btn-primary btn-lg btn-block" type="submit" id="boton">Login</button>
+                        <label>¿No tienes cuenta?<a href="formulario registro.html"> createla</a></label>
+
+                        <hr class="my-4">
+
+                        <button class="btn btn-lg btn-block btn-primary" style="background-color: #dd4b39;"
+                            type="submit"><i class="fab fa-google me-2"></i> Sign in with google</button>
+                        <button class="btn btn-lg btn-block btn-primary mb-2" style="background-color: #3b5998;"
+                            type="submit"><i class="fab fa-facebook-f me-2"></i>Sign in with facebook</button>
+
                     </div>
                 </div>
             </div>
