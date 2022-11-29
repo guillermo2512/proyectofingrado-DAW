@@ -53,7 +53,11 @@ function registro() {
         if (this.readyState == 4 && this.status == 200) {
             document.getElementById("boton").disabled = false;
             if (this.response == false) {
-                alert("El usuario ya existe, porfavor introduzca otro diferente");
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'El usuario ya existe, porfavor introduzca otro diferente'
+                });
             }
             else {
                 var enviar2 = new Object();
@@ -74,10 +78,18 @@ function registro() {
                         document.getElementById("boton").disabled = false;
                         if (this.response == false) 
                         {
-                            alert('Error al registrarse');
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: 'Error al registrarse'
+                            });
                         }
                         else{
-                            alert('El registro se ha completo satisfactoriamente');
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Registro',
+                                text: 'El registro se ha completo satisfactoriamente'
+                            });
                             window.location = "http://localhost/Proyecto%20fin%20de%20grado/login.html";
                         }
                     }

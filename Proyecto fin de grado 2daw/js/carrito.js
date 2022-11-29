@@ -13,7 +13,7 @@ var Buttons = document.querySelectorAll('button.boton');
 
 Buttons.forEach(function (item) {
     item.addEventListener('click', function () {
-        var cantidad = 1;
+        //var cantidad = 1;
         const id = parseInt(item.dataset.id);
         const precio = item.dataset.precio;
         const titulo = item.dataset.titulo;
@@ -35,7 +35,7 @@ Buttons.forEach(function (item) {
             id: id,
             precio: precio,
             titulo: titulo,
-            //cantidad: cantidad
+            cantidad: 1
         }
         articulos.push(articulo);
 

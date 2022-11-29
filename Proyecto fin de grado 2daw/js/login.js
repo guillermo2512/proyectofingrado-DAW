@@ -20,8 +20,11 @@ function login() {
             document.getElementById("boton").disabled = false;
             var respuesta = this.responseText;
             if (respuesta == 1) {
-                alert("La contraseña o el usuario no existe");
-                //form.reset();
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'La contraseña o el usuario no existen'
+                });
             }
             else {
                 var json = JSON.parse(this.responseText);
@@ -32,7 +35,11 @@ function login() {
                 var userjson = JSON.stringify(usuario);
 
                 localStorage.setItem("usuario", userjson);
-                alert("Bienvenido " + json.Nombre);
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Login',
+                    text: 'Bienvenido ' + json.Nombre
+                });
 
                 if (localStorage.getItem("articulos") != null) 
                 {
@@ -40,11 +47,8 @@ function login() {
                 }
                 else
                 {
-                    window.location = "http://localhost/Proyecto%20fin%20de%20grado/home.html";
+                    window.location = "http://localhost/Proyecto%20fin%20de%20grado%20definitivo/";
                 }
-
-               
-                
             }
         }
     };

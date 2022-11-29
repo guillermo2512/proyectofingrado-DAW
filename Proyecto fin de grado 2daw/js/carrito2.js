@@ -34,6 +34,7 @@ function mostrarcarrito() {
 
 function vaciarcarrito() {
     localStorage.removeItem("articulos");
+    location.reload();
 }
 
 function pagar() {
