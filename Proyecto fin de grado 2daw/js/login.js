@@ -31,7 +31,7 @@ function login() {
                 var usuario = new Object();
                 usuario.email = json.Email;
                 usuario.nombre = json.Nombre;
-                
+
                 var userjson = JSON.stringify(usuario);
 
                 localStorage.setItem("usuario", userjson);
@@ -40,15 +40,16 @@ function login() {
                     title: 'Login',
                     text: 'Bienvenido ' + json.Nombre
                 });
-
-                if (localStorage.getItem("articulos") != null) 
+                setInterval(function () 
                 {
-                    window.location = "http://localhost/Proyecto%20fin%20de%20grado%20definitivo/pago.html";
-                }
-                else
-                {
-                    window.location = "http://localhost/Proyecto%20fin%20de%20grado%20definitivo/";
-                }
+                    if (localStorage.getItem("articulos") != null) 
+                    {
+                        window.location = "http://localhost/Proyecto%20fin%20de%20grado%20definitivo/pago.html";
+                    }
+                    else {
+                        window.location = "http://localhost/Proyecto%20fin%20de%20grado%20definitivo/";
+                    }
+                });
             }
         }
     };

@@ -5,8 +5,6 @@ function cargareventos(ev) {
         productos();
         cargarusuario();
         document.getElementById("btn").addEventListener("click", comprar);
-        //document.getElementById("pwd").addEventListener("change", validarPwd);
-        //document.getElementById("npay").addEventListener("change", validarTarjeta);
     }
 }
 
@@ -18,15 +16,22 @@ function productos() {
     if (localStorage.getItem("articulos") != null) {
         array = JSON.parse(localStorage.getItem('articulos'));
         array.forEach(element => {
-            total = total + element.precio;
+            acomualdor = parseInt(element.precio);
+            totaliza = acomualdor*element.cantidad
+            total += totaliza;
             html += `
-                <tr>
-                    <td>` + element.id + `</td>
-                    <td>` + element.titulo + `</td>
-                    <td>` + element.precio + `</td>
-                </tr>`;
+            <tr>
+                <td>` + element.id + `</td>
+                <td>` + element.titulo + `</td>
+                <td>` + element.precio + "€" + `</td>
+                <td>` + element.cantidad + `</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>` + total + `</td>
+            </tr>`;
         });
-        document.getElementById("total").value = total;
         document.getElementById("productos").innerHTML = html;
     }
 }
@@ -57,7 +62,7 @@ function comprar() {
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             document.getElementById("btn").disabled = false;
-            form.reset();
+            location.reload();
             alert("La Compra ha sido registrarda correctamente");
             localStorage.removeItem("usuario");
         }

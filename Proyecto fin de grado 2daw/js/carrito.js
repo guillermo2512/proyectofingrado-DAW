@@ -39,6 +39,9 @@ Buttons.forEach(function (item) {
         }
         articulos.push(articulo);
 
+        localStorage.setItem('articulos', JSON.stringify(articulos));
+        mostrarindice();
+
         //si se repite borrar el anterior con con el valor menos 1
         /*if (articulos.length == 0) 
         { 
@@ -108,17 +111,8 @@ Buttons.forEach(function (item) {
                 }
             });
         }*/
-
-
-
-        localStorage.setItem('articulos', JSON.stringify(articulos));
-        mostrarindice();
     });
 });
-
-function modal() {
-
-}
 
 function mostrarindice() {
     if (localStorage.getItem("articulos") != null) {

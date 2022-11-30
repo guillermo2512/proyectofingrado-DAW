@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Tienda de Informática y Videojuegos online</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.16/dist/sweetalert2.all.min.js"></script>
+    <!--<script src="js/mostrar.js"></script>-->
+    <style>
+        .jumbotron {
+            background: rgb(191, 240, 221);
+        }
+
+        .custom-control {
+            margin-left: 20px;
+        }
+
+        nav {
+            margin: 14px;
+        }
+
+        .container {
+            border: 1px solid rgb(119, 165, 172);
+            margin-top: 30px;
+        }
+
+        .nav-item {
+            margin-left: 20px;
+        }
+
+        .card-text {
+            padding-top: 16em;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar-expand-sm navbar-dark" style="background: #34ad0f; height: 40px; border-radius: 7px ">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" style="margin-left: 20px;" href="home.html"><i class="fas fa-home"></i>Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="La saga.html"><i class="fa fa-info-circle"></i>La saga</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="login.html"><i class="fas fa-sign-in-alt"></i>Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="carrito.html"><i class="fa fa-fw fa-cart-plus"></i>Carrito<span
+                            class="badge bg-primary" id="carrito" style="margin-left: 4px;">0</span></a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-4">
+                <div class="card img-fluid" style="height: 80%;">
+                    <img class="card-img-top" src="img/star-wars-jedi-fallen-order.jpg" alt="Card image"
+                        style="height: 91%;">
+                    <div class="card-img-overlay">
+                        <h4 class="card-text text-danger">Para PC es un juego de acción y aventuras basado en la popular
+                            y duradera franquicia de películas del mismo nombre.
+                            Cronológicamente, el juego se sitúa justo después de los eventos del Episodio III (La
+                            Venganza de los Sith)
+                            y cuenta con un conocido elenco de héroes, villanos, droides y Jedis, todos luchando por el
+                            éxito de sus misiones.</h4>
+                    </div>
+                    <div class="card-footer">
+                        <h3>Precio: <p id="precio" style="display: inline-flex;">50€</p>
+                        </h3>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#fallen-order"
+                    style="display: flex; margin-top: 20px; width: 49%; float: left;">Info</button>
+                <button type="button" id="1" class="btn btn-info boton" data-id="1" data-precio="50"
+                    data-titulo="Jedi Fallen Order"
+                    style="display: flex; margin-top: 20px; width: 49%; float: left; margin-left: 0.4em;">Añadir</button>
+            </div>
+
+            <div class="modal" id="fallen-order">
+                <div class="modal-dialog ">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Jedi Fallen Order</h4>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+
+                        <div class="modal-body">
+                            <ul class="nav nav-tabs">
+                                <li class="nav-item">
+                                    <a class="nav-link active" data-bs-toggle="tab" data-bs-target="#Requisitos"
+                                        aria-expanded="true" aria-controls="Requisitos">Requisitos</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-bs-toggle="tab" data-bs-target="#Acerca"
+                                        aria-expanded="false" aria-controls="Acerca">Acerca de</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-bs-toggle="tab" data-bs-target="#Jugabilidad"
+                                        aria-expanded="false" aria-controls="Jugabilidad">Tipo de Jugabilidad</a>
+                                </li>
+                            </ul>
+
+                            <div class="container tab-pane active" id="Requisitos">
+                                <div class="embed-responsive embed-responsive p-2 ">
+                                    <iframe class="embed-responsive-item"
+                                        src="https://www.youtube-nocookie.com/embed/xIl2z5wwjdA"
+                                        title="YouTube video player"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen></iframe>
+                                </div>
+                                <div class="table-responsive-sm">
+                                    <table class="table table-bordered">
+                                        <thead style="text-align: center;">
+                                            <tr>
+                                                <th>Configuracion</th>
+                                                <th>Configuracion Recomendada</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>SO: 64-bit Windows 7/8.1/10 </td>
+                                                <td>SO: 64-bit Windows 7/8.1/10 </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Procesador: AMD FX-6100/Intel i3-3220 or Equivalent</td>
+                                                <td>Procesador: AMD Ryzen 7 1700/Intel i7-6700K or Equivalent</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Memoria: 8 GB de RAM</td>
+                                                <td>Memoria: 16 GB de RAM</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Gráficos: AMD Radeon HD 7750, NVIDIA GeForce GTX 650 or Equivalent
+                                                </td>
+                                                <td>G AMD RX Vega 56, Nvidia GTX 1070/GTX1660Ti or Equivalent</td>
+                                            </tr>
+                                            <tr>
+                                                <td>DirectX: Versión 11</td>
+                                                <td>DirectX: Versión 11</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Almacenamiento: 55 GB de espacio disponible</td>
+                                                <td>Almacenamiento: 55 GB de espacio disponible</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div class="container tab-pane" id="Acerca">
+                                <p style="font-size: 26px;">Un joven aprendiz de Jedi (a quienes se conoce como
+                                    Padawans)
+                                    se ve obligado a huir del Imperio Galáctico como consecuencia de la Orden 66,
+                                    una purga de la Orden Jedi a lo largo de toda la galaxia. La verdadera identidad del
+                                    joven
+                                    Jedi cuyo nombre es Cal Kestis queda de manifiesto cuando éste utiliza la fuerza
+                                    para salvar la vida de un amigo luego de ocurrir un accidente. Siguiendo el viejo
+                                    dicho que reza
+                                    Ninguna buena acción queda sin castigo…’, se corre la voz acerca de la verdadera
+                                    identidad del
+                                    joven, información que llega hasta los oídos de los inquisidores del Imperio,
+                                    quienes comienzan una feroz persecución, decididos a atrapar a cualquier
+                                    sobreviviente de la orden Jedi.
+
+                                    La misión de Cal ahora consiste en encontrar un lugar seguro para esconderse,
+                                    evitando ser
+                                    capturado por el Imperio. Por el camino, se encontrará con muchos rostros
+                                    reconocibles al instante para los fanáticos asiduos de la franquicia - entre los que
+                                    se encuentran
+                                    personajes como Saw Gerrera (hábilmente vocalizado por el actor Forrest Whittaker) y
+                                    Cere (cuya actuación de voz es llevada a cabo por la maravillosa Debra Wilson) -
+                                    además de recibir información valiosa y consejos que le ayudarán a conseguir sus
+                                    objetivos.
+                                </p>
+                            </div>
+
+                            <div class="container tab-pane" id="Jugabilidad">
+                                <p>El juego no es un mundo abierto que te ofrezca la posibilidad de explorar libremente
+                                    por donde desees. En cambio, dispones de un mapa de juego y misiones que debes
+                                    completar, aunque no necesariamente tendrás que adherirte a un único frente de
+                                    progreso a la vez.
+                                    Esto significa que puedes montarte en tu nave espacial y viajar a cualquiera de las
+                                    áreas
+                                    desbloqueadas del mapa - más áreas del mapa se irán desbloqueando a medida que
+                                    progreses para llevar la misión correspondiente de esa área, hasta completarla o
+                                    hasta que te sientas en apuros.
+
+                                    De suceder esto último, tan solo tendrás que volver a tu nave y saltar hacia un
+                                    planeta distinto para aumentar y desarrollar las habilidades de las que careces en
+                                    ese
+                                    momento, enfocándote en misiones más sencillas (o tal vez, simplemente, en otro
+                                    orden)
+                                    antes de volver e intentar con aquella que te pareció difícil.
+                                    Así que, aunque no se trate de un mundo abierto como tal,
+                                    podría decirse que el juego ofrece una jugabilidad híbrida,
+                                    compuesta por elementos de tipo lineal a la vez que ofrece cierto margen de libertad
+                                    al jugador </p>
+                            </div>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="card img-fluid" style="height: 80%;">
+                    <img class="card-img-top" src="img/scuadrons.jpg" alt="Card image" style="height: 91%;">
+                    <div class="card-img-overlay">
+                        <button type="button" class="btn btn-info" data-bs-toggle="modal"
+                            data-bs-target="#descripcion-scuadrons" style="display: flex;">Descripcion</button>
+
+                        <div class="modal" id="descripcion-scuadrons">
+                            <div class="modal-dialog ">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <h3>Domina el arte del combate
+                                            con cazas estelares en la
+                                            auténtica de pilotaje
+                                            de STAR WARS™: Squadrons. Abróchate el cinturón y siente la adrenalina de los combates
+                                            espaciales
+                                            multijugador en primera persona junto a tu escuadrón. Alístate y métete en las cabinas de
+                                            cazas
+                                            estelares de las flotas de la Nueva República y del Imperio, y lucha en batallas espaciales
+                                            estratégicas 5 contra 5. Modifica tu caza estelar y ajusta la composición de tu escuadrón
+                                            para
+                                            adaptarte a distintos estilos y aplastar a tus rivales. Triunfa como equipo y completa
+                                            objetivos
+                                            tácticos de campos de batalla tanto conocidos como nunca vistos, entre los que se incluyen
+                                            el
+                                            gigante gaseoso de Yavin Prime y la luna destrozada de Galitan.</br>
+                                            Descubre lo que significa ser piloto en una emocionante historia de STAR WARS™ para un
+                                            jugador tras
+                                            los acontecimientos de El Retorno del Jedi. Desde perspectivas alternas entre las dos
+                                            facciones,
+                                            líderes emblemáticos y emergentes de ambos bandos lucharán por la galaxia. La Nueva
+                                            República lucha
+                                            por la libertad. El Imperio exige orden.</h3>
+                                    </div>
+
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-danger"
+                                            data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h4 class="card-text text-danger d-flex" style=" padding-top: 0em;"></h4>
+                    </div>
+                    <div class="card-footer">
+                        <h3>Precio: <p id="precio" style="display: inline-flex;">35€</p>
+                        </h3>
+                    </div>
+                </div>
+
+                <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#scuadrons"
+                    style="display: flex; margin-top: 20px; width: 49%; float: left;">Info</button>
+                <button type="button" id="2" class="btn btn-info boton" data-id="2" data-precio="35"
+                    data-titulo="Scuadrons" style="display: flex; margin-top: 20px; width: 49%; float: left; margin-left: 0.4em;">Añadir</button>
+            </div>
+
+            <div class="modal" id="scuadrons">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Star Wars: Scuadrons</h4>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+
+                        <div class="modal-body">
+                            <ul class="nav nav-tabs">
+                                <li class="nav-item">
+                                    <a class="nav-link active" data-bs-toggle="collapse" data-bs-target="#Requisitos"
+                                        aria-expanded="true" aria-controls="Requisitos">Requisitos</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-bs-toggle="collapse" data-bs-target="#Acerca"
+                                        aria-expanded="false" aria-controls="Acerca">Acerca de</a>
+                                </li>
+                            </ul>
+
+                            <div class="collapse show" id="Requisitos">
+                                <div class="embed-responsive embed-responsive-4by3 p-2 ">
+                                    <iframe class="embed-responsive-item"
+                                        src="https://www.youtube.com/embed/w0eRkhR1z6A" title="YouTube video player"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen></iframe>
+                                </div>
+                                <div class="table-responsive-sm">
+                                    <table class="table table-bordered">
+                                        <thead style="text-align: center;">
+                                            <tr>
+                                                <th>Configuracion</th>
+                                                <th>Configuracion Recomendada</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Windows 10 64-bit </td>
+                                                <td>Windows 10 64-bit</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Procesador: Ryzen 3 1300X or better/ i5 6600k or better</td>
+                                                <td>Procesador: Ryzen 7 2700X or better/ i7-7700 or better</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Memoria: 8 GB de RAM</td>
+                                                <td>Memoria: 16 GB de RAM</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Gráficos: Radeon HD 7850 or better/ GeForce GTX 660 or better</td>
+                                                <td>Gráficos: Radeon RX 480 (Non-VR/Minimum VR) or Radeon RX 570
+                                                    (Recommended VR)/</br>
+                                                    GeForce GTX 1060(Non-VR/Minimum VR) or GeForce GTX 1070 (Recommended
+                                                    VR)</td>
+                                            </tr>
+                                            <tr>
+                                                <td>DirectX: Versión 11</td>
+                                                <td>DirectX: Versión 11</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Red: Conexión de banda ancha a Internet</td>
+                                                <td>Red: Conexión de banda ancha a Internet</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Almacenamiento: 40 GB de espacio disponible</td>
+                                                <td>Almacenamiento: 40 GB de espacio disponible</td>
+                                            </tr>
+                                        </tbody>
+
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div class="collapse" id="Acerca">
+                                <p style="font-size: 26px;"><strong>Pilotos, preséntense</strong> planifica escaramuzas
+                                    con tu escuadrón en la sala de reuniones antes de volar
+                                    a campos de batalla dinámicos por toda la galaxia. Lucha en intensos combates
+                                    multijugador de 5
+                                    contra 5 o únete a tu escuadrón para inclinar la balanza en descomunales batallas de
+                                    flota. En
+                                    equipo, sois la élite de la galaxia.</br>
+
+                                    <strong>cazas estelares legendarios</strong> toma el control de diferentes cazas
+                                    estelares de la Nueva
+                                    República y de las flotas imperiales, incluido el ágil Ala-A y el devastador
+                                    bombardero TIE.
+                                    Modifica tu nave, desvía la energía entre sus sistemas y destruye a tus rivales en
+                                    combates
+                                    espaciales estratégicos.</br>
+
+                                    <strong>tu fantasía de piloto de STAR WARS</strong> la cabina es tu hogar. Aprovecha
+                                    los paneles de mando y,
+                                    con solo un poco de metal y vidrio entre los peligros del espacio y tú, siente la
+                                    intensidad del
+                                    combate desde una perspectiva en primera persona. Despega en emocionantes modos
+                                    multijugador y una
+                                    historia de STAR WARS única para un jugador, que cubre un momento clave cerca del
+                                    fin de la Guerra
+                                    Civil Galáctica. Sumérgete completamente en el asiento del piloto con la opción de
+                                    jugar todo STAR
+                                    WARS: Squadrons en VR.</br>
+
+                                    <strong>Misión está clara:</strong> STAR WARS Squadrons es una experiencia completa
+                                    desde el principio, en la que
+                                    obtendrás recompensas a través del juego. Asciende de rango y desbloquea nuevos
+                                    componentes, como
+                                    armas, cascos, motores, escudos y artículos cosméticos, con una ruta de progresión
+                                    que hace que la
+                                    jugabilidad sea siempre novedosa y cautivadora.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="card img-fluid" style="height: 80%;">
+                    <img class="card-img-top" src="img/star wars battlefront 2.jpg" alt="Card image"
+                        style="height: 91%;">
+                    <div class="card-img-overlay">
+                        <h4 class="card-text text-danger">Para PC es un juego de acción y disparos en el que el
+                            jugador debe abrirse paso a través del vasto universo de Star Wars con el apoyo de amigables
+                            alienígenas y Jedis, además de perseguir y combatir a los Siths, al Imperio y a otros
+                            enemigos.</h4>
+                    </div>
+                    <div class="card-footer">
+                        <h3>Precio: <p id="precio" style="display: inline-flex;">45€</p>
+                        </h3>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#battlefront2"
+                    style="display: flex; margin-top: 20px; width: 49%; float: left;">Info</button>
+                <button type="button" id="3" class="btn btn-info boton" data-id="3" data-precio="45"
+                    data-titulo="battlefront2"
+                    style="display: flex; margin-top: 20px; width: 49%; float: left; margin-left: 0.4em;">Añadir</button>
+            </div>
+
+            <div class="modal" id="battlefront2">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Star Wars: Battlefront 2</h4>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+
+                        <div class="modal-body">
+                            <ul class="nav nav-tabs">
+                                <li class="nav-item">
+                                    <a class="nav-link active" data-bs-toggle="collapse" data-bs-target="#Requisitos"
+                                        aria-expanded="true" aria-controls="Requisitos">Requisitos</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-bs-toggle="collapse" data-bs-target="#Acerca"
+                                        aria-expanded="false" aria-controls="Acerca">Acerca de</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-bs-toggle="collapse" data-bs-target="#Jugabilidad"
+                                        aria-expanded="false" aria-controls="Jugabilidad">Cajas de
+                                        Botín</a>
+                                </li>
+                            </ul>
+
+                            <div class="collapse show" id="Requisitos">
+                                <div class="embed-responsive embed-responsive-4by3 p-2 ">
+                                    <iframe class="embed-responsive-item"
+                                        src="https://www.youtube.com/embed/_q51LZ2HpbE" title="YouTube video player"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen></iframe>
+                                </div>
+                                <div class="table-responsive-sm">
+                                    <table class="table table-bordered">
+                                        <thead style="text-align: center;">
+                                            <tr>
+                                                <th>Configuracion</th>
+                                                <th>Configuracion Recomendada</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>64-bit Windows 7 SP1/Windows 8.1/Windows 10 </td>
+                                                <td>64-bit Windows 10 or later </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Procesador: Processor (AMD): AMD FX 6350 Processor (Intel): Intel
+                                                    Core i5 6600K</td>
+                                                <td>Procesador: Processor (AMD): AMD FX 8350 Wraith Processor (Intel):
+                                                    Intel Core i7 6700 or equivalent</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Memoria: 8 GB de RAM</td>
+                                                <td>Memoria: 16 GB de RAM</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Gráficos: AMD Radeon™ HD 7850 2GB or NVIDIA GeForce® GTX 660 2GB
+                                                </td>
+                                                <td>G AMD RX Vega 56, Nvidia GTX 1070/GTX1660Ti or Equivalent</td>
+                                            </tr>
+                                            <tr>
+                                                <td>DirectX: Versión 11</td>
+                                                <td>DirectX: Versión 11</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Red: Conexión de banda ancha a Internet</td>
+                                                <td>Red: Conexión de banda ancha a Internet</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Almacenamiento: 60 GB de espacio disponible</td>
+                                                <td>Almacenamiento: 60 GB de espacio disponible</td>
+                                            </tr>
+                                        </tbody>
+
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div class="collapse" id="Acerca">
+                                <p style="font-size: 26px;">El jugador tiene la posibilidad de elegir entre una gran
+                                    variedad de personajes jugables, todos muy conocidos y queridos,
+                                    que forman parte de la franquicia de películas del mismo nombre.
+                                    Estos incluyen a Luke Skywalker, Leia, Han Solo, Chewbacca, Lando, Yoda y
+                                    Rey, además de muchos otros.
+
+                                    El modo campaña de un solo jugador cuenta con un arco argumental completo, el cual
+                                    hace que sea tan inmersivo y adictivo como los modos multijugador,
+                                    de los cuales hay una ampliavariedad.
+                                    Al jugar en solitario, los personajes deben progresar a lo largo de la historia
+                                    principal para
+                                    evitar caer en la trampa tendida por el villano principal,
+                                    el Emperador Palpatine, quien busca sacar a la Resistencia de su escondite para
+                                    hacerla caer en sus garras.
+
+                                    Los comandos de las Fuerzas Especiales del Imperio aseguran estar listos para la
+                                    batalla, pero han subestimado la pasión y el empuje de los rebeldes,
+                                    quienes darán lo mejor de sí mismos en el combate.
+
+                                    El juego cuenta con once modos multijugador, y algunos de ellos están limitados por
+                                    el tiempo. Persigue a Stormtroopers hasta la muerte,
+                                    tras lo cual resurgirán al igual que tus compañeros
+                                    Ewoks, enfréntate en partidas de dos contra dos,
+                                    héroes contra villanos - sin la posibilidad de reaparecer hasta que la
+                                    partida haya terminado -, o ve a lo grande: dos equipos de veinte integrantes
+                                    atacándose los unos a
+                                    los otros a lo largo de trece planetas en el modo de asalto intergaláctico, una gran
+                                    batalla por el éxito.
+
+                                    Otras opciones multijugador incluyen dinámicas de juego que exigirán el máximo de
+                                    tus capacidades,
+                                    en las que la velocidad, el ataque y la defensa deberán ser puestas a prueba - por
+                                    sí solas o en conjunto -
+                                    en emocionantes enfrentamientos que te dejarán sin aliento y de los cuales, con algo
+                                    de suerte, ¡saldrás victorioso!
+                                </p>
+                            </div>
+
+                            <div class="collapse" id="Jugabilidad">
+                                <p>¿Las llamadas Cajas de Botín (o Lootboxes) son, tal como se escucha, cajas llenas de
+                                    artículos de valor, los cuales pueden ser utilizados en el juego.
+                                    Estas pueden ser obtenidas a cambio de dinero real por
+                                    medio de microtransacciones y ofrecen distintos tipos de ventajas a la jugabilidad.
+                                    Sin embargo, el mundo de los video juegos se entusiasmó un poco más de la cuenta con
+                                    esta dinámica
+                                    derrochadora de dinero, y las empresas desarrolladoras comenzaron a cobrar dinero
+                                    adicional a los
+                                    jugadores para que pudieran progresar en los juegos, incluso después de ya haber
+                                    pagado por ellos.
+                                    Este juego en particular se vio envuelto justo en medio de la polémica, debido a lo
+                                    siguiente:
+
+                                    La oferta inicial de este juego parecía indicar que la única manera lograr un
+                                    desarrollo notable de las
+                                    habilidades de los personajes era mediante la compra de cajas de botín, sin que el
+                                    jugador tuviera ningún tipo de control sobre lo que venía dentro de las mismas.
+                                    Evidentemente, los jugadores se mostraron indignados,
+                                    y consultaron a autoridades de juegos de azar acerca de la legitimidad y la
+                                    moralidad de estas prácticas.
+
+                                    Debido a esto, los desarrolladores del juego detuvieron todas las microtransacciones
+                                    durante un tiempo,
+                                    con el fin de considerar cuál era la mejor manera de proceder. Mientras tanto,
+                                    permitieron que los jugadores pudieran desarrollar las habilidades de los personajes
+                                    sin tener que
+                                    gastar más dinero, lo que complació a los jugadores.
+
+                                    El juego todavía ofrece un botín por cada día de juego, y su contenido sigue siendo
+                                    completamente aleatorio: sin embargo, ahora es gratis, y las recompensas se limitan
+                                    a
+                                    actualizaciones estéticas y skins - nada que pueda afectar a los jugadores que no
+                                    pueden
+                                    permitirse gastar más dinero en sus juegos.
+
+                                    Últimamente, las microtransacciones han sido incorporadas nuevamente en el juego,
+                                    por lo que aquellos que pueden permitírselo y desean progresar sin dificultades
+                                    pueden echar mano de ellas.
+                                    Sin embargo, aquellos que no pueden o no deseen pagar por ellas pueden alcanzar los
+                                    mismos
+                                    niveles de habilidad invirtiendo solamente un poco de tiempo y esfuerzo.</p>
+                            </div>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-4" style="margin-top: -6em;">
+                <div class="card img-fluid" style="height: 80%;">
+                    <img class="card-img-top" src="img/star wars battlefront .jpg" alt="Card image"
+                        style="height: 91%;">
+                    <div class="card-img-overlay">
+                        <h4 class="card-text text-danger">Para PC es un juego de acción y aventuras basado en la
+                            popular y
+                            duradera franquicia de películas del mismo nombre.
+                            Cronológicamente, el juego se sitúa justo después de los eventos del Episodio III (La
+                            Venganza de
+                            los Sith) y cuenta con un conocido elenco de héroes, villanos, droides y Jedis, todos
+                            luchando por el éxito de sus misiones.</h4>
+                    </div>
+                    <div class="card-footer">
+                        <h3>Precio: <p id="precio" style="display: inline-flex;">38€</p>
+                        </h3>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#Battlefront"
+                    style="display: flex; margin-top: 20px; width: 49%; float: left;">Info</button>
+                <button type="button" id="4" class="btn btn-info boton" data-id="" data-precio="" data-titulo=""
+                    style="display: flex; margin-top: 20px; width: 49%; float: left; margin-left: 0.4em;">Añadir</button>
+            </div>
+
+            <div class="modal" id="Battlefront">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Star Wars: Battlefront</h4>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+
+                        <div class="modal-body">
+                            <ul class="nav nav-tabs">
+                                <li class="nav-item">
+                                    <a class="nav-link active" data-bs-toggle="collapse" data-bs-target="#Requisitos"
+                                        aria-expanded="true" aria-controls="Requisitos">Requisitos</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-bs-toggle="collapse" data-bs-target="#Acerca"
+                                        aria-expanded="false" aria-controls="Acerca">Acerca de</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-bs-toggle="collapse" data-bs-target="#Jugabilidad"
+                                        aria-expanded="false" aria-controls="Jugabilidad">Tipo de Jugabilidad</a>
+                                </li>
+                            </ul>
+
+                            <div class="collapse show" id="Requisitos">
+                                <div class="embed-responsive embed-responsive-4by3 p-2 ">
+                                    <iframe class="embed-responsive-item"
+                                        src="https://www.youtube-nocookie.com/embed/xIl2z5wwjdA"
+                                        title="YouTube video player"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen></iframe>
+                                </div>
+                                <div class="table-responsive-sm">
+                                    <table class="table table-bordered">
+                                        <thead style="text-align: center;">
+                                            <tr>
+                                                <th>Configuracion</th>
+                                                <th>Configuracion Recomendada</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>SO: 64-bit Windows 7/8.1/10 </td>
+                                                <td>SO: 64-bit Windows 7/8.1/10 </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Procesador: AMD FX-6100/Intel i3-3220 or Equivalent</td>
+                                                <td>Procesador: AMD Ryzen 7 1700/Intel i7-6700K or Equivalent</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Memoria: 8 GB de RAM</td>
+                                                <td>Memoria: 16 GB de RAM</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Gráficos: AMD Radeon HD 7750, NVIDIA GeForce GTX 650 or
+                                                    Equivalent
+                                                </td>
+                                                <td>G AMD RX Vega 56, Nvidia GTX 1070/GTX1660Ti or Equivalent</td>
+                                            </tr>
+                                            <tr>
+                                                <td>DirectX: Versión 11</td>
+                                                <td>DirectX: Versión 11</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Almacenamiento: 55 GB de espacio disponible</td>
+                                                <td>Almacenamiento: 55 GB de espacio disponible</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div class="collapse" id="Acerca">
+                                <p style="font-size: 26px;">
+                                </p>
+                            </div>
+
+                            <div class="collapse" id="Jugabilidad">
+                                <p></p>
+                            </div>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-4" style="margin-top: -7em;">
+                <div class="card img-fluid" style="margin-top: 15px; height: 79%;">
+                    <img class="card-img-top" src="img/elite dangerous.jpg" alt="Card image" style="height: 100%;">
+                    <div class="card-img-overlay">
+                        <h4 class="card-text text-danger">Este título te presenta la Vía Láctea en escala 1:1 con todo
+                            su conjunto de
+                            sistemas estelares, planetas y lunas. Al principio tendrás tu nave y un poco de dinero, y a
+                            partir
+                            de allí te abrirás paso, por la vía legal o ilegal, llevando a cabo actividades de comercio,
+                            piratería, asesino a sueldo o caza-recompensas. Videojuego de simulación especial que nos
+                            ofrece
+                            toda la libertad del mundo para que exploremos los confines del universo del modo que
+                            deseemos.</h4>
+                    </div>
+                    <div class="card-footer">
+                        <h3>Precio: <p id="precio" style="display: inline-flex;">26€</p>
+                        </h3>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#Elite"
+                    style="display: flex; margin-top: 20px; width: 49%; float: left;">Info</button>
+                <button type="button" id="5" class="btn btn-info boton" data-id="5" data-precio="26" data-titulo="Elite"
+                    style="display: flex; margin-top: 20px; width: 49%; float: left; margin-left: 0.4em;">Añadir</button>
+            </div>
+
+            <div class="modal" id="Elite">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Elite Dangerous</h4>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+
+                        <div class="modal-body">
+                            <ul class="nav nav-tabs">
+                                <li class="nav-item">
+                                    <a class="nav-link active" data-bs-toggle="collapse" data-bs-target="#Requisitos"
+                                        aria-expanded="true" aria-controls="Requisitos">Requisitos</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-bs-toggle="collapse" data-bs-target="#Acerca"
+                                        aria-expanded="true" aria-controls="Acerca">Acerca de</a>
+                                </li>
+                            </ul>
+
+                            <div class="collapse show" id="Requisitos">
+                                <div class="embed-responsive embed-responsive-4by3 p-2 ">
+                                    <iframe class="embed-responsive-item"
+                                        src="https://www.youtube.com/embed/YESNObZJTgQ" title="YouTube video player"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen></iframe>
+                                </div>
+                                <div class="table-responsive-sm">
+                                    <table class="table table-bordered">
+                                        <thead style="text-align: center;">
+                                            <tr>
+                                                <th>Configuracion</th>
+                                                <th>Configuracion Recomendada</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Windows 7/8/10 64-bit</td>
+                                                <td>Windows 7/8/10 64-bit</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Procesador: Quad Core CPU (4 x 2Ghz)</td>
+                                                <td>Procesador: Intel Core i7-3770K Quad Core CPU or better / AMD FX
+                                                    4350 Quad Core CPU
+                                                    or better</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Memoria: 6 GB de RAM</td>
+                                                <td>Memoria: 8 GB de RAM</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Gráficos: Nvidia GTX 470/AMD R7 240</td>
+                                                <td>Gráficos: Nvidia GTX 770 / AMD Radeon R9 280X</td>
+                                            </tr>
+                                            <tr>
+                                                <td>DirectX: Versión 11</td>
+                                                <td>DirectX: Versión 11</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Red: Conexión de banda ancha a Internet</td>
+                                                <td>Red: Conexión de banda ancha a Internet</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Almacenamiento: 25 GB de espacio disponible</td>
+                                                <td>Almacenamiento: 25 GB de espacio disponible</td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>Notas adicionales: Supports SteamVR, Oculus Rift and TrackIR
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div class="collapse" id="Acerca">
+                                <p style="font-size: 26px;">Tras comenzar con solo una pequeña nave estelar y unos
+                                    pocos créditos, el jugador hará todo lo que
+                                    esté en su mano para obtener las habilidades, conocimientos, riqueza y poder
+                                    necesarios para
+                                    sobrevivir en una implacable galaxia del futuro y destacar entre los miembros de
+                                    la icónica Élite.
+                                    En una era de superpotencias galácticas y guerra interestelar, la historia
+                                    personal de cada jugador
+                                    influirá en la galaxia conectada y la evolución artesanal de la narrativa. Caen
+                                    gobiernos, se
+                                    pierden y ganan batallas, la última frontera de la humanidad se reconfigura
+                                    constantemente; todo
+                                    ello en función de las acciones de los jugadores.</br></br>
+
+                                    <strong> ¡Temporada Horizons incluida! </strong></br>
+                                    Explora la galaxia desde una perspectiva completamente nueva con la temporada
+                                    Horizons, ya
+                                    disponible junto Elite Dangerous. Viaja desde las estrellas hasta las
+                                    superficies de mundos
+                                    desconocidos, aterriza con el nuevo vehículo de reconocimiento "Scarab", fabrica
+                                    armas, despliega
+                                    cazas desde tus naves y vive una experiencia multitripulación cooperativa
+                                    trepidante.
+                                    Una galaxia maravillosa
+                                    Los 400 000 millones de sistemas estelares de la Vía Láctea son el escenario
+                                    donde se desarrolla
+                                    Elite Dangerous a través de su sistema abierto. Las verdaderas estrellas,
+                                    planetas, lunas, campos de
+                                    asteroides y agujeros negros de nuestra propia galaxia se han reproducido a
+                                    épica escala real,
+                                    creando el mayor espacio de juego jamás diseñado en la historia de los
+                                    videojuegos.
+                                    Una experiencia única de juego conectado
+                                    Caen gobiernos, se pierden y ganan batallas, la última frontera de la humanidad
+                                    se reconfigura
+                                    constantemente; todo ello en función de las acciones de los jugadores. En una
+                                    era de superpotencias
+                                    galácticas y guerra interestelar, la historia personal de cada jugador influirá
+                                    en la galaxia
+                                    conectada y la evolución artesanal de la narrativa. </br></br>
+
+                                    <strong>Traza tu propio rumbo</strong></br>
+                                    Mejora tu nave y personaliza cada uno de sus componentes, todo mientras cazas,
+                                    exploras, combates,
+                                    extraes minerales, contrabandeas, comercias y sobrevives en la implacable
+                                    galaxia del año 3301. Haz
+                                    lo que sea necesario para obtener las habilidades, conocimientos, riquezas y
+                                    poder necesarios para
+                                    destacar entre los miembros de la Élite.</br></br>
+
+                                    <strong>Multijugador masivo</strong></br>
+                                    Vive encuentros impredecibles con jugadores de todo el mundo en el inmenso
+                                    espacio multijugador de
+                                    Elite Dangerous. Disfruta de toda una galaxia conectada en el modo Jugar en
+                                    solitario o con
+                                    jugadores de todo el mundo en el modo Juego abierto, en la que cada piloto que
+                                    te encuentres podría
+                                    convertirse en fiable aliado o en tu enemigo más mortal. Tendrás que registrar
+                                    una cuenta gratuita
+                                    en Frontier para jugar a Elite Dangerous.</br></br>
+
+                                    <strong>Un juego vivo</strong></br>
+                                    Elite Dangerous crece y se expande con nuevas funciones y contenido. Las
+                                    actualizaciones principales
+                                    reaccionan a cómo quieren jugar los jugadores y crean oportunidades de juego
+                                    nuevas para los cientos
+                                    de miles de usuarios que cooperan, compiten y exploran la galaxia
+                                    conectada.</br></br>
+
+                                    <strong>La aventura de mundo abierto original</strong></br>
+                                    Elite Dangerous es la tercera secuela del título que estableció las bases del
+                                    género, Elite, de
+                                    1984, y acerca esta aventura original de mundo abierto a la nueva generación con
+                                    una galaxia
+                                    conectada, una narrativa en constante evolución y una recreación integral de la
+                                    Vía Láctea.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-4" style="margin-top: -7em;">
+                <div class="card img-fluid" style="margin-top: 15px; height: 79%;">
+                    <img class="card-img-top" src="img/No Man's Sky 2.jpg" alt="Card image" style="height: 100%;">
+                    <div class="card-img-overlay">
+                        <button type="button" class="btn btn-info" data-bs-toggle="modal"
+                            data-bs-target="#descripcion-Sky" style="display: flex;">Descripcion</button>
+
+                        <div class="modal" id="descripcion-Sky">
+                            <div class="modal-dialog ">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <h3>Para PC es un juego de supervivencia de acción y
+                                            aventuras, en el que el jugador toma
+                                            la forma de un humanoide alienígena que aterriza tras estrellarse en un accidente, al
+                                            que se le
+                                            suministran los elementos básicos que necesita para sobrevivir, e incluso prosperar.
+                
+                                            Equipado con una herramienta multiusos, el jugador puede seguir los consejos en pantalla
+                                            brindados
+                                            por una entidad llamada Atlas.
+                
+                                            Pero la mejor manera de jugar es tomar las riendas por tu cuenta, construyendo las naves
+                                            y
+                                            transportadores que necesites para continuar tu travesía en el momento que los
+                                            necesites. Averigua
+                                            cuán lejos puedes viajar: negociando, obteniendo recursos y luchando a medida que
+                                            avanzas.</h3>
+                                    </div>
+
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-danger"
+                                            data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="card-footer">
+                        <h3>Precio: <p id="precio" style="display: inline-flex;">58€</p>
+                        </h3>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#Sky"
+                    style="display: flex; margin-top: 20px; width: 49%; float: left;">Info</button>
+                <button type="button" id="6" class="btn btn-info boton" data-id="6" data-precio="58"
+                    data-titulo="No man`s sky"
+                    style="display: flex; margin-top: 20px; width: 49%; float: left; margin-left: 0.4em;">Añadir</button>
+            </div>
+
+            <div class="modal" id="Sky">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">No Man's Sky</h4>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+
+                        <div class="modal-body">
+                            <ul class="nav nav-tabs">
+                                <li class="nav-item">
+                                    <a class="nav-link active" data-bs-toggle="collapse" data-bs-target="#Requisitos"
+                                        aria-expanded="true" aria-controls="Requisitos">Requisitos</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-bs-toggle="collapse" data-bs-target="#Acerca"
+                                        aria-expanded="false" aria-controls="Acerca">Acerca de</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-bs-toggle="collapse" data-bs-target="#Jugabilidad"
+                                        aria-expanded="false" aria-controls="Jugabilidad">Modos de Juego</a>
+                                </li>
+                            </ul>
+
+                            <div class="collapse show" id="Requisitos">
+                                <div class="embed-responsive embed-responsive-4by3 p-2 ">
+                                    <iframe class="embed-responsive-item"
+                                        src="https://www.youtube.com/embed/aCgWabJssVI" title="YouTube video player"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen></iframe>
+                                </div>
+                                <div class="table-responsive-sm">
+                                    <table class="table table-bordered">
+                                        <thead style="text-align: center;">
+                                            <tr>
+                                                <th>Configuracion</th>
+                                                <th>Configuracion Recomendada</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>SO: Windows 7/8.1/10 (64-bit versions) </td>
+                                                <td>Requiere un sistema operativo de 64 bits </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Procesador: Intel Core i3</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Memoria: 8 GB de RAM</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Gráficos: NVidia GTX 480, AMD Radeon 7870</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>DirectX: Versión 11</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Almacenamiento: 10 GB de espacio disponible</td>
+                                                <td></td>
+                                            </tr>
+                                        </tbody>
+
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div class="collapse" id="Acerca">
+                                <p style="font-size: 26px;"> Cuando se lanzó al público en 2016, el juego fue
+                                    aclamado como algo único y maravilloso, aunque los
+                                    críticos se quejaron debido a que muchas de las funciones prometidas no estaban
+                                    presentes en la
+                                    primera versión del juego. Sin embargo, los desarrolladores han cumplido con sus
+                                    promesas, y
+                                    características prometidas como la capacidad multijugador, funciones adicionales
+                                    de construcción,
+                                    etc., ya están disponibles.
+
+                                    En su mayoría, el juego funciona utilizando algoritmos que ‘crean’ el mundo un
+                                    tanto antes del
+                                    progreso del jugador. A esto se le llama generación procedural y es un aspecto
+                                    positivo del juego,
+                                    debido a que utiliza menos recursos de los que utilizaría mantener un mundo
+                                    fijo.
+
+                                    Si los jugadores viajan al mismo lugar al mismo tiempo, verán las mismas
+                                    características y colonias.
+                                    Esto hace que la jugabilidad sea más auténtica, manteniendo el uso de datos
+                                    relativamente bajo.
+                                </p>
+                            </div>
+
+                            <div class="collapse" id="Jugabilidad">
+                                <p>Principalmente, se trata de un juego de exploración y construcción de mundos, con
+                                    suficientes
+                                    misiones interesantes para mantener el interés alto. Los jugadores pueden elegir
+                                    su nivel de
+                                    dificultad, para poder simplemente explorar el paisaje espacial bellamente
+                                    representado. Hay
+                                    distintos modos de juego a elegir, dependiendo de lo que el jugador prefiera:
+
+                                    Exploración: La configuración predeterminada. Te haces cargo del personaje de un
+                                    alienígena
+                                    humanoide que aterriza tras estrellarse en un accidente, y te esfuerzas por
+                                    asegurar tu
+                                    supervivencia y tu escape del planeta en el que te has estrellado por accidente.
+                                    Se te alienta a
+                                    utilizar la herramienta multiusos, que todos los jugadores tienen de manera
+                                    estándar, para obtener
+                                    recursos, los cuales luego puedes utilizar para crear equipo de protección y
+                                    transporte.
+
+                                    Supervivencia: Es similar al juego estándar, pero con una dificultad mucho
+                                    mayor, así que, si te
+                                    gusta la máxima emoción y el desafío en tu juego, este es el modo indicado para
+                                    ti, ya que serás
+                                    sometido a ataques más hostiles y a una mayor variedad de situaciones de combate
+                                    que en otro modo.
+
+                                    Combate: Batallas a tope desde el inicio hasta el final. Estas normalmente se
+                                    insertan en la
+                                    exploración del jugador, con batallas más frecuentes cuando se elige este modo.
+
+                                    Comercio: Este modo de juego depende más de la diplomacia y de hacer tratos con
+                                    alienígenas que se
+                                    cruzan en tu camino a medida que exploras los mundos. Sin embargo, no es tan
+                                    sencillo como suena.
+                                    Los alienígenas hablan idiomas que requieren esfuerzo de tu parte para ser
+                                    comprendidos, reuniendo
+                                    ‘Piedras de Rosetta’ que te ayudarán con las traducciones. ¡Los malentendidos
+                                    pueden generar
+                                    tensiones!
+
+                                    Multijugador: Pueden unirse hasta 16 jugadores para explorar nuevas áreas del
+                                    mapa y los amigos
+                                    pueden rastrearse unos a otros en el mapa.</p>
+                            </div>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/carrito.js"></script>
+
+</html>

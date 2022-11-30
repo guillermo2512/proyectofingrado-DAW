@@ -76,17 +76,6 @@ class Login
 
 $condb = new Login();
 $contra = $condb->comprobarExisteUsuario($enviar->email);
-//$contra = $condb->comprobarExisteUsuario("perico@gmail.com");
-
-/*if (Password::verify("1234", $contra)) 
-{
-    $condb->recibir_ajax("perico@gmail.com", $contra);
-
-} else {
-    $resp = false;
-    $envio = json_encode($resp);
-    echo $envio;
-}*/
 
 if (Password::verify($enviar->pass, $contra)) 
 {

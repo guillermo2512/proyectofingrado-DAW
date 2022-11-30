@@ -18,7 +18,6 @@ function mostrarcarrito() {
             acomualdor = parseInt(element.precio);
             totaliza = acomualdor*element.cantidad
             total += totaliza;
-            //<td>` + element.cantidad + `</td>
             html += `
             <tr>
                 <td>` + element.id + `</td>
@@ -48,7 +47,11 @@ function pagar() {
     }
     else
     {
-        alert("Debe de haber algo en el carrito");
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Debe de haber algo en el carrito'
+        });
     }
 }
 

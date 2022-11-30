@@ -90,7 +90,7 @@ function registro() {
                                 title: 'Registro',
                                 text: 'El registro se ha completo satisfactoriamente'
                             });
-                            window.location = "http://localhost/Proyecto%20fin%20de%20grado/login.html";
+                            setInterval(function(){window.location = "http://localhost/Proyecto%20fin%20de%20grado/login.html"}); 
                         }
                     }
                 }
