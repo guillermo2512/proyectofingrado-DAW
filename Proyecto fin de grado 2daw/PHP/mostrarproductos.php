@@ -24,7 +24,7 @@ class Comprar {
                 return false;
             }
 
-            $almacen = $consulta->fetchAll();   
+            $almacen = $consulta->fetchAll(PDO::FETCH_ASSOC);   
 
             $envio = json_encode($almacen);
             echo $envio;

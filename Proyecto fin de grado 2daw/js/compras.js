@@ -29,7 +29,7 @@ function productos() {
             <tr>
                 <td></td>
                 <td></td>
-                <td>` + total + `</td>
+                <td> Total` + total + `</td>
             </tr>`;
         });
         document.getElementById("productos").innerHTML = html;
