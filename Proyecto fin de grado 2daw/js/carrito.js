@@ -17,6 +17,7 @@ Buttons.forEach(function (item) {
         const id = parseInt(item.dataset.id);
         const precio = item.dataset.precio;
         const titulo = item.dataset.titulo;
+        const estado = item.dataset.estado;
 
         /*Swal.fire({
             title: 'Cantidad',
@@ -35,7 +36,8 @@ Buttons.forEach(function (item) {
             id: id,
             precio: precio,
             titulo: titulo,
-            cantidad: 1
+            cantidad: 1,
+            estado: estado
         }
         articulos.push(articulo);
 

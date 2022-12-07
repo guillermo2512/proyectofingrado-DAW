@@ -37,10 +37,7 @@
     </header>
     <div class="container px-4 px-lg-5">
         <div class="d-flex align-items-center justify-content-between mb-4 pt-3">
-            <h1 class="h3 mb-0 text-gray-800">Productos</h1>
-            <button type="button" class="btn btn-primary" id="nuevo" data-bs-toggle="modal"
-                data-bs-target="#nuevoproducto">
-                <i class="fas fa-plus fa-sm text-white-50"></i> Nuevo</button>
+            <h1 class="h3 mb-0 text-gray-800">Reservas</h1>
         </div>
         <div class="row">
             <div class="col-md-12">
@@ -62,45 +59,7 @@
             </div>
         </div>
     </div>
-
-    <div class="modal" id="nuevoproducto">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Nuevo Producto</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="form-group">
-                            <label for="titulo">Titulo</label>
-                            <input id="titulo" class="form-control" type="text" placeholder="Titulo" required>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label for="precio">Precio</label>
-                                <input id="precio" class="form-control" type="text" placeholder="Precio" required>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label for="cantidad">Cantidad</label>
-                                <input id="cantidad" class="form-control" type="text" placeholder="Cantidad" required>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <button class="btn btn-primary" type="button" id="registrar">Registrar</button>
-                        </div>
-                    </div>
-                    <div class="modal-footer mb-2">
-                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 </body>
-<script src="js/administrar.js"></script>
+<script src="js/verreservas.js"></script>
 
 </html>

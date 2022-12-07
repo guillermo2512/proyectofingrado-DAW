@@ -40,6 +40,7 @@ function login() {
                     title: 'Login',
                     text: 'Bienvenido ' + json.Nombre
                 });
+
                 setInterval(function () 
                 {
                     if (localStorage.getItem("articulos") != null) 
@@ -49,7 +50,7 @@ function login() {
                     else {
                         window.location = "http://localhost/Proyecto%20fin%20de%20grado%20definitivo/";
                     }
-                });
+                },6000);
             }
         }
     };

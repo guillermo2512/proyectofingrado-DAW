@@ -28,7 +28,7 @@ function login() {
             }
             else {
                 var datos = this.responseText;
-                localStorage.setItem("user", datos.Nombre);
+                localStorage.setItem("user", datos);
                 window.location = "http://localhost/Proyecto%20fin%20de%20grado%20definitivo/admin/administrar.html";
             }
         }

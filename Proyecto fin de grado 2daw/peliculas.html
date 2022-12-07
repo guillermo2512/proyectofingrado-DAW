@@ -10,11 +10,13 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
         integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.16/dist/sweetalert2.all.min.js"></script>
     <style>
         .custom-control {
             margin-left: 20px;
         }
-        .nav-item{
+
+        .nav-item {
             padding-left: 26px;
         }
     </style>
@@ -22,13 +24,14 @@
 
 <body>
     <header>
-        <nav class="navbar-expand-sm navbar-dark"  style="background: #34ad0f; font-size: 24px;">
+        <nav class="navbar-expand-sm navbar-dark" style="background: #34ad0f; font-size: 24px;">
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link" style="color: black;" href="home.html"><i class="fas fa-home"></i>Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" style="color: black;" href="login.html"><i class="fas fa-sign-in-alt"></i>Login</a>
+                    <a class="nav-link" style="color: black;" href="login.html"><i
+                            class="fas fa-sign-in-alt"></i>Login</a>
                 </li>
             </ul>
         </nav>
@@ -36,33 +39,90 @@
 
     <div class="container-fluid">
         <div class="row">
-            <div class="col-6">
-                <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#series"
-                    style="display: flex; width: 49%; float: left; margin-right: 0.8em;">Informacion general</button>
-                <a type="button" href="Series.html" class="btn btn-info" style="display: flex;  width: 49%;">Series</a>
-
-                <div class="card img-fluid" style="height: 66%; margin-top: 10px;">
-                    <img class="card-img-top h-100" src="img/Mandalorian.jpg" alt="Card image">
+            <div class="col-4">
+                <div class="card img-fluid" style="height: 80%; margin-top: 10px;">
+                    <img class="card-img-top h-100" src="img/star war episodio 2.jpg" alt="Card image">
                 </div>
+
+                <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#episodio2"
+                    style="display: flex; margin-top: 20px; width: 49%; float: left;">Informacion general</button>
+                <a type="button"
+                    href="https://www.disneyplus.com/es-es/video/4624fbab-504c-4545-b421-763911703ea4"
+                    class="btn btn-info"
+                    style="display: flex; margin-top: 20px; width: 49%; float: left; margin-left: 0.4em;">Episodio 2</a>
             </div>
 
-            <div class="modal" id="series">
-                <div class="modal-dialog ">
+            <div class="modal" id="episodio2">
+                <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h4 class="modal-title">Series</h4>
+                            <h4 class="modal-title">Episodio 2</h4>
                             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                         </div>
 
                         <div class="modal-body">
-                            Las series son una gran fuente de informacion sobre la saga ya que se situan entre episodios y
-                            rellenan lo que paso entre ellos.</br>
-                            Las tres series mas importantes por su situacion son: The clone war por pertenecer a las
-                            precuelas
-                            entre los episodios 2 y 3,
-                            Rebels por pertenecer a la trilogia original entre los episodios 3 y 4, The Mandalorian por
-                            pertenecer a las secuelas entre los episodios 6 y 7.
-                        </div>    
+                            <ul class="nav nav-tabs">
+                                <li class="nav-item">
+                                    <a class="nav-link active" data-bs-toggle="tab" data-bs-target="#Requisitos"
+                                        aria-expanded="true" aria-controls="Requisitos">Texto del inico</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-bs-toggle="tab" data-bs-target="#Acerca"
+                                        aria-expanded="false" aria-controls="Acerca">Resumen</a>
+                                </li>
+                            </ul>
+
+                            <div class="container tab-content">
+                                <div class="tab-pane active" id="Requisitos">
+                                    <span>Texto del inico:</span>
+                                    <p style="font-size: 26px;">
+                                        En el Senado Galáctico.
+                                        reina la inquietud. Varios
+                                        miles de sistemas solares
+                                        han declarado su intención
+                                        de abandonar la República.
+
+                                        Este movimiento separatista,
+                                        liderado por el misterioso
+                                        Conde Dooku, ha provocado
+                                        que al limitado número de
+                                        Caballeros Jedi les resulte
+                                        difícil mantener la paz y el
+                                        orden en la galaxia.
+
+                                        La senadora Amidala, la
+                                        antigua reina de Naboo,
+                                        regresa al Senado Galáctico
+                                        para dar su voto en la crítica
+                                        cuestión de crear un
+                                        EJÉRCITO DE LA REPÚBLICA
+                                        que ayude a los desbordados
+                                        Jedi…</p>
+                                </div>
+
+                                <div class="tab-pane" id="Acerca" style="font-size: 26px;">
+                                    <p style="font-size: 26px;">
+                                        Star Wars: Episodio II El Ataque de los Clones es el segundo capítulo en la
+                                        línea
+                                        cronológica y la quinta película en ser producida, en la serie de saga
+                                        episodios. Es,
+                                        además, la segunda parte en la trilogía de precuelas, iniciada por Star Wars:
+                                        Episodio I La
+                                        Amenaza Fantasma, y concluida con Star Wars: Episodio III La Venganza de los
+                                        Sith.
+
+                                        Es la primera película de Star Wars que utilizó cámaras digitales de alta
+                                        definición durante
+                                        su filmación para la mayoría de las escenas con actores reales.
+
+                                        El filme fue un éxito financiero, recaudando más de $300 millones en la taquilla
+                                        tan solo en
+                                        los Estados Unidos; sin embargo, quedo a por detrás de su antecesora, La Amenaza
+                                        Fantasma.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
 
                         <div class="modal-footer">
                             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
@@ -72,54 +132,202 @@
                 </div>
             </div>
 
-            <div class="col-6">
-                <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#peliculas" style="display: flex; width: 49%; float: left; margin-right: 0.8em;">Informacion general</button>
-                <a type="button" href="peliculas.html" class="btn btn-info" style="display: flex; width: 49%;">Peliculas</a>
-
-                <div class="card img-fluid" style="height: 66%; margin-top: 10px;">
-                    <img class="card-img-top h-100" src="img/star war episodio 2.jpg" alt="Card image">
+            <div class="col-4">
+                <div class="card img-fluid" style="height: 80%; margin-top: 10px;">
+                    <img class="card-img-top h-100" src="img/star war episodio 3.jpg" alt="Card image">
                 </div>
+
+                <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#episodio3"
+                    style="display: flex; margin-top: 20px; width: 49%; float: left;">Informacion general</button>
+                <a type="button" href="https://www.disneyplus.com/es-es/video/866814e0-042c-4f5a-ac8f-cd91fcf73333"
+                    class="btn btn-info" style="display: flex; margin-top: 20px; width: 49%; float: left; margin-left: 0.4em;">Episodio 3</a>
             </div>
 
-            <div class="modal" id="peliculas">
-                <div class="modal-dialog">
+            <div class="modal" id="episodio3">
+                <div class="modal-dialog ">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h4 class="modal-title">Peliculas</h4>
+                            <h4 class="modal-title">Episodio 3</h4>
                             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                         </div>
 
                         <div class="modal-body">
-                            Las 9 pelicualas se dividen en 3 trilogias y son el eje central de la saga 6 peliculas las
-                            correspondientes a las 2 primeras trilogias son creadas y dirigidas por
-                            George Lucas y las ultimas 3 es decir la ultima trilogia corresponde a disney tras la venta
-                            de
-                            la
-                            saga.</br>
-                            Precuelas: formada por los episodios I,II,III; Episodio I Amenaza fantasma, Episodio II
-                            Guerra
-                            de
-                            los Clones,
-                            Episodio III La Venganza de los Shits.</br>
-                            Trilogia original: formada por los episodios IV,V,VI; Episodio IV Una nueva Esperanza,
-                            Episodio
-                            V
-                            Imperio
-                            Contrataca, Episodio VI Retorno del Jedi.</br>
-                            Secuelas: formada por los episodios VII,VIII,IX; Episodio VII El despertar de la Fuerza,
-                            Episodio
-                            VIII Los Ultimos Jedi,
-                            Episodio IX Ascenso de skywalker</br>.
-                        </div>
+                            <ul class="nav nav-tabs">
+                                <li class="nav-item">
+                                    <a class="nav-link active" data-bs-toggle="tab" data-bs-target="#Requisitos"
+                                        aria-expanded="true" aria-controls="Requisitos">Texto del inico</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-bs-toggle="tab" data-bs-target="#Acerca"
+                                        aria-expanded="false" aria-controls="Acerca">Resumen</a>
+                                </li>
+                            </ul>
 
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-                        </div>
+                            <div class="container tab-content">
+                                <div class="tab-pane active" id="Requisitos">
+                                    <span>Texto del inico:</span>
+                                    <p style="font-size: 26px;">
+                                        ¡Guerra! La República se
+                                        desmorona bajo los ataques del
+                                        despiadado Lord Sith, el Conde
+                                        Dooku. Hay héroes en ambos
+                                        bandos. El mal está por doquier.
 
+                                        En una contundente jugada, el
+                                        diabólico líder droide, el General
+                                        Grievous, ha irrumpido en la
+                                        capital de la República y ha
+                                        secuestrado al Canciller
+                                        Palpatine, líder del Senado
+                                        Galáctico.
+
+                                        Mientras el ejército droide
+                                        separatista trata de huir de la
+                                        capital sitiada con su valioso
+                                        rehén, dos Caballeros Jedi
+                                        lideran una misión desesperada
+                                        para rescatar al Canciller
+                                        cautivo....</p>
+                                </div>
+
+                                <div class="tab-pane" id="Acerca" style="font-size: 26px;">
+                                    <p style="font-size: 26px;">
+                                        Star Wars: Episodio III La Venganza de los Sith es la sexta película de Star
+                                        Wars en ser
+                                        producida y el tercer y último episodio de la trilogía de precuelas. Fue
+                                        estrenada en
+                                        los
+                                        cines el jueves 19 de mayo de 2005 (el día exacto en que el primer episodio de
+                                        la
+                                        trilogía
+                                        de precuelas de Star Wars: Episodio I La Amenaza Fantasma fue lanzada en 1999),
+                                        y se
+                                        estrenó
+                                        (fuera de competición) en el Festival de Cannes el 15 de mayo de 2005. La
+                                        película
+                                        generalmente fue recibida con críticas positivas, especialmente en comparación
+                                        con las
+                                        dos
+                                        anteriores precuelas. Rompió varios récords en la taquilla en su semana de
+                                        estreno y
+                                        pasó a
+                                        recaudar más de US$ 800 millones en todo el mundo, convirtiéndola en una de las
+                                        mejores
+                                        películas de 2005. Es la segunda película de Star Wars que utiliza un sistema
+                                        digital 24
+                                        de
+                                        alta definición para la mayoría de las escenas de acción en vivo en la película.
+                                        La
+                                        película
+                                        fue re-lanzada en formato Blu-ray en Septiembre de 2011.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>
         </div>
+
+        <div class="col-4">
+            <div class="card img-fluid" style="height: 80%; margin-top: 10px;">
+                <img class="card-img-top h-100" src="img/star war episodio 5.jpg" alt="Card image">
+            </div>
+
+            <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#episodio5"
+                style="display: flex; margin-top: 20px; width: 49%; float: left;">Informacion general</button>
+            <a type="button"
+                href="https://www.disneyplus.com/es-es/video/680c038f-0b84-43cc-af47-708c3071f19f"
+                class="btn btn-info"
+                style="display: flex; margin-top: 20px; width: 49%; float: left; margin-left: 0.4em;">Episodio 5</a>
+        </div>
+
+        <div class="modal" id="episodio5">
+            <div class="modal-dialog ">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Episodio 5</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+
+                    <div class="modal-body">
+                        <ul class="nav nav-tabs">
+                            <li class="nav-item">
+                                <a class="nav-link active" data-bs-toggle="tab" data-bs-target="#Requisitos"
+                                    aria-expanded="true" aria-controls="Requisitos">Texto del inico</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-bs-toggle="tab" data-bs-target="#Acerca" aria-expanded="false"
+                                    aria-controls="Acerca">Resumen</a>
+                            </li>
+                        </ul>
+
+                        <div class="container tab-content">
+                            <div class="tab-pane active" id="Requisitos">
+                                <span>Texto del inico:</span>
+                                <p style="font-size: 26px;">
+                                    Son tiempos adversos para la
+                                    rebelión. Aunque la Estrella de
+                                    la Muerte ha sido destruida,
+                                    las tropas imperiales han
+                                    hecho salir a las fuerzas
+                                    rebeldes de sus bases ocultas
+                                    y las han perseguido a través de
+                                    la galaxia.
+    
+                                    Tras escapar de la terrible
+                                    Flota Imperial, un grupo de
+                                    guerreros de la libertad,
+                                    encabezados por Luke
+                                    Skywalker, ha establecido
+                                    una nueva base secreta
+                                    en el remoto mundo helado
+                                    de Hoth.
+    
+                                    El malvado Lord Darth Vader,
+                                    obsesionado por encontrar al
+                                    joven skywalker, ha eviado
+                                    miles de sondas espaciales
+                                    hacía las infinitas distancias
+                                    del espacio....</p>
+                            </div>
+
+                            <div class="tab-pane" id="Acerca" style="font-size: 26px;">
+                                <p style="font-size: 26px;">
+                                    Star Wars: Episodio V El Imperio Contraataca, comercializado simplemente como El
+                                    Imperio
+                                    Contraataca, es la segunda película de Star Wars y el segundo capítulo de la
+                                    trilogía
+                                    original. Originalmente estrenada en 1980, la película ha resultado ser una de las
+                                    películas
+                                    más populares de la serie entre muchos seguidores y críticos. Fue re-estrenado con
+                                    cambios
+                                    en 1997 y (en DVD) en 2004. La película fue re-estrenada en formato Blu-ray en
+                                    Septiembre de
+                                    2011. Una adaptación de radio fue transmitida por la Radio Pública Nacional en los
+                                    EE.UU en
+                                    1983. La película fue seleccionada en 2010 para ser conservada por la Biblioteca del
+                                    Congreso como parte de su Registro Nacional de Cine.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
     </div>
 </body>
 

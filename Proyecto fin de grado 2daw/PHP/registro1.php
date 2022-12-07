@@ -24,7 +24,9 @@ class Login
 
             if (!$consulta->execute()) {
                 print_r($consulta->errorInfo());
-                return false;
+                $resp = true;
+                $envio = json_encode($resp);
+                echo $envio;
             }
             
             if ($consulta->rowCount() >= 0)

@@ -10,11 +10,13 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
         integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.16/dist/sweetalert2.all.min.js"></script>
     <style>
         .custom-control {
             margin-left: 20px;
         }
-        .nav-item{
+
+        .nav-item {
             padding-left: 26px;
         }
     </style>
@@ -22,47 +24,57 @@
 
 <body>
     <header>
-        <nav class="navbar-expand-sm navbar-dark"  style="background: #34ad0f; font-size: 24px;">
+        <nav class="navbar-expand-sm navbar-dark" style="background: #34ad0f; height: 40px;">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" style="color: black;" href="home.html"><i class="fas fa-home"></i>Home</a>
+                    <a class="nav-link" style="margin-left: 20px;" href="home.html"><i class="fas fa-home"></i>Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" style="color: black;" href="login.html"><i class="fas fa-sign-in-alt"></i>Login</a>
+                    <a class="nav-link" href="La saga.html"><i class="fa fa-info-circle"></i>La saga</a>
                 </li>
             </ul>
         </nav>
     </header>
 
     <div class="container-fluid">
-        <div class="row">
+        <div class="row" style="margin-top: 16px;">
             <div class="col-4">
-                <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#series"
-                    style="display: flex; width: 49%; float: left; margin-right: 0.8em;">Informacion general</button>
-                <a type="button" href="Series.html" class="btn btn-info" style="display: flex;  width: 49%;">Series</a>
-
-                <div class="card img-fluid" style="height: 66%; margin-top: 10px;">
-                    <img class="card-img-top h-100" src="img/Mandalorian.jpg" alt="Card image">
+                <div class="card img-fluid" style="height: 100%;">
+                    <img class="card-img-top" src="img/star war rebels.jpg" alt="Card image" style="height: 100%;">
                 </div>
+                <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#rebels"
+                    style="display: flex; margin-top: 20px; width: 49%; float: left;">Informacion general</button>
+                <a href="https://www.disneyplus.com/es-es/series/star-wars-rebels/64MCZgAzY0Zw" type="button"
+                    class="btn btn-info"
+                    style="display: flex; margin-top: 20px; width: 49%; float: left; margin-left: 0.4em;">Rebels</a>
             </div>
 
-            <div class="modal" id="series">
+            <div class="modal" id="rebels">
                 <div class="modal-dialog ">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h4 class="modal-title">Series</h4>
+                            <h4 class="modal-title">Rebels</h4>
                             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                         </div>
 
                         <div class="modal-body">
-                            Las series son una gran fuente de informacion sobre la saga ya que se situan entre episodios y
-                            rellenan lo que paso entre ellos.</br>
-                            Las tres series mas importantes por su situacion son: The clone war por pertenecer a las
-                            precuelas
-                            entre los episodios 2 y 3,
-                            Rebels por pertenecer a la trilogia original entre los episodios 3 y 4, The Mandalorian por
-                            pertenecer a las secuelas entre los episodios 6 y 7.
-                        </div>    
+                            Star Wars Rebels es una serie de televisión animada ambientada durante el período de tiempo
+                            entre las películas Star Wars: Episodio III La Venganza de los Sith y Star Wars: Episodio IV
+                            Una Nueva Esperanza. 5 ABY - 0 ABY
+
+                            La serie cuenta con 4 temporadas con 2 temporadas de 14 episodios y 2 de 20 episodios ademas de peliculas y cortos.
+
+                            La serie comienza cinco años antes de Star Wars: Episodio IV Una Nueva Esperanza, después de
+                            catorce años del reinado del Imperio Galáctico. La premisa general se describe de la
+                            siguiente manera: «Es una época oscura en la galaxia, a medida que el malvado Imperio
+                            Galáctico incrementa su poder de mundo en mundo. Cuando comienza la serie, las fuerzas
+                            Imperiales han ocupado un planeta remoto, gobernando con un puño de hierro y arruinando la
+                            vida de su gente. Pero hay unos pocos selectos que son lo suficientemente valientes como
+                            para enfrentarse a los interminables soldados de asalto y cazas TIE del Imperio: la
+                            inteligente y variopinta tripulación de la nave estelar Espíritu. Juntos, este diverso grupo
+                            se enfrentará a amenazadores nuevos villanos, viviendo emocionantes aventuras y
+                            convirtiéndose en héroes». La tripulación ayudará a dar lugar a la Alianza Rebelde.
+                        </div>
 
                         <div class="modal-footer">
                             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
@@ -73,44 +85,75 @@
             </div>
 
             <div class="col-4">
-                <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#peliculas" style="display: flex;">Informacion general</button>
-
-                <div class="card img-fluid" style="height: 66%; margin-top: 10px;">
-                    <img class="card-img-top h-100" src="img/star war episodio 2.jpg" alt="Card image">
+                <div class="card img-fluid" style="height: 100%; ">
+                    <img class="card-img-top h-100" src="img/Mandalorian.jpg" alt="Card image">
                 </div>
+
+                <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#Mandalorian"
+                    style="display: flex; margin-top: 20px; width: 49%; float: left;">Informacion general</button>
+                <a href="https://www.disneyplus.com/es-es/series/the-mandalorian/3jLIGMDYINqD" type="button"
+                    class="btn btn-info boton"
+                    style="display: flex; margin-top: 20px; width: 49%; float: left; margin-left: 0.4em;">Mandalorian</a>
             </div>
 
-            <div class="modal" id="peliculas">
+            <div class="modal" id="Mandalorian">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h4 class="modal-title">Peliculas</h4>
+                            <h4 class="modal-title">Mandalorian</h4>
                             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                         </div>
 
                         <div class="modal-body">
-                            Las 9 pelicualas se dividen en 3 trilogias y son el eje central de la saga 6 peliculas las
-                            correspondientes a las 2 primeras trilogias son creadas y dirigidas por
-                            George Lucas y las ultimas 3 es decir la ultima trilogia corresponde a disney tras la venta
-                            de
-                            la
-                            saga.</br>
-                            Precuelas: formada por los episodios I,II,III; Episodio I Amenaza fantasma, Episodio II
-                            Guerra
-                            de
-                            los Clones,
-                            Episodio III La Venganza de los Shits.</br>
-                            Trilogia original: formada por los episodios IV,V,VI; Episodio IV Una nueva Esperanza,
-                            Episodio
-                            V
-                            Imperio
-                            Contrataca, Episodio VI Retorno del Jedi.</br>
-                            Secuelas: formada por los episodios VII,VIII,IX; Episodio VII El despertar de la Fuerza,
-                            Episodio
-                            VIII Los Ultimos Jedi,
-                            Episodio IX Ascenso de skywalker</br>.
+                            The Mandalorian es una serie de televisión de Star Wars acción en vivo desarrollada por
+                            Lucasfilm. La serie toma lugar alrededor de cinco años después de los eventos de Star Wars:
+                            Episodio VI El Retorno del Jedi. 9 DBY
+
+                            La serie cuenta con 3 temporadas y actualmente esta en emision, teniendo 2 temporadas terminadas de 8 episodios cada una 
+                            y la tercera por estrenar en 1 de marzo.
+
+                            Después de las historias de Jango y Boba Fett, otro guerrero emerge en el universo Star
+                            Wars. The Mandalorian está establecida después de la caída del Imperio y antes de la
+                            aparición de la Primera Orden. Seguimos los viajes de un pistolero solitario en las
+                            extensiones exteriores de la galaxia lejos de la autoridad de la Nueva República...
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
                         </div>
 
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="card img-fluid" style="height: 100%;">
+                    <img class="card-img-top h-100" src="img/clone wars.jpeg" alt="Card image">
+                </div>
+                <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#clone-wars"
+                    style="display: flex; margin-top: 20px; width: 49%; float: left;">Informacion general</button>
+                <a href="https://www.disneyplus.com/es-es/series/star-wars-the-clone-wars/1wYXzjabXGVZ" type="button"
+                    class="btn btn-info boton"
+                    style="display: flex; margin-top: 20px; width: 49%; float: left; margin-left: 0.4em;">Clone Wars</a>
+            </div>
+
+            <div class="modal" id="clone-wars">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Clone Wars</h4>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+
+                        <div class="modal-body">
+                            Star Wars: The Clone Wars, también conocida como Star Wars: La Guerra de los Clones es una
+                            serie de televisión animada ambientada entre los sucesos de de Star Wars: Episodio II El
+                            Ataque de los Clones y Star Wars: Episodio III La Venganza de los Sith. 22 ABY - 19 ABY
+
+                            La serie cuenta con 7 temporadas los episodios de dichas temporadas van entre los 12 y 22 episodios y una pelicula que une 4 episodios.
+
+                            En la serie cuantan lo que viven y hacen los personajes de las peliculas entre Episodio II y Episodio III; tambien cuentan como van las guerras clon.
+
+                        </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
                         </div>
@@ -119,7 +162,6 @@
                 </div>
             </div>
         </div>
-    </div>
 </body>
 
 </html>

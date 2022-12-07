@@ -1,6 +1,6 @@
 <?php
 
-$enviar = json_decode($_GET["compras"], false);
+$enviar = json_decode($_GET["enviar"], false);
 
 include_once "conexion.php";
 
@@ -15,20 +15,23 @@ class Comprar {
     }
 
 
-    public function enviar_ajax($Nombre, $Apellidos, $Email, $carrito, $Direccion, $Codigo_postal)
+    public function compras($Nombre, $Apellidos, $Email, $carrito, $Direccion, $Codigo_postal)
     {
         $this->getconecBD();
         try {
-            $consulta = $this->conexion->prepare("INSERT INTO clientes (Nombre, Apellidos, Email, carrito, Direccion, Codigo_postal) VALUES (?, ?, ?, ?, ?, ?)");
+            $consulta = $this->conexion->prepare("INSERT INTO clientes (Nombre, Apellidos, Email, carrito, Direccion, Codigo_postal) VALUES (?,?,?,?,?,?)");
             $consulta->bindparam(1, $Nombre);
             $consulta->bindparam(2, $Apellidos);
             $consulta->bindparam(3, $Email);
             $consulta->bindparam(4, $carrito);
             $consulta->bindparam(5, $Direccion);
             $consulta->bindparam(6, $Codigo_postal);
+
             if (!$consulta->execute()) {
-                print_r($consulta->errorInfo());
-                return false;
+                //print_r($consulta->errorInfo());
+                $resp = 1;
+                $envio = json_encode($resp);
+                echo $envio;
             }
 
         } catch (PDOException $e) {
@@ -38,7 +41,9 @@ class Comprar {
 }
 
 $condb = new Comprar();
-$condb -> enviar_ajax($enviar->nombre, $enviar->apellidos, $enviar->Email, $enviar->productos, $enviar->direccion, $enviar->codigo_postal);
+$condb -> compras($enviar->nombre, $enviar->apellidos, $enviar->email, $enviar->productos, $enviar->direccion, $enviar->codigo_postal);
+
+//$condb -> compras("pepe", "gimenez", "perico@gmail.com", "Jedi Fallen Order", "calle del pez", "28050");
 
 
 ?>

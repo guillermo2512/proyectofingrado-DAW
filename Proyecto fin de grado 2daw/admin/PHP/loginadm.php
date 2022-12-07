@@ -19,7 +19,7 @@ class Login
     {
         $this->getconecBD();
         try {
-            $consulta = $this->conexion->prepare("SELECT Contrasena FROM usuarios WHERE Email = ?;");
+            $consulta = $this->conexion->prepare("SELECT contrasena FROM gerencia WHERE usuario = ?;");
             $consulta->bindparam(1, $nombre);
 
             if (!$consulta->execute()) {
@@ -32,7 +32,7 @@ class Login
             if ($consulta->rowCount() >= 0) {
                 if ($row = $consulta->fetch()) 
                 {
-                    return $row["Contrasena"];
+                    return $row["contrasena"];
                 }
             }
             return 1;
@@ -45,7 +45,7 @@ class Login
     {
         $this->getconecBD();
         try {
-            $consulta = $this->conexion->prepare("SELECT Nombre FROM usuarios WHERE Email = ? and Contrasena = ?;");
+            $consulta = $this->conexion->prepare("SELECT Nombre, usuario FROM gerencia WHERE usuario = ? and contrasena = ?;");
             $consulta->bindparam(1, $email);
             $consulta->bindparam(2, $pass);
 

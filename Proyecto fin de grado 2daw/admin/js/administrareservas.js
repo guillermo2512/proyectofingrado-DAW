@@ -1,22 +1,14 @@
+let datos;
+
 document.addEventListener("readystatechange", cargareventos, false);
 function cargareventos(ev) {
     if (document.readyState == "interactive") {
         var user = JSON.parse(localStorage.getItem("user"));
 
-        if (localStorage.getItem("user") == null) 
-        {
-            window.location = "http://localhost/Proyecto%20fin%20de%20grado%20definitivo/admin/index.html";
-
-        }else if(user.usuario != "admin")
-        {
-            document.getElementById("nuevo").style.display = "none";
-            document.getElementById("pagos").style.display = "none";
-            document.getElementById("reservas").style.display = "none";
-        }
-
         document.getElementById("user").innerHTML = user.Nombre;
         mostar();
-        document.getElementById("registrar").addEventListener("click", crear);
+
+        document.getElementById("registrar").addEventListener("click",crear);
         document.getElementById("exit").addEventListener("click", function(){
             localStorage.removeItem("user");
         });
@@ -36,24 +28,23 @@ function mostar()
                 htmlstr += '<tr>';
                 htmlstr += '<td>' + element["Titulo"] + '</td>';
                 htmlstr += '<td>' + element["Precio"] + '</td>';
-                htmlstr += '<td>' + element["Cantidad"] + '</td>';
+                htmlstr += '<td>' + element["fecha_salida"] + '</td>';
                 htmlstr += '</tr>';
             });
             document.getElementById('tAdmin').innerHTML = htmlstr; 
         }
     };
 
-    xhttp.open("GET", "php/mostrar.php");
+    xhttp.open("GET", "php/mostrarreservas.php");
     xhttp.send();
 }
 
 function crear() 
 {
     var enviar = new Object();
-    enviar.id_articulo = id_articulo;
     enviar.titulo = document.getElementById("titulo").value;
     enviar.precio = document.getElementById("precio").value;
-    enviar.cantidad = locdocument.getElementById("cantidad").value;
+    enviar.fecha = document.getElementById("fecha").value;
 
     document.getElementById("btn").disabled = true;
 
@@ -67,12 +58,12 @@ function crear()
             Swal.fire({
                 icon: 'success',
                 title: 'Crear',
-                text: 'Articulo añadido'
+                text: 'Reserva añadida'
             });
         }
     };
 
-    xhttp.open("GET", "php/crear.php?enviar=" + myJSON);
+    xhttp.open("GET", "php/crearreservas.php?enviar=" + myJSON);
     xhttp.send();
 }
 

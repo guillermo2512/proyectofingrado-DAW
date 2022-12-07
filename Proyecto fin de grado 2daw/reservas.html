@@ -11,7 +11,6 @@
         integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.16/dist/sweetalert2.all.min.js"></script>
-    <!--<script src="js/mostrar.js"></script>-->
     <style>
         .jumbotron {
             background: rgb(191, 240, 221);
@@ -63,10 +62,9 @@
 
     <div class="container-fluid">
         <div class="row">
-            <div class="col-4">
-                <div class="card img-fluid" style="height: 80%;">
-                    <img class="card-img-top" src="img/Starfield.jpg" alt="Card image"
-                        style="height: 91%;">
+            <div class="col-6">
+                <div class="card img-fluid" >
+                    <img class="card-img-top" src="img/Starfield.jpg" alt="Card image">
                     <div class="card-img-overlay">
                         <button type="button" class="btn btn-info" data-bs-toggle="modal"
                             data-bs-target="#descripcion-Starfi" style="display: flex;">Descripcion</button>
@@ -79,11 +77,13 @@
                                     </div>
                                     <div class="modal-body">
                                         <h3>Para PC es un juego de acción y aventuras basado en la popular
-                                        y duradera franquicia de películas del mismo nombre.
-                                        Cronológicamente, el juego se sitúa justo después de los eventos del Episodio III (La
-                                        Venganza de los Sith)
-                                        y cuenta con un conocido elenco de héroes, villanos, droides y Jedis, todos luchando por el
-                                        éxito de sus misiones.</h3>
+                                            y duradera franquicia de películas del mismo nombre.
+                                            Cronológicamente, el juego se sitúa justo después de los eventos del
+                                            Episodio III (La
+                                            Venganza de los Sith)
+                                            y cuenta con un conocido elenco de héroes, villanos, droides y Jedis, todos
+                                            luchando por el
+                                            éxito de sus misiones.</h3>
                                     </div>
 
                                     <div class="modal-footer">
@@ -98,13 +98,20 @@
                     <div class="card-footer">
                         <h3>Precio: <p id="precio" style="display: inline-flex;">50€</p>
                         </h3>
+                        <h3>Fecha Salida: <p id="precio" style="display: inline-flex;">2023</p>
+                        </h3>
                     </div>
                 </div>
                 <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#Starfield"
                     style="display: flex; margin-top: 20px; width: 49%; float: left;">Info</button>
-                <button type="button" id="1" class="btn btn-info boton" data-id="1" data-precio="50"
-                    data-titulo="Jedi Fallen Order"
-                    style="display: flex; margin-top: 20px; width: 49%; float: left; margin-left: 0.4em;">Añadir</button>
+                <button type="button" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown"
+                    style="margin-top: 20px; width: 49%; float: left; margin-left: 0.4em;">Añadir</button>
+                <ul class="dropdown-menu">
+                    <li><button class="dropdown-item boton" id="1" data-id="1" data-precio="50" data-titulo="Starfield"
+                            data-estado="reserva">Reservar (Cuota de 15%)</a></li>
+                    <li><button class="dropdown-item boton" id="1" data-id="1" data-precio="50" data-titulo="Starfield"
+                            data-estado="reserva pagado">Comprar</a></li>
+                </ul>
             </div>
 
             <div class="modal" id="Starfield">
@@ -248,9 +255,9 @@
                 </div>
             </div>
 
-            <div class="col-4">
-                <div class="card img-fluid" style="height: 80%;">
-                    <img class="card-img-top" src="img/jedisurvival.jpg" alt="Card image" style="height: 91%;">
+            <div class="col-6">
+                <div class="card img-fluid" >
+                    <img class="card-img-top" src="img/jedisurvival2.jpg" alt="Card image" style="height: 91%;">
                     <div class="card-img-overlay">
                         <button type="button" class="btn btn-info" data-bs-toggle="modal"
                             data-bs-target="#descripcion-survival" style="display: flex;">Descripcion</button>
@@ -262,37 +269,7 @@
                                         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                                     </div>
                                     <div class="modal-body">
-                                        <h3>Domina el arte del combate
-                                            con cazas estelares en la
-                                            auténtica de pilotaje
-                                            de STAR WARS™: Squadrons. Abróchate el cinturón y siente la adrenalina de
-                                            los combates
-                                            espaciales
-                                            multijugador en primera persona junto a tu escuadrón. Alístate y métete en
-                                            las cabinas de
-                                            cazas
-                                            estelares de las flotas de la Nueva República y del Imperio, y lucha en
-                                            batallas espaciales
-                                            estratégicas 5 contra 5. Modifica tu caza estelar y ajusta la composición de
-                                            tu escuadrón
-                                            para
-                                            adaptarte a distintos estilos y aplastar a tus rivales. Triunfa como equipo
-                                            y completa
-                                            objetivos
-                                            tácticos de campos de batalla tanto conocidos como nunca vistos, entre los
-                                            que se incluyen
-                                            el
-                                            gigante gaseoso de Yavin Prime y la luna destrozada de Galitan.</br>
-                                            Descubre lo que significa ser piloto en una emocionante historia de STAR
-                                            WARS™ para un
-                                            jugador tras
-                                            los acontecimientos de El Retorno del Jedi. Desde perspectivas alternas
-                                            entre las dos
-                                            facciones,
-                                            líderes emblemáticos y emergentes de ambos bandos lucharán por la galaxia.
-                                            La Nueva
-                                            República lucha
-                                            por la libertad. El Imperio exige orden.</h3>
+                                        <h3></h3>
                                     </div>
 
                                     <div class="modal-footer">
@@ -306,16 +283,23 @@
                         <h4 class="card-text text-danger d-flex" style=" padding-top: 0em;"></h4>
                     </div>
                     <div class="card-footer">
-                        <h3>Precio: <p id="precio" style="display: inline-flex;">35€</p>
+                        <h3>Precio: <p id="precio" style="display: inline-flex;">60€</p>
+                        </h3>
+                        <h3>Fecha Salida: <p id="precio" style="display: inline-flex;">marzo 2023</p>
                         </h3>
                     </div>
                 </div>
 
                 <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#jedisurvival"
                     style="display: flex; margin-top: 20px; width: 49%; float: left;">Info</button>
-                <button type="button" id="2" class="btn btn-info boton" data-id="2" data-precio="35"
-                    data-titulo="Scuadrons"
-                    style="display: flex; margin-top: 20px; width: 49%; float: left; margin-left: 0.4em;">Añadir</button>
+                <button type="button" id="2" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown"
+                    style="margin-top: 20px; width: 49%; float: left; margin-left: 0.4em;">Añadir</button>
+                <ul class="dropdown-menu">
+                    <li><button class="dropdown-item boton" data-id="2" data-precio="60" data-titulo="jedi survival"
+                            data-estado="reserva">Reservar (Cuota de 15%)</a></li>
+                    <li><button class="dropdown-item boton" data-id="2" data-precio="60" data-titulo="jedi survival"
+                            data-estado="reserva pagado">Comprar</a></li>
+                </ul>
             </div>
 
             <div class="modal" id="jedisurvival">
@@ -453,254 +437,10 @@
                     </div>
                 </div>
             </div>
-
-            <div class="col-4">
-                <div class="card img-fluid" style="height: 80%;">
-                    <img class="card-img-top" src="img/star wars battlefront 2.jpg" alt="Card image"
-                        style="height: 91%;">
-                    <div class="card-img-overlay">
-                        <button type="button" class="btn btn-info" data-bs-toggle="modal"
-                            data-bs-target="#descripcion-battlefront" style="display: flex;">Descripcion</button>
-
-                        <div class="modal" id="descripcion-battlefront">
-                            <div class="modal-dialog ">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <h3>Para PC es un juego de acción y disparos en el que el
-                                            jugador debe abrirse paso a través del vasto universo de Star Wars con el apoyo de amigables
-                                            alienígenas y Jedis, además de perseguir y combatir a los Siths, al Imperio y a otros
-                                            enemigos.</h3>
-                                    </div>
-
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-danger"
-                                            data-bs-dismiss="modal">Close</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <h4 class="card-text text-danger"></h4>
-                    </div>
-                    <div class="card-footer">
-                        <h3>Precio: <p id="precio" style="display: inline-flex;">45€</p>
-                        </h3>
-                    </div>
-                </div>
-                <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#battlefront2"
-                    style="display: flex; margin-top: 20px; width: 49%; float: left;">Info</button>
-                <button type="button" id="3" class="btn btn-info boton" data-id="3" data-precio="45"
-                    data-titulo="battlefront2"
-                    style="display: flex; margin-top: 20px; width: 49%; float: left; margin-left: 0.4em;">Añadir</button>
-            </div>
-
-            <div class="modal" id="battlefront2">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h4 class="modal-title">Star Wars: Battlefront 2</h4>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                        </div>
-
-                        <div class="modal-body">
-                            <ul class="nav nav-tabs">
-                                <li class="nav-item">
-                                    <a class="nav-link active" data-bs-toggle="tab" data-bs-target="#Requisit"
-                                        aria-expanded="true" aria-controls="Requisit">Requisitos</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" data-bs-toggle="tab" data-bs-target="#Acer"
-                                        aria-expanded="false" aria-controls="Acer">Acerca de</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" data-bs-toggle="tab" data-bs-target="#Jugabilida"
-                                        aria-expanded="false" aria-controls="Jugabilida">Cajas de
-                                        Botín</a>
-                                </li>
-                            </ul>
-
-                            <div class="container tab-content">
-                                <div class="tab-pane active" id="Requisit">
-                                    <div class="embed-responsive embed-responsive-4by3 p-2 ">
-                                        <iframe class="embed-responsive-item"
-                                            src="https://www.youtube.com/embed/_q51LZ2HpbE" title="YouTube video player"
-                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                            allowfullscreen></iframe>
-                                    </div>
-                                    <div class="table-responsive-sm">
-                                        <table class="table table-bordered">
-                                            <thead style="text-align: center;">
-                                                <tr>
-                                                    <th>Configuracion</th>
-                                                    <th>Configuracion Recomendada</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>64-bit Windows 7 SP1/Windows 8.1/Windows 10 </td>
-                                                    <td>64-bit Windows 10 or later </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Procesador: Processor (AMD): AMD FX 6350 Processor (Intel):
-                                                        Intel
-                                                        Core i5 6600K</td>
-                                                    <td>Procesador: Processor (AMD): AMD FX 8350 Wraith Processor
-                                                        (Intel):
-                                                        Intel Core i7 6700 or equivalent</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Memoria: 8 GB de RAM</td>
-                                                    <td>Memoria: 16 GB de RAM</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Gráficos: AMD Radeon™ HD 7850 2GB or NVIDIA GeForce® GTX 660 2GB
-                                                    </td>
-                                                    <td>G AMD RX Vega 56, Nvidia GTX 1070/GTX1660Ti or Equivalent</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>DirectX: Versión 11</td>
-                                                    <td>DirectX: Versión 11</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Red: Conexión de banda ancha a Internet</td>
-                                                    <td>Red: Conexión de banda ancha a Internet</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Almacenamiento: 60 GB de espacio disponible</td>
-                                                    <td>Almacenamiento: 60 GB de espacio disponible</td>
-                                                </tr>
-                                            </tbody>
-
-                                        </table>
-                                    </div>
-                                </div>
-
-                                <div class="tab-pane" id="Acer" style="font-size: 26px;">
-                                    <p style="font-size: 26px;">El jugador tiene la posibilidad de elegir entre una
-                                        gran
-                                        variedad de personajes jugables, todos muy conocidos y queridos,
-                                        que forman parte de la franquicia de películas del mismo nombre.
-                                        Estos incluyen a Luke Skywalker, Leia, Han Solo, Chewbacca, Lando, Yoda y
-                                        Rey, además de muchos otros.
-
-                                        El modo campaña de un solo jugador cuenta con un arco argumental completo,
-                                        el cual
-                                        hace que sea tan inmersivo y adictivo como los modos multijugador,
-                                        de los cuales hay una ampliavariedad.
-                                        Al jugar en solitario, los personajes deben progresar a lo largo de la
-                                        historia
-                                        principal para
-                                        evitar caer en la trampa tendida por el villano principal,
-                                        el Emperador Palpatine, quien busca sacar a la Resistencia de su escondite
-                                        para
-                                        hacerla caer en sus garras.
-
-                                        Los comandos de las Fuerzas Especiales del Imperio aseguran estar listos
-                                        para la
-                                        batalla, pero han subestimado la pasión y el empuje de los rebeldes,
-                                        quienes darán lo mejor de sí mismos en el combate.
-
-                                        El juego cuenta con once modos multijugador, y algunos de ellos están
-                                        limitados por
-                                        el tiempo. Persigue a Stormtroopers hasta la muerte,
-                                        tras lo cual resurgirán al igual que tus compañeros
-                                        Ewoks, enfréntate en partidas de dos contra dos,
-                                        héroes contra villanos - sin la posibilidad de reaparecer hasta que la
-                                        partida haya terminado -, o ve a lo grande: dos equipos de veinte
-                                        integrantes
-                                        atacándose los unos a
-                                        los otros a lo largo de trece planetas en el modo de asalto intergaláctico,
-                                        una gran
-                                        batalla por el éxito.
-
-                                        Otras opciones multijugador incluyen dinámicas de juego que exigirán el
-                                        máximo de
-                                        tus capacidades,
-                                        en las que la velocidad, el ataque y la defensa deberán ser puestas a prueba
-                                        - por
-                                        sí solas o en conjunto -
-                                        en emocionantes enfrentamientos que te dejarán sin aliento y de los cuales,
-                                        con algo
-                                        de suerte, ¡saldrás victorioso!
-                                    </p>
-                                </div>
-
-                                <div class="tab-pane" id="Jugabilida" style="font-size: 26px;">
-                                    <p>¿Las llamadas Cajas de Botín (o Lootboxes) son, tal como se escucha, cajas
-                                        llenas de
-                                        artículos de valor, los cuales pueden ser utilizados en el juego.
-                                        Estas pueden ser obtenidas a cambio de dinero real por
-                                        medio de microtransacciones y ofrecen distintos tipos de ventajas a la
-                                        jugabilidad.
-                                        Sin embargo, el mundo de los video juegos se entusiasmó un poco más de la
-                                        cuenta con
-                                        esta dinámica
-                                        derrochadora de dinero, y las empresas desarrolladoras comenzaron a cobrar
-                                        dinero
-                                        adicional a los
-                                        jugadores para que pudieran progresar en los juegos, incluso después de ya
-                                        haber
-                                        pagado por ellos.
-                                        Este juego en particular se vio envuelto justo en medio de la polémica,
-                                        debido a lo
-                                        siguiente:
-
-                                        La oferta inicial de este juego parecía indicar que la única manera lograr
-                                        un
-                                        desarrollo notable de las
-                                        habilidades de los personajes era mediante la compra de cajas de botín, sin
-                                        que el
-                                        jugador tuviera ningún tipo de control sobre lo que venía dentro de las
-                                        mismas.
-                                        Evidentemente, los jugadores se mostraron indignados,
-                                        y consultaron a autoridades de juegos de azar acerca de la legitimidad y la
-                                        moralidad de estas prácticas.
-
-                                        Debido a esto, los desarrolladores del juego detuvieron todas las
-                                        microtransacciones
-                                        durante un tiempo,
-                                        con el fin de considerar cuál era la mejor manera de proceder. Mientras
-                                        tanto,
-                                        permitieron que los jugadores pudieran desarrollar las habilidades de los
-                                        personajes
-                                        sin tener que
-                                        gastar más dinero, lo que complació a los jugadores.
-
-                                        El juego todavía ofrece un botín por cada día de juego, y su contenido sigue
-                                        siendo
-                                        completamente aleatorio: sin embargo, ahora es gratis, y las recompensas se
-                                        limitan
-                                        a
-                                        actualizaciones estéticas y skins - nada que pueda afectar a los jugadores
-                                        que no
-                                        pueden
-                                        permitirse gastar más dinero en sus juegos.
-
-                                        Últimamente, las microtransacciones han sido incorporadas nuevamente en el
-                                        juego,
-                                        por lo que aquellos que pueden permitírselo y desean progresar sin
-                                        dificultades
-                                        pueden echar mano de ellas.
-                                        Sin embargo, aquellos que no pueden o no deseen pagar por ellas pueden
-                                        alcanzar los
-                                        mismos
-                                        niveles de habilidad invirtiendo solamente un poco de tiempo y esfuerzo.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
     </div>
 </body>
-<script src="js/carrito.js"></script>
+<script src="js/carritoreservas.js"></script>
 
 </html>

@@ -25,13 +25,9 @@ function productos() {
                 <td>` + element.titulo + `</td>
                 <td>` + element.precio + "€" + `</td>
                 <td>` + element.cantidad + `</td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td> Total` + total + `</td>
             </tr>`;
         });
+        document.getElementById("total_pagar").innerHTML = total + "€";
         document.getElementById("productos").innerHTML = html;
     }
 }
@@ -46,11 +42,12 @@ function cargarusuario() {
 }
 
 function comprar() {
+    pagar();
     var enviar = new Object();
     enviar.nombre = document.getElementById("nombre").value;
     enviar.apellidos = document.getElementById("apellidos").value;
     enviar.email = document.getElementById("mail1").value;
-    enviar.productos = localStorage.getItem('articulos');
+    enviar.productos = localStorage.getItem("articulos");
     enviar.direccion = document.getElementById("direccion").value;
     enviar.codigo_postal = document.getElementById("codigopostal").value;
 
@@ -62,11 +59,64 @@ function comprar() {
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             document.getElementById("btn").disabled = false;
-            location.reload();
-            alert("La Compra ha sido registrarda correctamente");
-            localStorage.removeItem("usuario");
+            var respuesta = this.responseText;
+            if (respuesta == 1) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'La compra ha salido mal'
+                });
+            }else
+            {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Compra',
+                    text: 'La Compra ha sido registrarda correctamente'
+                });
+                setInterval(function(){location.reload()},4000); 
+                //localStorage.removeItem("usuario");
+                //localStorage.removeItem("articulos");
+            } 
         }
     };
-    xhttp.open("GET", "PHP/compras.php?compras=" + myJSON);
+    xhttp.open("GET", "PHP/compras.php?enviar=" + myJSON);
+    xhttp.send();
+}
+
+function pagar()
+{
+    var enviar = new Object();
+    enviar.titular = document.getElementById("Titular").value;
+    enviar.ntar = document.getElementById("npay").value;
+    enviar.cod = document.getElementById("CCV").value;
+
+    document.getElementById("btn").disabled = true;
+
+    var myJSON = JSON.stringify(enviar);
+
+    const xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("btn").disabled = false;
+            var respuesta = this.responseText;
+            if (respuesta == 1) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'El pago no se realizo correctamente por favor intentelo otra vez'
+                });
+            }else
+            {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Compra',
+                    text: 'El pago se ha realizado correctamente'
+                });
+            }    
+           
+            setInterval(function(){},8000);
+        }
+    };
+    xhttp.open("GET", "PHP/pasarelapago.php?enviar=" + myJSON);
     xhttp.send();
 }

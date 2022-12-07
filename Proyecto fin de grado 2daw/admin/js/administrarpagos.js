@@ -1,7 +1,9 @@
+let datos;
+
 document.addEventListener("readystatechange", cargareventos, false);
 function cargareventos(ev) {
     if (document.readyState == "interactive") {
-        var user = JSON.parse(localStorage.getItem("user"));
+        var user = localStorage.getItem("user");
 
         if (localStorage.getItem("user") == null) 
         {
@@ -9,17 +11,13 @@ function cargareventos(ev) {
 
         }else if(user.usuario != "admin")
         {
-            document.getElementById("nuevo").style.display = "none";
-            document.getElementById("pagos").style.display = "none";
-            document.getElementById("reservas").style.display = "none";
+            
         }
-
-        document.getElementById("user").innerHTML = user.Nombre;
-        mostar();
-        document.getElementById("registrar").addEventListener("click", crear);
-        document.getElementById("exit").addEventListener("click", function(){
-            localStorage.removeItem("user");
-        });
+        else
+        {
+            document.getElementById("user").innerHTML = user.Nombre;
+            mostar();
+        }
     }
 }
 
@@ -47,13 +45,26 @@ function mostar()
     xhttp.send();
 }
 
+var Buttons = document.querySelectorAll('button.editar');
+
+Buttons.forEach(function (item) {
+    item.addEventListener('click', function () {
+
+    console.log(item);
+        const id = parseInt(item.dataset.id);
+        const precio = item.dataset.precio;
+        const titulo = item.dataset.titulo;
+
+    });
+});
+
 function crear() 
 {
     var enviar = new Object();
     enviar.id_articulo = id_articulo;
-    enviar.titulo = document.getElementById("titulo").value;
-    enviar.precio = document.getElementById("precio").value;
-    enviar.cantidad = locdocument.getElementById("cantidad").value;
+    enviar.titulo = document.getElementById("apellidos").value;
+    enviar.precio = document.getElementById("mail1").value;
+    enviar.cantidad = localStorage.getItem('articulos');
 
     document.getElementById("btn").disabled = true;
 
@@ -72,7 +83,35 @@ function crear()
         }
     };
 
-    xhttp.open("GET", "php/crear.php?enviar=" + myJSON);
+    xhttp.open("GET", "php/editar.php");
+    xhttp.send();
+}
+
+function borrar() 
+{
+    var boton = document.getElementsByTagName("editar");
+
+    boton.forEach(function (item) 
+    {
+        item.addEventListener('click', function () 
+        {
+            console.log(item);
+        });
+    });
+
+    const xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) 
+        {
+            Swal.fire({
+                icon: 'success',
+                title: 'Borrado',
+                text: 'Cliente borrado con exito'
+            });
+        }
+    };
+
+    xhttp.open("GET", "php/borrar.php");
     xhttp.send();
 }
 

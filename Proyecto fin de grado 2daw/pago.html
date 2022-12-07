@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
         integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.16/dist/sweetalert2.all.min.js"></script>
     <style>
         .jumbotron {
             background: rgb(255, 140, 0);
@@ -57,9 +58,6 @@
         <p>Los campos obligatorios se marcan con *.</p>
 
     </div>
-
-    <form class="form-group" name="compras" id="compras">
-
         <div class="container" id="datosPersona">
             <h5 class="font-italic text-center">Datos personales</h5>
             <div class="form-group">
@@ -89,6 +87,7 @@
                 <tbody id="productos">
                     
                 </tbody>
+                <h4>Total a Pagar: <span id="total_pagar">0.00€</span></h4>
             </table>
         </div>
 
@@ -106,16 +105,16 @@
 
         <div class="container">
             <h5 class="font-italic text-center">Formato de pago</h5>
-            <div id="tarjeta" class="form-group">
+            <div class="form-group">
+                <label for="text">Titular *</label>
+                <input type="text" class="form-control" id="Titular" name="Titular">
+            </div>
+            <div class="form-group">
                 <label for="npay">Número de tarjeta: *</label>
                 <input type="text" class="form-control" id="npay" name="npay">
             </div>
-            <div id="fechacad" class="form-group">
-                <label for="fechacad">Fecha de caducidad: *</label>
-                <input type="text" class="form-control" id="fechacad" name="Fecha de caducidad:">
-            </div>
-
-            <div id="CCV" class="form-group">
+            
+            <div class="form-group">
                 <label for="text">CVV *</label>
                 <input type="text" class="form-control" id="CCV" name="CCV">
             </div>
@@ -124,7 +123,6 @@
             <button type="submit" class="btn btn-outline-success" id="btn">Validar el pago
             </button>
         </div>
-    </form>
 </body>
 <script src="js/compras.js"></script>
 
