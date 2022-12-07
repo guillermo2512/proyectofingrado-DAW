@@ -74,8 +74,8 @@ function comprar() {
                     text: 'La Compra ha sido registrarda correctamente'
                 });
                 setInterval(function(){location.reload()},4000); 
-                //localStorage.removeItem("usuario");
-                //localStorage.removeItem("articulos");
+                localStorage.removeItem("usuario");
+                localStorage.removeItem("articulos");
             } 
         }
     };

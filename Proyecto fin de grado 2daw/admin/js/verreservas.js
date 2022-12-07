@@ -1,10 +1,10 @@
 document.addEventListener("readystatechange", cargareventos, false);
 function cargareventos(ev) {
     if (document.readyState == "interactive") {
+        var user = JSON.parse(localStorage.getItem("user"));
 
         document.getElementById("user").innerHTML = user.Nombre;
         mostar();
-        document.getElementById("registrar").addEventListener("click", crear);
         document.getElementById("exit").addEventListener("click", function () {
             localStorage.removeItem("user");
         });
@@ -19,13 +19,11 @@ function mostar() {
             var htmlstr = '';
 
             datos.forEach(element => {
-                if (element.estado == "reserva" || element.estado == "reserva pagado") {
-                    htmlstr += '<tr>';
-                    htmlstr += '<td>' + element["Nombre"] + '</td>';
-                    htmlstr += '<td>' + element["Email"] + '</td>';
-                    htmlstr += '<td>' + element["carrito"] + '</td>';
-                    htmlstr += '</tr>';
-                }
+                htmlstr += '<tr>';
+                        htmlstr += '<td>' + element["Nombre"] + '</td>';
+                        htmlstr += '<td>' + element["Email"] + '</td>';
+                        htmlstr += '<td>' + element["carrito"] + '</td>';
+                        htmlstr += '</tr>';
             });
 
             document.getElementById('tAdmin').innerHTML = htmlstr;
