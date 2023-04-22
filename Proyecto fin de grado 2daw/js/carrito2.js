@@ -20,15 +20,28 @@ function mostrarcarrito() {
             total += totaliza;
             html += `
             <tr>
-                <td>` + element.id + `</td>
                 <td>` + element.titulo + `</td>
                 <td>` + element.precio + "€" + `</td>
                 <td>` + element.cantidad + `</td>
-            </tr>`;
+                <td><button onclick="sumarcantidad(`+ element.id +`)" class="btn btn-primary">+</button></td>
+            </tr>`
         });
         document.getElementById("total_pagar").innerHTML = total + "€";
         document.getElementById("tCarrito").innerHTML = html;
+    } 
+}
+
+
+function sumarcantidad(id)
+{
+    var array = JSON.parse(localStorage.getItem('articulos'));
+    const miItem = array.find(item => item.id === id);
+    //miItem.some
+    if(miItem.cantidad >= 1)
+    {
+        miItem.cantidad++;
     }
+    
 }
 
 function vaciarcarrito() {

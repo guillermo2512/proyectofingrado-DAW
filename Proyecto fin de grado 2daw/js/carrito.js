@@ -1,4 +1,3 @@
-
 var articulos = [];
 var articulo = {
     id: 0
@@ -12,25 +11,12 @@ if (localStorage.getItem("articulos") != null) {
 var Buttons = document.querySelectorAll('button.boton');
 
 Buttons.forEach(function (item) {
-    item.addEventListener('click', function () {
-        //var cantidad = 1;
+    item.addEventListener('click', function () 
+    {
         const id = parseInt(item.dataset.id);
         const precio = item.dataset.precio;
         const titulo = item.dataset.titulo;
         const estado = item.dataset.estado;
-
-        /*Swal.fire({
-            title: 'Cantidad',
-            text: '¿Cuantos quieres?',
-            input: 'text',
-            confirmButtonText: "Guardar",
-        }).then(resultado => {
-            if (!resultado.value) {
-                cantidad = 1;
-            }else{
-                cantidad = resultado.value;
-            }
-        });*/
 
         articulo = {
             id: id,
@@ -42,77 +28,13 @@ Buttons.forEach(function (item) {
         articulos.push(articulo);
 
         localStorage.setItem('articulos', JSON.stringify(articulos));
+
         mostrarindice();
-
-        //si se repite borrar el anterior con con el valor menos 1
-        /*if (articulos.length == 0) 
-        { 
-            articulo = {
-                id: id,
-                precio: precio,
-                titulo: titulo,
-                cantidad: 1
-            }
-            articulos.push(articulo);
-
-        }else{
-
-            const lookup = articulos.reduce((a, e) => {
-                a[e.id] = ++a[e.id] || 0;
-                return a;
-              }, {});
-              
-              const datos = articulos.filter(e => lookup[e.id])
-              
-              // Se reduce el arreglo data2 para formar un indice
-              const index = datos.reduce((prev, curr) => {
-                  return {
-                      ...prev,
-                      [curr.id]: curr.cantidad
-                  }
-              },
-              {})
-              
-              console.log(index);
-              
-              // Se reduce el arreglo data1 comparandolo respecto al indice
-              const res = values.reduce((prev, curr) => {
-                  // Si las cantidades son iguales se agrega el objeto a los correctos
-                  if (index[curr.id] !== curr.cantidad) {
-                      return {
-                          right: [...prev.right, curr],
-                          wrong: prev.wrong
-                      }
-                  }
-                  // De lo contrario se agrega a los incorrectos
-                  return {
-                      right: prev.right,
-                      wrong: [...prev.wrong, curr]
-                  }
-              },
-              {
-                  right: [],
-                  wrong: []
-              })
-            
-            articulos.forEach(element => {
-                var ids = element.id;
-                if(ids!= id)
-                {
-                    articulo = {
-                        id: id,
-                        precio: precio,
-                        titulo: titulo,
-                        cantidad: 1
-                    }
-                    articulos.push(articulo);
-                }
-                else{
-                    var alamcen = element.cantidad;
-                    articulo.cantidad = alamcen + 1;
-                }
-            });
-        }*/
+        
+    });
+    item.addEventListener('click', function () 
+    {
+        location.reload();
     });
 });
 
@@ -121,7 +43,7 @@ function mostrarindice() {
         var array = JSON.parse(localStorage.getItem('articulos'));
         if (array) {
             var x = array.length;
-            document.getElementById("carrito").innerHTML = x;
+            document.getElementById("carro").innerHTML = x;
         }
     }
 }

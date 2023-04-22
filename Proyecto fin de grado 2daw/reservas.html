@@ -53,22 +53,58 @@
                     <a class="nav-link" href="login.html"><i class="fas fa-sign-in-alt"></i>Login</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="carrito.html"><i class="fa fa-fw fa-cart-plus"></i>Carrito<span
-                            class="badge bg-primary" id="carrito" style="margin-left: 4px;">0</span></a>
+                    <a data-bs-toggle="offcanvas" data-bs-target="#Carrito"><i
+                            class="fa fa-fw fa-cart-plus"></i>Carrito<span class="badge bg-primary" id="carrito"
+                            style="margin-left: 4px;">0</span></a>
                 </li>
             </ul>
         </nav>
     </header>
 
+    <div class="offcanvas offcanvas-end" id="Carrito">
+        <div class="offcanvas-header">
+            <h1 class="offcanvas-title">Carrito</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="container px-4 px-lg-5">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Producto</th>
+                                        <th>Precio</th>
+                                        <th>Cantidad</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tCarrito">
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <h4>Total a Pagar: <span id="total_pagar">0.00€</span></h4>
+                    <div class="d-flex justify-content-between">
+                        <button class="btn btn-danger" type="button" id="Vaciar">Vaciar Carrito</button>
+                        <button class="btn btn-success" type="button" id="pagar">Pagar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="container-fluid">
         <div class="row">
             <div class="col-6">
                 <div class="card img-fluid" style="height: 76%;">
-                    <img class="card-img-top" src="img/Starfield.jpg" alt="Card image"  style="height: 84%;">
+                    <img class="card-img-top" src="img/Starfield.jpg" alt="Card image" style="height: 84%;">
                     <div class="card-footer">
-                        <h3>Precio: <p id="precio" style="display: inline-flex;">50€</p>
+                        <h3>Precio: <p id="precio" style="display: inline-flex;">60€</p>
                         </h3>
-                        <h3>Fecha Salida: <p id="precio" style="display: inline-flex;">2023</p>
+                        <h3>Fecha Salida: <p id="precio" style="display: inline-flex;">6 de septiembre de 2023</p>
                         </h3>
                     </div>
                 </div>
@@ -77,9 +113,9 @@
                 <button type="button" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown"
                     style="margin-top: 20px; width: 49%; float: left; margin-left: 0.4em;">Añadir</button>
                 <ul class="dropdown-menu">
-                    <li><button class="dropdown-item boton" id="1" data-id="1" data-precio="50" data-titulo="Starfield"
+                    <li><button class="dropdown-item boton" id="1" data-id="1" data-precio="60" data-titulo="Starfield"
                             data-estado="reserva">Reservar (Cuota de 15%)</a></li>
-                    <li><button class="dropdown-item boton" id="1" data-id="1" data-precio="50" data-titulo="Starfield"
+                    <li><button class="dropdown-item boton" id="1" data-id="1" data-precio="60" data-titulo="Starfield"
                             data-estado="reserva pagado">Comprar</a></li>
                 </ul>
             </div>
@@ -88,7 +124,7 @@
                 <div class="modal-dialog ">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h4 class="modal-title">Jedi Fallen Order</h4>
+                            <h4 class="modal-title">Starfield</h4>
                             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                         </div>
 
@@ -101,10 +137,6 @@
                                 <li class="nav-item">
                                     <a class="nav-link" data-bs-toggle="tab" data-bs-target="#Acerca"
                                         aria-expanded="false" aria-controls="Acerca">Acerca de</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" data-bs-toggle="tab" data-bs-target="#Jugabilidad"
-                                        aria-expanded="false" aria-controls="Jugabilidad">Tipo de Jugabilidad</a>
                                 </li>
                             </ul>
 
@@ -127,30 +159,28 @@
                                             </thead>
                                             <tbody>
                                                 <tr>
-                                                    <td>SO: 64-bit Windows 7/8.1/10 </td>
-                                                    <td>SO: 64-bit Windows 7/8.1/10 </td>
+                                                    <td>SO: 64-bit Windows 10/11 </td>
+                                                    <td>SO: 64-bit Windows 10/11 </td>
                                                 </tr>
                                                 <tr>
-                                                    <td>Procesador: AMD FX-6100/Intel i3-3220 or Equivalent</td>
-                                                    <td>Procesador: AMD Ryzen 7 1700/Intel i7-6700K or Equivalent</td>
+                                                    <td>Procesador: Intel Core i7-4770K o Ryzen 5 1500X</td>
+                                                    <td>Procesador: Intel Core i7-8700K o Ryzen 5 3600</td>
                                                 </tr>
                                                 <tr>
                                                     <td>Memoria: 8 GB de RAM</td>
                                                     <td>Memoria: 16 GB de RAM</td>
                                                 </tr>
                                                 <tr>
-                                                    <td>Gráficos: AMD Radeon HD 7750, NVIDIA GeForce GTX 650 or
-                                                        Equivalent
-                                                    </td>
-                                                    <td>G AMD RX Vega 56, Nvidia GTX 1070/GTX1660Ti or Equivalent</td>
+                                                    <td>Gráficos: AMD Radeon RX 570 o NVIDIA GeForce GTX 970</td>
+                                                    <td>Gráficos: AMD Radeon RX 6600 o NVIDIA GeForce RTX 2070</td>
                                                 </tr>
                                                 <tr>
-                                                    <td>DirectX: Versión 11</td>
-                                                    <td>DirectX: Versión 11</td>
+                                                    <td>DirectX: Versión 12</td>
+                                                    <td>DirectX: Versión 12</td>
                                                 </tr>
                                                 <tr>
-                                                    <td>Almacenamiento: 55 GB de espacio disponible</td>
-                                                    <td>Almacenamiento: 55 GB de espacio disponible</td>
+                                                    <td>Almacenamiento: 100 GB de espacio disponible</td>
+                                                    <td>Almacenamiento: 100 GB de espacio disponible</td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -158,61 +188,18 @@
                                 </div>
 
                                 <div class="tab-pane" id="Acerca" style="font-size: 26px;">
-                                    <p style="font-size: 26px;">Un joven aprendiz de Jedi (a quienes se conoce como
-                                        Padawans)
-                                        se ve obligado a huir del Imperio Galáctico como consecuencia de la Orden 66,
-                                        una purga de la Orden Jedi a lo largo de toda la galaxia. La verdadera identidad
-                                        del
-                                        joven
-                                        Jedi cuyo nombre es Cal Kestis queda de manifiesto cuando éste utiliza la fuerza
-                                        para salvar la vida de un amigo luego de ocurrir un accidente. Siguiendo el
-                                        viejo
-                                        dicho que reza
-                                        Ninguna buena acción queda sin castigo…’, se corre la voz acerca de la verdadera
-                                        identidad del
-                                        joven, información que llega hasta los oídos de los inquisidores del Imperio,
-                                        quienes comienzan una feroz persecución, decididos a atrapar a cualquier
-                                        sobreviviente de la orden Jedi.
+                                    <p style="font-size: 26px;">En este juego de rol de próxima generación ambientado
+                                        entre las estrellas, podrás hacerte el personaje que desees y explorar con una
+                                        libertad sin precedentes mientras te embarcas en un viaje épico para desentrañar
+                                        el mayor misterio de la humanidad.
 
-                                        La misión de Cal ahora consiste en encontrar un lugar seguro para esconderse,
-                                        evitando ser
-                                        capturado por el Imperio. Por el camino, se encontrará con muchos rostros
-                                        reconocibles al instante para los fanáticos asiduos de la franquicia - entre los
-                                        que
-                                        se encuentran
-                                        personajes como Saw Gerrera (hábilmente vocalizado por el actor Forrest
-                                        Whittaker) y
-                                        Cere (cuya actuación de voz es llevada a cabo por la maravillosa Debra Wilson) -
-                                        además de recibir información valiosa y consejos que le ayudarán a conseguir sus
-                                        objetivos.
+                                        Corre el año 2330. La humanidad se ha aventurado más allá de nuestro sistema
+                                        solar para asentarse en planetas nuevos y vivir como un pueblo espacial. Tras
+                                        dejar atrás tus humildes inicios en la minería espacial, te unirás a
+                                        Constelación, el último grupo de exploradores espaciales en busca de raros
+                                        artefactos por toda la galaxia, y viajarás por la vasta extensión de los
+                                        Sistemas Colonizados
                                     </p>
-                                </div>
-
-                                <div class="tab-pane" id="Jugabilidad" style="font-size: 26px;">
-                                    <p>El juego no es un mundo abierto que te ofrezca la posibilidad de explorar
-                                        libremente
-                                        por donde desees. En cambio, dispones de un mapa de juego y misiones que debes
-                                        completar, aunque no necesariamente tendrás que adherirte a un único frente de
-                                        progreso a la vez.
-                                        Esto significa que puedes montarte en tu nave espacial y viajar a cualquiera de
-                                        las
-                                        áreas
-                                        desbloqueadas del mapa - más áreas del mapa se irán desbloqueando a medida que
-                                        progreses para llevar la misión correspondiente de esa área, hasta completarla o
-                                        hasta que te sientas en apuros.
-
-                                        De suceder esto último, tan solo tendrás que volver a tu nave y saltar hacia un
-                                        planeta distinto para aumentar y desarrollar las habilidades de las que careces
-                                        en
-                                        ese
-                                        momento, enfocándote en misiones más sencillas (o tal vez, simplemente, en otro
-                                        orden)
-                                        antes de volver e intentar con aquella que te pareció difícil.
-                                        Así que, aunque no se trate de un mundo abierto como tal,
-                                        podría decirse que el juego ofrece una jugabilidad híbrida,
-                                        compuesta por elementos de tipo lineal a la vez que ofrece cierto margen de
-                                        libertad
-                                        al jugador </p>
                                 </div>
                             </div>
                         </div>
@@ -229,9 +216,9 @@
                 <div class="card img-fluid" style="height: 76%;">
                     <img class="card-img-top" src="img/jedisurvival2.jpg" alt="Card image" style="height: 84%;">
                     <div class="card-footer">
-                        <h3>Precio: <p id="precio" style="display: inline-flex;">60€</p>
+                        <h3>Precio: <p id="precio" style="display: inline-flex;">70€</p>
                         </h3>
-                        <h3>Fecha Salida: <p id="precio" style="display: inline-flex;">marzo 2023</p>
+                        <h3>Fecha Salida: <p id="precio" style="display: inline-flex;">28 de abril de 2023</p>
                         </h3>
                     </div>
                 </div>
@@ -241,10 +228,10 @@
                 <button type="button" id="2" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown"
                     style="margin-top: 20px; width: 49%; float: left; margin-left: 0.4em;">Añadir</button>
                 <ul class="dropdown-menu">
-                    <li><button class="dropdown-item boton" data-id="2" data-precio="60" data-titulo="jedi survival"
-                            data-estado="reserva">Reservar (Cuota de 15%)</a></li>
-                    <li><button class="dropdown-item boton" data-id="2" data-precio="60" data-titulo="jedi survival"
-                            data-estado="reserva pagado">Comprar</a></li>
+                    <li><button class="dropdown-item boton" id="1" data-id="2" data-precio="70"
+                            data-titulo="jedi survival" data-estado="reserva">Reservar (Cuota de 15%)</a></li>
+                    <li><button class="dropdown-item boton" id="1" data-id="2" data-precio="70"
+                            data-titulo="jedi survival" data-estado="reserva pagado">Comprar</a></li>
                 </ul>
             </div>
 
@@ -252,7 +239,7 @@
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h4 class="modal-title">Star Wars: Scuadrons</h4>
+                            <h4 class="modal-title">Star Wars: Jedi Survival</h4>
                             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                         </div>
 
@@ -292,33 +279,28 @@
                                                     <td>Windows 10 64-bit</td>
                                                 </tr>
                                                 <tr>
-                                                    <td>Procesador: Ryzen 3 1300X or better/ i5 6600k or better</td>
-                                                    <td>Procesador: Ryzen 7 2700X or better/ i7-7700 or better</td>
+                                                    <td>Procesador: Intel Core i7-7700 | Ryzen 5 1400</td>
+                                                    <td>Procesador: Intel Core i5 11600K | Ryzen 5 5600X</td>
                                                 </tr>
                                                 <tr>
                                                     <td>Memoria: 8 GB de RAM</td>
                                                     <td>Memoria: 16 GB de RAM</td>
                                                 </tr>
                                                 <tr>
-                                                    <td>Gráficos: Radeon HD 7850 or better/ GeForce GTX 660 or better
-                                                    </td>
-                                                    <td>Gráficos: Radeon RX 480 (Non-VR/Minimum VR) or Radeon RX 570
-                                                        (Recommended VR)/</br>
-                                                        GeForce GTX 1060(Non-VR/Minimum VR) or GeForce GTX 1070
-                                                        (Recommended
-                                                        VR)</td>
+                                                    <td>Gráficos: GTX 1070 | Radeon RX 580 </td>
+                                                    <td>Gráficos: RTX2070 | RX 6700 XT</td>
                                                 </tr>
                                                 <tr>
-                                                    <td>DirectX: Versión 11</td>
-                                                    <td>DirectX: Versión 11</td>
+                                                    <td>DirectX: Versión 12</td>
+                                                    <td>DirectX: Versión 12</td>
                                                 </tr>
                                                 <tr>
                                                     <td>Red: Conexión de banda ancha a Internet</td>
                                                     <td>Red: Conexión de banda ancha a Internet</td>
                                                 </tr>
                                                 <tr>
-                                                    <td>Almacenamiento: 40 GB de espacio disponible</td>
-                                                    <td>Almacenamiento: 40 GB de espacio disponible</td>
+                                                    <td>Almacenamiento: 130 GB de espacio disponible</td>
+                                                    <td>Almacenamiento: 130 GB de espacio disponible</td>
                                                 </tr>
                                             </tbody>
 
@@ -328,50 +310,17 @@
 
 
                                 <div class="tab-pane" id="Acercad" style="font-size: 26px;">
-                                    <p style="font-size: 26px;"><strong>Pilotos, preséntense</strong> planifica
-                                        escaramuzas
-                                        con tu escuadrón en la sala de reuniones antes de volar
-                                        a campos de batalla dinámicos por toda la galaxia. Lucha en intensos combates
-                                        multijugador de 5
-                                        contra 5 o únete a tu escuadrón para inclinar la balanza en descomunales
-                                        batallas de
-                                        flota. En
-                                        equipo, sois la élite de la galaxia.</br>
-
-                                        <strong>cazas estelares legendarios</strong> toma el control de diferentes cazas
-                                        estelares de la Nueva
-                                        República y de las flotas imperiales, incluido el ágil Ala-A y el devastador
-                                        bombardero TIE.
-                                        Modifica tu nave, desvía la energía entre sus sistemas y destruye a tus rivales
-                                        en
-                                        combates
-                                        espaciales estratégicos.</br>
-
-                                        <strong>tu fantasía de piloto de STAR WARS</strong> la cabina es tu hogar.
-                                        Aprovecha
-                                        los paneles de mando y,
-                                        con solo un poco de metal y vidrio entre los peligros del espacio y tú, siente
-                                        la
-                                        intensidad del
-                                        combate desde una perspectiva en primera persona. Despega en emocionantes modos
-                                        multijugador y una
-                                        historia de STAR WARS única para un jugador, que cubre un momento clave cerca
-                                        del
-                                        fin de la Guerra
-                                        Civil Galáctica. Sumérgete completamente en el asiento del piloto con la opción
-                                        de
-                                        jugar todo STAR
-                                        WARS: Squadrons en VR.</br>
-
-                                        <strong>Misión está clara:</strong> STAR WARS Squadrons es una experiencia
-                                        completa
-                                        desde el principio, en la que
-                                        obtendrás recompensas a través del juego. Asciende de rango y desbloquea nuevos
-                                        componentes, como
-                                        armas, cascos, motores, escudos y artículos cosméticos, con una ruta de
-                                        progresión
-                                        que hace que la
-                                        jugabilidad sea siempre novedosa y cautivadora.
+                                    <p style="font-size: 26px;">La historia de Cal Kestis continúa en Star Wars Jedi:
+                                        Survivor, un juego de acción y aventuras en tercera persona desarrollado por
+                                        Respawn Entertainment en colaboración con Lucasfilm Games. Este título para un
+                                        jugador centrado en la historia retoma la aventura 5 años después de los
+                                        acontecimientos de Star Wars Jedi: Fallen Order™ y acompañaremos a Cal en su
+                                        lucha cada vez más desesperada mientras la galaxia se hunde en la oscuridad.
+                                        Empujado al exilio por culpa del Imperio, deberá guardarse de nuevas y viejas
+                                        amenazas. Como uno de los últimos Caballeros Jedi, debe hacer frente a los
+                                        tiempos más oscuros de la galaxia, pero ¿hasta dónde está dispuesto a llegar
+                                        para protegerse a sí mismo,
+                                        a su tripulación y al legado de la Orden Jedi?
                                     </p>
                                 </div>
                             </div>
@@ -388,5 +337,6 @@
     </div>
 </body>
 <script src="js/carritoreservas.js"></script>
+<script src="js/carrito2.js"></script>
 
 </html>

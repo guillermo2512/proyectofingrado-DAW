@@ -25,11 +25,6 @@
             margin: 14px;
         }
 
-        .container {
-            border: 1px solid rgb(119, 165, 172);
-            margin-top: 30px;
-        }
-
         .nav-item {
             margin-left: 20px;
         }
@@ -54,12 +49,47 @@
                     <a class="nav-link" href="login.html"><i class="fas fa-sign-in-alt"></i>Login</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="carrito.html"><i class="fa fa-fw fa-cart-plus"></i>Carrito<span
-                            class="badge bg-primary" id="carrito" style="margin-left: 4px;">0</span></a>
+                    <a data-bs-toggle="offcanvas" data-bs-target="#Carrito">
+                        <i class="fa fa-fw fa-cart-plus"></i>Carrito<span id="carro" class="badge bg-primary" 
+                        style="margin-left: 4px;">0</span></a>
                 </li>
             </ul>
         </nav>
     </header>
+
+    <div class="offcanvas offcanvas-end" id="Carrito">
+        <div class="offcanvas-header">
+            <h1 class="offcanvas-title">Carrito</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Producto</th>
+                                        <th>Precio</th>
+                                        <th>Cantidad</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tCarrito">
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <h4>Total a Pagar: <span id="total_pagar">0.00€</span></h4>
+                    <div class="d-flex justify-content-between">
+                        <a href="carrito.html" class="btn btn-info" type="button" id="ircarrito">Ver articulos del carrito</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <div class="container-fluid">
         <div class="row">
@@ -1252,5 +1282,6 @@
     </div>
 </body>
 <script src="js/carrito.js"></script>
+<script src="js/carrito2.js"></script>
 
 </html>
