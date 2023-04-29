@@ -35,13 +35,16 @@ function mostrarcarrito() {
 function sumarcantidad(id)
 {
     var array = JSON.parse(localStorage.getItem('articulos'));
-    const miItem = array.find(item => item.id === id);
-    //miItem.some
-    if(miItem.cantidad >= 1)
+
+    array.map(function(dato)
     {
-        miItem.cantidad++;
-    }
-    
+        if(dato.id == id)
+        {
+          dato.cantidad++;
+        }
+    });
+    localStorage.setItem("articulos", JSON.stringify(array));
+    location.reload();
 }
 
 function vaciarcarrito() {
