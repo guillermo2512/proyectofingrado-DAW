@@ -19,7 +19,7 @@ class Login
         $this->getconecBD();
         try {
 			
-            $consulta = $this->conexion->prepare("SELECT Email FROM usuarios WHERE Email = ?;");
+            $consulta = $this->conexion->prepare("SELECT usuario FROM usuarios WHERE usuario = ?;");
             $consulta->bindparam(1, $nombre);
 
             if (!$consulta->execute()) {
@@ -49,6 +49,6 @@ class Login
 }
 
 $condb = new Login();
-$condb->recibir_ajax($enviar->email);
+$condb->recibir_ajax($enviar->usuario);
 
 ?>

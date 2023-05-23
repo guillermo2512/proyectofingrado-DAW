@@ -8,8 +8,8 @@ function cargareventos(ev) {
         document.getElementById("user").innerHTML = user.Nombre;
         mostar();
 
-        document.getElementById("registrar").addEventListener("click", crear());
-        document.getElementById("Modificar").addEventListener("click", modificar());
+        document.getElementById("registrar").addEventListener("click", crear);
+        document.getElementById("Modificar").addEventListener("click", modificar);
         document.getElementById("exit").addEventListener("click", function () {
             localStorage.removeItem("user");
         });
@@ -27,8 +27,8 @@ function mostar() {
                 htmlstr += '<tr>';
                 htmlstr += '<td>' + element["Titulo"] + '</td>';
                 htmlstr += '<td>' + element["Precio"] + '</td>';
-                htmlstr += '<td>' + element["fecha_salida"] + '</td>';
-                htmlstr += '<td><button onclick="cargarModificacion(' + element["ID_Articulo"] + ')" type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#modificarreserva"><i class="fas fa-user-edit"></i></button></td>';
+                htmlstr += '<td>' + element["Fecha_Salida"] + '</td>';
+                htmlstr += '<td><button onclick="cargarModificacion(' + element["Id"] + ')" type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#modificarreserva"><i class="fas fa-user-edit"></i></button></td>';
                 htmlstr += '</tr>';
             });
             document.getElementById('tAdmin').innerHTML = htmlstr;
@@ -74,19 +74,19 @@ function crear() {
     xhttp.send();
 }
 
-function cargarModificacion(ID_Articulo) {
-    const reserva = datos.filter(item => parseInt(item.ID_Articulo) === ID_Articulo);
+function cargarModificacion(Id) {
+    const reserva = datos.filter(item => parseInt(item.Id) === Id);
     var htmlstr = '';
 
     reserva.forEach(element => {
         htmlstr += '<label for="idID">ID</label>';
-        htmlstr += '<input id="IdArticulo" class="form-control" type="text" placeholder="Titulo" value="' + ID_Articulo + '" readonly>' + '<br>';
+        htmlstr += '<input id="IdArticulo" class="form-control" type="text" placeholder="Id Articulo" value="' + Id + '" disabled>' + '<br>';
         htmlstr += '<label for="idID">Titulo</label>'
         htmlstr += '<input type="text" class="form-control" id="Titulo" placeholder="Titulo" value="' + element["Titulo"] + '">' + '<br>';
         htmlstr += '<label for="idCodigo">Precio</label>';
         htmlstr += '<input type="text" class="form-control" id="Precio" placeholder="Precio" value="' + element["Precio"] + '">' + '<br>';
         htmlstr += '<label for="idCodigo">fecha de salida</label>';
-        htmlstr += '<input type="text" class="form-control" id="fecha_salida" placeholder="fecha_salida" value="' + element["fecha_salida"] + '">';
+        htmlstr += '<input type="text" class="form-control" id="fecha_salida" placeholder="fecha_salida" value="' + element["Fecha_Salida"] + '">';
     });
 
     document.getElementById('modificardatos').innerHTML = htmlstr;
@@ -118,7 +118,7 @@ function modificar() {
             } else {
                 Swal.fire({
                     icon: 'success',
-                    title: 'Crear',
+                    title: 'Modificar',
                     text: 'La reserva modificada'
                 });
             }

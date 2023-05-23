@@ -45,8 +45,14 @@
                 <li class="nav-item">
                     <a class="nav-link" href="La saga.html"><i class="fa fa-info-circle"></i>La saga</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="login.html"><i class="fas fa-sign-in-alt"></i>Login</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="login.html" role="button" data-bs-toggle="dropdown"><i
+                            class="fas fa-sign-in-alt"></i>Login</a>
+                    <a class="nav-link dropdown-toggle" style="margin-left: 20px;" href="#" role="button"
+                        data-bs-toggle="dropdown">
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" id="exit" href=""></a></li>
+                        </ul>
                 </li>
                 <li class="nav-item">
                     <a data-bs-toggle="offcanvas" data-bs-target="#Carrito">
@@ -80,10 +86,10 @@
                                 </tbody>
                             </table>
                         </div>
-                        <!--<h4>Total a Pagar: <span id="total_pagar">0.00€</span></h4>
+                        <h4>Total a Pagar: <span id="total_pagar">0.00€</span></h4>
                         <div class="d-flex justify-content-between">
-                            <a href="carrito.html" class="btn btn-info" type="button" id="ircarrito">Ver articulos del carrito</button>
-                        </div>-->
+                            <button class="btn btn-info" type="button" id="ircarrito">Ver articulos del carrito</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -97,12 +103,35 @@
                     <img class="card-img-top" src="img/star-wars-jedi-fallen-order.jpg" alt="Card image"
                         style="height: 91%;">
                     <div class="card-img-overlay">
-                        <h4 class="card-text text-danger">Para PC es un juego de acción y aventuras basado en la popular
-                            y duradera franquicia de películas del mismo nombre.
-                            Cronológicamente, el juego se sitúa justo después de los eventos del Episodio III (La
-                            Venganza de los Sith)
-                            y cuenta con un conocido elenco de héroes, villanos, droides y Jedis, todos luchando por el
-                            éxito de sus misiones.</h4>
+                        <button type="button" class="btn btn-info" data-bs-toggle="modal"
+                            data-bs-target="#descripcion-fallenorder" style="display: flex;">Descripcion</button>
+
+                        <div class="modal" id="descripcion-fallenorder">
+                            <div class="modal-dialog ">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <h3>Para PC es un juego de acción y aventuras basado en la popular
+                                            y duradera franquicia de películas del mismo nombre.
+                                            Cronológicamente, el juego se sitúa justo después de los eventos del
+                                            Episodio III (La
+                                            Venganza de los Sith)
+                                            y cuenta con un conocido elenco de héroes, villanos, droides y Jedis, todos
+                                            luchando por el
+                                            éxito de sus misiones.</h3>
+                                    </div>
+
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-danger"
+                                            data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h4 class="card-text text-danger d-flex" style=" padding-top: 0em;"></h4>
                     </div>
                     <div class="card-footer">
                         <h3>Precio: <p id="precio" style="display: inline-flex;">50€</p>
@@ -689,20 +718,35 @@
         </div>
 
         <div class="row">
-            <div class="col-4" style="margin-top: -6em;">
+            <div class="col-4" style="margin-top: -5em;">
                 <div class="card img-fluid" style="height: 80%;">
                     <img class="card-img-top" src="img/star wars battlefront .jpg" alt="Card image"
                         style="height: 91%;">
                     <div class="card-img-overlay">
-                        <h4 class="card-text text-danger">Para PC es un juego de acción y aventuras basado en la
-                            popular y
-                            duradera franquicia de películas del mismo nombre.
-                            Cronológicamente, el juego se sitúa justo después de los eventos del Episodio III
-                            (La
-                            Venganza de
-                            los Sith) y cuenta con un conocido elenco de héroes, villanos, droides y Jedis,
-                            todos
-                            luchando por el éxito de sus misiones.</h4>
+                        <button type="button" class="btn btn-info" data-bs-toggle="modal"
+                            data-bs-target="#descripcion-battlefront"
+                            style="display: flex;">Descripcion</button>
+
+                        <div class="modal" id="descripcion-battlefront">
+                            <div class="modal-dialog ">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <h3>Para PC es un juego de acción y aventuras basado en la popular y
+                                            duradera franquicia de películas del mismo nombre.
+                                            Cronológicamente, el juego se sitúa justo después de los eventos del Episodio III
+                                            (La Venganza de los Sith) y cuenta con un conocido elenco de héroes, villanos, droides y
+                                            Jedis, todos luchando por el éxito de sus misiones.</h3>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-danger"
+                                            data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="card-footer">
                         <h3>Precio: <p id="precio" style="display: inline-flex;">38€</p>
@@ -809,24 +853,42 @@
                 </div>
             </div>
 
-            <div class="col-4" style="margin-top: -7em;">
+            <div class="col-4" style="margin-top: -6em;">
                 <div class="card img-fluid" style="margin-top: 15px; height: 79%;">
                     <img class="card-img-top" src="img/elite dangerous.jpg" alt="Card image" style="height: 100%;">
                     <div class="card-img-overlay">
-                        <h4 class="card-text text-danger">Este título te presenta la Vía Láctea en escala 1:1
-                            con todo
-                            su conjunto de
-                            sistemas estelares, planetas y lunas. Al principio tendrás tu nave y un poco de
-                            dinero, y a
-                            partir
-                            de allí te abrirás paso, por la vía legal o ilegal, llevando a cabo actividades de
-                            comercio,
-                            piratería, asesino a sueldo o caza-recompensas. Videojuego de simulación especial
-                            que nos
-                            ofrece
-                            toda la libertad del mundo para que exploremos los confines del universo del modo
-                            que
-                            deseemos.</h4>
+                        <div class="card-img-overlay">
+                            <button type="button" class="btn btn-info" data-bs-toggle="modal"
+                                data-bs-target="#descripcion-elite"
+                                style="display: flex; margin-top: 3.2em;">Descripcion</button>
+
+                            <div class="modal" id="descripcion-elite">
+                                <div class="modal-dialog ">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <h3>Este título te presenta la Vía Láctea en escala 1:1 con todo su conjunto
+                                                de sistemas estelares,
+                                                planetas y lunas. Al principio tendrás tu nave y un poco de dinero,
+                                                y a partir de allí te abrirás paso, por la vía legal o ilegal,
+                                                llevando a cabo actividades de comercio, piratería, asesino a sueldo o
+                                                caza-recompensas.
+                                                Videojuego de simulación especial que noso ofrece toda la libertad del
+                                                mundo para que exploremos
+                                                los confines del universo del modo que deseemos.</h3>
+                                        </div>
+
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-danger"
+                                                data-bs-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <h4 class="card-text text-danger"></h4>
                     </div>
                     <div class="card-footer">
                         <h3>Precio: <p id="precio" style="display: inline-flex;">26€</p>
@@ -1022,7 +1084,7 @@
                 </div>
             </div>
 
-            <div class="col-4" style="margin-top: -7em;">
+            <div class="col-4" style="margin-top: -6em;">
                 <div class="card img-fluid" style="margin-top: 15px; height: 79%;">
                     <img class="card-img-top" src="img/No Man's Sky 2.jpg" alt="Card image" style="height: 100%;">
                     <div class="card-img-overlay">

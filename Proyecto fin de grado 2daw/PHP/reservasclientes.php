@@ -2,7 +2,7 @@
 
 $enviar = json_decode($_GET["enviar"], false);
 
-include_once "../../PHP/conexion.php";
+include_once "conexion.php";
 
 class Comprar {
 
@@ -15,23 +15,20 @@ class Comprar {
     }
 
 
-    public function modificar_reservas($titulo, $precio, $fecha, $Id)
+    public function ReservasCl($Reservasclien)
     {
         $this->getconecBD();
         try {
-            $consulta = $this->conexion->prepare("UPDATE reservas SET Titulo = ?, Precio = ?, Fecha_Salida = ? WHERE Id = ?;");
-            $consulta->bindparam(1, $titulo);
-			$consulta->bindparam(2, $precio);
-            $consulta->bindparam(3, $fecha);
-            $consulta->bindparam(4, $Id);
+            $consulta = $this->conexion->prepare("INSERT INTO reservasclientes (Articulos) VALUES (?)");
+            $consulta->bindparam(1, $Reservasclien);
 
-            if (!$consulta->execute()) 
-            {
+            if (!$consulta->execute()) {
                 print_r($consulta->errorInfo());
                 $resp = 1;
                 $envio = json_encode($resp);
                 echo $envio;
             }
+
 
         } catch (PDOException $e) {
             die("Error: " . $e->getMessage());
@@ -40,6 +37,9 @@ class Comprar {
 }
 
 $condb = new Comprar();
-$condb->modificar_reservas($enviar->titulo, $enviar->precio, $enviar->fecha, $enviar->id);
+$condb -> ReservasCl($enviar->productos);
+
+//$condb -> compras("pepe", "gimenez", "perico@gmail.com", "Jedi Fallen Order", "calle del pez", "28050");
+
 
 ?>

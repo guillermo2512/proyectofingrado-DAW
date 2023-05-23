@@ -16,14 +16,16 @@ class Comprar {
     }
 
 
-    public function enviar_ajax($nombre, $pass, $mail)
+    public function enviar_ajax($usuario, $nombre, $pass, $mail, $fecha)
     {
         $this->getconecBD();
         try {
-            $consulta = $this->conexion->prepare("INSERT INTO usuarios(Nombre, Contrasena, Email) VALUES (?, ?, ?)");
-            $consulta->bindparam(1, $mail);
-			$consulta->bindparam(2, $pass);
-            $consulta->bindparam(3, $nombre);
+            $consulta = $this->conexion->prepare("INSERT INTO usuarios (Usuario, Nombre, Contrasena, Email, Fecha_Alta) VALUES (?, ?, ?, ?, ?)");
+            $consulta->bindparam(1, $usuario);
+			$consulta->bindparam(2, $nombre);
+            $consulta->bindparam(3, $pass);
+            $consulta->bindparam(4, $mail);
+            $consulta->bindparam(5, $fecha);
 
             if (!$consulta->execute()) 
             {
@@ -39,8 +41,8 @@ class Comprar {
     }
 }
 $clave = Password::hash($enviar->pass);
+$fecha = date("d-m-Y");
 
 $condb = new Comprar();
-$condb->enviar_ajax($enviar->email, $clave, $enviar->nombre);
-
+$condb->enviar_ajax($enviar->usuario, $enviar->nombre ,$clave, $enviar->email, $fecha);
 ?>

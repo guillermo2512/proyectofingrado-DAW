@@ -11,7 +11,7 @@
         integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.16/dist/sweetalert2.all.min.js"></script>
-    <script src="js/administrareservas.js"></script>
+    <link rel="stylesheet" href="estilos.css">
 </head>
 
 <body>
@@ -44,16 +44,16 @@
             <div class="col-md-12">
                 <div class="table-responsive">
                     <table class="table table-hover">
-                        <thead class="table-dark" style="text-align: center;">
+                        <thead class="table-dark">
                             <tr>
                                 <th>Titulo</th>
                                 <th>Precio</th>
                                 <th>Fecha Salida</th>
                                 <th>Editar</th>
-                                <!--<th>Borrar</th>-->
+                                <th>Borrar</th>
                             </tr>
                         </thead>
-                        <tbody id="tAdmin" style="text-align: center; font-size: 17px;">
+                        <tbody id="tAdmin">
                         </tbody>
                     </table>
                 </div>
@@ -123,24 +123,5 @@
         </div>
     </div>
 </body>
-
+<script src="js/administrareservas.js"></script>
 </html>
-<!--<div class="form-group">
-    <label for="titulo">Titulo</label>
-    <input id="titulo" class="form-control" type="text" placeholder="Titulo" required>
-</div>
-<div class="col-md-4">
-    <div class="form-group">
-        <label for="precio">Precio</label>
-        <input id="precio" class="form-control" type="text" placeholder="Precio" required>
-    </div>
-</div>
-<div class="col-md-4">
-    <div class="form-group">
-        <label for="cantidad">fecha salida</label>
-        <input id="fecha" class="form-control" type="text" placeholder="fecha salida" required>
-    </div>
-</div>
-<div class="col-md-4">
-    <button class="btn btn-primary" type="button" id="registrar">Registrar</button>
-</div>-->

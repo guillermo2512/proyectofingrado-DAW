@@ -45,7 +45,7 @@ class Login
     {
         $this->getconecBD();
         try {
-            $consulta = $this->conexion->prepare("SELECT Email, Nombre FROM usuarios WHERE Email = ? and Contrasena = ?;");
+            $consulta = $this->conexion->prepare("SELECT Email, Nombre, Usuario FROM usuarios WHERE Email = ? and Contrasena = ?;");
             $consulta->bindparam(1, $email);
             $consulta->bindparam(2, $pass);
 

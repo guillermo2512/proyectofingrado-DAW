@@ -28,7 +28,7 @@ class Comprar {
             $consulta->bindparam(6, $Codigo_postal);
 
             if (!$consulta->execute()) {
-                //print_r($consulta->errorInfo());
+                print_r($consulta->errorInfo());
                 $resp = 1;
                 $envio = json_encode($resp);
                 echo $envio;

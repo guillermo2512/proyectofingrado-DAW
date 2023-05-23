@@ -21,7 +21,6 @@ function productos() {
             total += totaliza;
             html += `
             <tr>
-                <td>` + element.id + `</td>
                 <td>` + element.titulo + `</td>
                 <td>` + element.precio + "€" + `</td>
                 <td>` + element.cantidad + `</td>
@@ -41,8 +40,10 @@ function cargarusuario() {
     }
 }
 
-function comprar() {
+function comprar() 
+{
     pagar();
+    //registrarReservas();
     var enviar = new Object();
     enviar.nombre = document.getElementById("nombre").value;
     enviar.apellidos = document.getElementById("apellidos").value;
@@ -80,6 +81,32 @@ function comprar() {
         }
     };
     xhttp.open("GET", "PHP/compras.php?enviar=" + myJSON);
+    xhttp.send();
+}
+
+function registrarReservas()
+{
+    var usuario;
+    if (localStorage.getItem("usuario") != null) 
+    {
+        usuario = JSON.parse(localStorage.getItem('usuario'));
+    }
+    var enviar = new Object();
+    enviar.usuario = usuario.nombreusu;
+    enviar.productos = localStorage.getItem("articulosrese");
+
+    document.getElementById("btn").disabled = true;
+
+    var myJSON = JSON.stringify(enviar);
+
+    const xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("btn").disabled = false;
+            localStorage.removeItem("articulosrese");
+        }
+    };
+    xhttp.open("GET", "PHP/reservasclientes.php?enviar=" + myJSON);
     xhttp.send();
 }
 

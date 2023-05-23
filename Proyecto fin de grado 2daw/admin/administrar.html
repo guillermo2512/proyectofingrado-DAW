@@ -11,6 +11,7 @@
         integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.16/dist/sweetalert2.all.min.js"></script>
+    <link rel="stylesheet" href="estilos.css">
 </head>
 
 <body>
@@ -46,11 +47,13 @@
             <div class="col-md-12">
                 <div class="table-responsive">
                     <table class="table table-hover">
-                        <thead class="table-dark" style="text-align: center;">
+                        <thead class="table-dark">
                             <tr>
                                 <th>Titulo</th>
                                 <th>Precio</th>
                                 <th>Cantidad</th>
+                                <th>Modificar</th>
+                                <th>Borrar</th>
                             </tr>
                         </thead>
                         <tbody id="tAdmin" style="text-align: center; font-size: 17px;">
@@ -89,6 +92,31 @@
                         </div>
                         <div class="col-md-4">
                             <button class="btn btn-primary" type="button" id="registrar">Registrar</button>
+                        </div>
+                    </div>
+                    <div class="modal-footer mb-2">
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="modificarproducto">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modificar reserva</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="form-group" id="modificardatos">
+
+                        </div>
+                        <div class="col-md-4">
+                            <button class="btn btn-primary" type="button" id="Modificar">Modificar</button>
                         </div>
                     </div>
                     <div class="modal-footer mb-2">

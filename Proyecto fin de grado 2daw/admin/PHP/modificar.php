@@ -15,14 +15,14 @@ class Comprar {
     }
 
 
-    public function modificar_reservas($titulo, $precio, $fecha, $Id)
+    public function modificar_productos($titulo, $precio, $cantidad, $Id)
     {
         $this->getconecBD();
         try {
-            $consulta = $this->conexion->prepare("UPDATE reservas SET Titulo = ?, Precio = ?, Fecha_Salida = ? WHERE Id = ?;");
+            $consulta = $this->conexion->prepare("UPDATE productos SET Titulo= ? ,Precio = ?, Cantidad= ? WHERE Id = ?;");
             $consulta->bindparam(1, $titulo);
 			$consulta->bindparam(2, $precio);
-            $consulta->bindparam(3, $fecha);
+            $consulta->bindparam(3, $cantidad);
             $consulta->bindparam(4, $Id);
 
             if (!$consulta->execute()) 
@@ -40,6 +40,6 @@ class Comprar {
 }
 
 $condb = new Comprar();
-$condb->modificar_reservas($enviar->titulo, $enviar->precio, $enviar->fecha, $enviar->id);
+$condb->modificar_productos($enviar->titulo, $enviar->precio, $enviar->cantidad, $enviar->id);
 
 ?>

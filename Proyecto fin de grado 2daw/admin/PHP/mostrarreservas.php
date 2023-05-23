@@ -28,7 +28,7 @@ class Singleton
 
     public function personas() 
     {
-        $sql = "SELECT * FROM reservas;";
+        $sql = "SELECT * FROM reservas";
         $consulta = $this->Idb->prepare($sql);
 
         if (!$consulta->execute()) {
