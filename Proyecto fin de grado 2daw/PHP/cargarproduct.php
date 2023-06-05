@@ -15,13 +15,12 @@ class Comprar {
     }
 
 
-    public function ReservasCl($idusuario, $Reservasclien)
+    public function cargarproductos($id)
     {
         $this->getconecBD();
         try {
-            $consulta = $this->conexion->prepare("INSERT INTO reservasclientes (IdUsuario, Articulos) VALUES (?, ?)");
-            $consulta->bindparam(1, $idusuario);
-            $consulta->bindparam(2, $Reservasclien);
+            $consulta = $this->conexion->prepare("SELECT carrito FROM clientes WHERE IdUsuario = ?;");
+            $consulta->bindparam(1, $id);
 
             if (!$consulta->execute()) {
                 print_r($consulta->errorInfo());
@@ -29,7 +28,19 @@ class Comprar {
                 $envio = json_encode($resp);
                 echo $envio;
             }
-
+            
+            if ($consulta->rowCount() > 0)
+            {
+                $almacen = $consulta->fetch();
+                $envios = json_encode($almacen);
+                echo $envios;
+            }
+            else {
+                $resp = 1;
+                $envio = json_encode($resp);
+                echo $envio;
+            }
+            return 1;
 
         } catch (PDOException $e) {
             die("Error: " . $e->getMessage());
@@ -38,9 +49,6 @@ class Comprar {
 }
 
 $condb = new Comprar();
-$condb -> ReservasCl($enviar->idusuario, $enviar->productos);
-
-//$condb -> compras("pepe", "gimenez", "perico@gmail.com", "Jedi Fallen Order", "calle del pez", "28050");
-
+$condb -> cargarproductos($enviar->id);
 
 ?>

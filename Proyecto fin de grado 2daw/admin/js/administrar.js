@@ -11,12 +11,19 @@ function cargareventos(ev) {
         {
             document.getElementById("nuevo").style.display = "none";
             document.getElementById("pagos").style.display = "none";
-            document.getElementById("reservas").style.display = "none";
+            document.getElementById("tbmodificar").style.display = "none";
+            document.getElementById("tborrar").style.display = "none";
+            mostar();
+        }
+        else{
+            mostaradmin();
         }
 
         document.getElementById("user").innerHTML = user.Nombre;
-        mostar();
         document.getElementById("registrar").addEventListener("click", crear);
+        document.getElementById("Modificar").addEventListener("click", modificar);
+        document.getElementById("borrar").addEventListener("click", borrar);
+        
         document.getElementById("exit").addEventListener("click", function(){
             localStorage.removeItem("user");
         });
@@ -37,8 +44,32 @@ function mostar()
                 htmlstr += '<td>' + element["Titulo"] + '</td>';
                 htmlstr += '<td>' + element["Precio"] + '</td>';
                 htmlstr += '<td>' + element["Cantidad"] + '</td>';
+                htmlstr += '</tr>';
+            });
+            document.getElementById('tAdmin').innerHTML = htmlstr; 
+        }
+    };
+
+    xhttp.open("GET", "php/mostrar.php");
+    xhttp.send();
+}
+
+function mostaradmin() 
+{
+    const xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) 
+        {
+            datos = JSON.parse(this.responseText);
+            var htmlstr = '';
+
+            datos.forEach(element => {
+                htmlstr += '<tr>';
+                htmlstr += '<td>' + element["Titulo"] + '</td>';
+                htmlstr += '<td>' + element["Precio"] + '</td>';
+                htmlstr += '<td>' + element["Cantidad"] + '</td>';
                 htmlstr += '<td><button onclick="cargarModificacion(' + element["Id"] + ')" type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#modificarproducto"><i class="fas fa-user-edit"></i></button></td>';
-                htmlstr += '<td><button onclick="cargarModificacion(' + element["Id"] + ')" type="button" class="btn btn-info"><i class="fas fa-user-edit"></i></button></td>';
+                htmlstr += '<td><button id="borrar" onclick="borrar(' + element["Id"] + ')" type="button" class="btn btn-danger"><i class="fas fa-user-edit"></i></button></td>';
                 htmlstr += '</tr>';
             });
             document.getElementById('tAdmin').innerHTML = htmlstr; 
@@ -133,78 +164,50 @@ function modificar() {
     xhttp.send();
 }
 
-function cargarModificacion(Id) {
-    const reserva = datos.filter(item => parseInt(item.Id) === Id);
-    var htmlstr = '';
-
-    reserva.forEach(element => {
-        htmlstr += '<label for="idID">ID</label>';
-        htmlstr += '<input id="Id" class="form-control" type="text" placeholder="IdArticulo" value="' + Id + '" disabled>' + '<br>';
-        htmlstr += '<label for="idID">Titulo</label>'
-        htmlstr += '<input type="text" class="form-control" id="Titulo" placeholder="Titulo" value="' + element["Titulo"] + '">' + '<br>';
-        htmlstr += '<label for="idCodigo">Precio</label>';
-        htmlstr += '<input type="text" class="form-control" id="Precio" placeholder="Precio" value="' + element["Precio"] + '">' + '<br>';
-        htmlstr += '<label for="idCodigo">Cantidad</label>';
-        htmlstr += '<input type="text" class="form-control" id="cantidad" placeholder="fecha_salida" value="' + element["Cantidad"] + '">';
-    });
-
-    document.getElementById('modificardatos').innerHTML = htmlstr;
-
-}
-
-function borrar() {
-    var config = true;
+function borrar(id) 
+{
     Swal.fire({
-        title: 'Are you sure?',
-        text: "You won't be able to revert this!",
+        title: 'Estas seguro de borrar este producto?',
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
-        confirmButtonText: 'Yes, delete it!'
+        confirmButtonText: 'Eliminar'
       }).then((result) => {
         if (result.isConfirmed) 
         {
-            
-          Swal.fire(
-            'Deleted!',
-            'Your file has been deleted.',
-            'success'
-          )
+            var enviar = new Object();
+            enviar.id = id;
+        
+            document.getElementById("borrar").disabled = true;
+        
+            var myJSON = JSON.stringify(enviar);
+        
+            const xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("borrar").disabled = false;
+                    var respuesta = this.responseText;
+                    if (respuesta == 1) {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Oops...',
+                            text: 'El producto no se puede borrar'
+                        });
+                    } else {
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Borrar',
+                            text: 'El Producto borrado'
+                        });
+                    }
+                }
+            };
+        
+            //xhttp.open("GET", "php/borrar.php?enviar=" + myJSON);
+            //xhttp.send();
         }
-
       });
-
-    var enviar = new Object();
-    enviar.id = document.getElementById("Id").value;
-
-    document.getElementById("Modificar").disabled = true;
-
-    var myJSON = JSON.stringify(enviar);
-
-    const xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            document.getElementById("Modificar").disabled = false;
-            var respuesta = this.responseText;
-            if (respuesta == 1) {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Oops...',
-                    text: 'El producto no se puede borrar'
-                });
-            } else {
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Borrar',
-                    text: 'El Producto borrado'
-                });
-            }
-        }
-    };
-
-    xhttp.open("GET", "php/modificar.php?enviar=" + myJSON);
-    xhttp.send();
 }
 
 

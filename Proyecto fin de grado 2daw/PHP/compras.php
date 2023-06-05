@@ -15,17 +15,18 @@ class Comprar {
     }
 
 
-    public function compras($Nombre, $Apellidos, $Email, $carrito, $Direccion, $Codigo_postal)
+    public function compras($idusuario ,$Nombre, $Apellidos, $Email, $carrito, $Direccion, $Codigo_postal)
     {
         $this->getconecBD();
         try {
-            $consulta = $this->conexion->prepare("INSERT INTO clientes (Nombre, Apellidos, Email, carrito, Direccion, Codigo_postal) VALUES (?,?,?,?,?,?)");
-            $consulta->bindparam(1, $Nombre);
-            $consulta->bindparam(2, $Apellidos);
-            $consulta->bindparam(3, $Email);
-            $consulta->bindparam(4, $carrito);
-            $consulta->bindparam(5, $Direccion);
-            $consulta->bindparam(6, $Codigo_postal);
+            $consulta = $this->conexion->prepare("INSERT INTO clientes (IdUsuario, Nombre, Apellidos, Email, carrito, Direccion, Codigo_postal) VALUES (?,?,?,?,?,?,?)");
+            $consulta->bindparam(1, $idusuario);
+            $consulta->bindparam(2, $Nombre);
+            $consulta->bindparam(3, $Apellidos);
+            $consulta->bindparam(4, $Email);
+            $consulta->bindparam(5, $carrito);
+            $consulta->bindparam(6, $Direccion);
+            $consulta->bindparam(7, $Codigo_postal);
 
             if (!$consulta->execute()) {
                 print_r($consulta->errorInfo());
@@ -41,9 +42,9 @@ class Comprar {
 }
 
 $condb = new Comprar();
-$condb -> compras($enviar->nombre, $enviar->apellidos, $enviar->email, $enviar->productos, $enviar->direccion, $enviar->codigo_postal);
+$condb -> compras($enviar->idusuario,$enviar->nombre, $enviar->apellidos, $enviar->email, $enviar->productos, $enviar->direccion, $enviar->codigo_postal);
 
-//$condb -> compras("pepe", "gimenez", "perico@gmail.com", "Jedi Fallen Order", "calle del pez", "28050");
+//$condb -> compras("guillermo", "gimenez", "guillermo@gmail.com", "jedi survivor", "calle del almendra", "28011");
 
 
 ?>

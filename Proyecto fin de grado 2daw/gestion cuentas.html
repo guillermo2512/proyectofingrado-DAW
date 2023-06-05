@@ -13,83 +13,117 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.16/dist/sweetalert2.all.min.js"></script>
     <style>
         .jumbotron {
-            background: rgb(191, 240, 221);
-        }
-
-        .custom-control {
-            margin-left: 20px;
-        }
-
-        nav {
-            margin: 14px;
+            height: 8em;
         }
 
         .nav-item {
             margin-left: 20px;
         }
 
-        .navbar-dark{
-            background: #34ad0f; 
-            height: 40px; 
-            border-radius: 7px 
+        .navbar-dark {
+            background: #34ad0f;
+            height: 40px;
+        }
+
+        h3 {
+            padding-top: 1em;
+        }  
+
+        .stat{
+            margin-left: 4em;
         }
     </style>
 </head>
 
 <body>
-    <header>
+    <header class="bg-success">
         <nav class="navbar-expand-sm navbar-dark">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" style="margin-left: 20px;" href=""><i class="fas fa-home"></i>Home</a>
+                    <a class="nav-link" href="home.html"><i class="fas fa-home"></i>Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href=""><i class="fa fa-info-circle"></i>La saga</a>
+                    <a class="nav-link" href="La saga.html"><i class="fa fa-info-circle"></i>La saga</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><span id="user">2</span></a>
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><span id="user">frigolto</span></a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Mis Pedidos</a></li>
-                        <li><a class="dropdown-item" href="#">Comentarios</a></li>
-                        <li><a class="dropdown-item" href="#">Configuracion</a></li>
+                        <li><a class="dropdown-item" href="gestion cuentas.html">Panel de control</a></li>
+                        <li><a class="dropdown-item" href="gepedidos.html">Mis Pedidos</a></li>
+                        <li><a class="dropdown-item" href="gecomentarios.html">Comentarios</a></li>
+                        <li><a class="dropdown-item" href="geconfiguracion.html">Configuracion</a></li>
                         <li><a class="dropdown-item" href="home.html" id="exit">Salir</a></li>
                     </ul>
                 </li>
             </ul>
         </nav>
-    </header>
-
-    <div class="main-panel">
-        <div class="user-links">
+        <div class="jumbotron text-center bg-success text-white">
             <h3><span id="user">frigolto</span></h3>
             <h4 id="user-date">Miembro desde:</h4>
         </div>
-    </div>
+    </header>
 
-    <nav class="navbar-expand-sm navbar-dark" >
+    <nav class="navbar-expand-sm navbar-dark auxiliar">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="">Mis Pedidos</a>
+                <a class="nav-link" href="gestion cuentas.html">Panel de control</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="">Comentarios</a>
+                <a class="nav-link" href="gepedidos.html">Mis Pedidos</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="">Configuracion</a>
+                <a class="nav-link" href="gecomentarios.html">Comentarios</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="geconfiguracion.html">Configuracion</a>
             </li>
         </ul>
     </nav>
 
     <div class="container-fluid">
         <div class="row">
-            <div class="col-6">
-                <!--cart para los productos comprados
+            <div class="col-12 d-inline-flex p-4">
+                <div class="card" style="width:400px; margin-left: 8em;">
+                    <h1 class="text-center">Vista general</h1>
+                    <div class="card-body d-inline-flex">
+                        <div class="stat">
+                            <div class="number" id="comentarios">5</div>
+                            <div class="text">
+                                Comentarios
+                            </div>
+                        </div>
+                        <div class="stat">
+                            <div class="number" id="productos">10</div>
+                            <div class="text">
+                                Juegos
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card" style="width:600px; margin-left: 28em;">
+                    <div class="card-header">Reservas</div>
+                    <div class="card-body d-inline-flex">
+                        <div class="stat">
+                            <div class="number" id="comentarios">2</div>
+                            <div class="text">
+                                Reservas
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--cart para los productos comprados
                     poner aqui el numero de productos comprados, cuantas reseñas has puesto y otro con los productos reservados
                 mirar lo del admin en aws-->
-            </div>
         </div>
     </div>
 </body>
-<script src="js/p.js"></script>
+<footer>
+    <div class="jumbotron text-center mh-100" style="background: rgb(159, 247, 242); margin-top: 22%;">
+        <p>Gracias por la visita</p>
+        <p>Creado por Guillermo Lopez<i class="fas fa-copyright"></i></p>
+    </div>
+</footer>
+<script src="js/gestin.js"></script>
 
 </html>

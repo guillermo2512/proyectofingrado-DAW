@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
         integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="estilos.css">
     <style>
         .jumbotron {
             background: rgb(191, 240, 221);
@@ -16,10 +17,6 @@
 
         .custom-control {
             margin-left: 20px;
-        }
-
-        form {
-            margin: 20px;
         }
 
         .container {
@@ -35,46 +32,61 @@
 
 <body>
     <header>
-        <form action="">
-            <nav class="navbar-expand-sm navbar-dark"
-                style="background: #34ad0f;height: 60px;border-radius: 7px; font-size:  32px;">
-                <ul class="navbar-nav">
-                    <div class="row">
-                        <li class="nav-item">
-                            <a class="nav-link" href="La saga.html" style=" color: black;"><i
-                                    class="fa fa-info-circle"></i>La saga</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="login.html"
-                                style=" display: flex; margin-left: 48em; color: black;">
-                                <i class="fa fa-user-circle"></i>Login</a>
-                        </li>
-                    </div>
-                </ul>
-            </nav>
-        </form>
+        <nav class="navbar-expand-sm navbar-dark"
+            style="background: #34ad0f;height: 60px; font-size:  32px;">
+            <ul class="navbar-nav">
+                <div class="row">
+                    <li class="nav-item">
+                        <a class="nav-link" href="La saga.html" style=" color: black;"><i
+                                class="fa fa-info-circle"></i>La saga</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html" style=" display: flex; margin-left: 48em; color: black;">
+                            <i class="fa fa-user-circle"></i>Login</a>
+                    </li>
+                </div>
+            </ul>
+        </nav>
 
         <div class="jumbotron text-center">
             <h1>Bienvenido a la tienda/wiki</h1>
         </div>
     </header>
     <div class="container-fluid">
-        <div id="horizontal">
-           <img class="img-f1luid" src="img/star-wars-jedi-fallen-order.jpg"
-                    style="max-width: 16%; margin-left: 26em; margin-top: 0px;"/>
-            <a href="videojuegos.html" >Videojuegos</a>
-            
-            <img class="img-fluid" src="img/star war rebels.jpg"
-                    style="max-width:40%; margin-left: 20px; margin-top: 0px;"/>
-            <a href="Series.html">Series</a>
+        <div class="row">
+            <div class="col-6">
+                <img src="img/star-wars-jedi-fallen-order.jpg" class="rounded" alt="Cinque Terre" width="255"
+                    height="362" style="margin-left: 30em; ">
+                <div>
+                    <a class="btn btn-info inicio" style="margin-left: 30em; margin-top: 16px; width: 28%;" href="videojuegos.html"
+                        role="button">Videojuegos</a>
+                </div>
+            </div>
+            <div class="col-6">
+                <img src="img/jedisurvival.jpg" class="rounded" alt="Cinque Terre" width="479" height="269"
+                    style="margin-left: 20px; margin-top: 16px;">
+                <div>
+                    <a class="btn btn-info inicio" style="margin-left: 20px; margin-top: 16px; width: 52%;" href="reservas.html" role="button">Reservas</a>
+                </div>
+            </div>
         </div>
-        <div id="vertical">
-            <img class="img-fluid" src="img/star war episodio 2.jpg"
-                    style="max-width: 16%; margin-left: 32em; margin-top: 16px;"/>
-            <a href="peliculas.html">Peliculas</a>
-            <img class="img-fluid" src="img/jedisurvival.jpg"
-                    style="max-width: 30%; margin-left: 20px; margin-top: 16px;"/>
-            <a href="reservas.html">Reservas</a>
+
+        <div class="row">
+            <div class="col-6">
+                <img src="img/star war episodio 2.jpg" class="rounded" alt="Cinque Terre" width="255" height="297"
+                    style="margin-left: 30em; margin-top: 16px;">
+                <div>
+                    <a class="btn btn-info inicio" style="margin-left: 30em; margin-top: 16px; width: 28%;" href="peliculas.html" role="button">Peliculas</a>
+                </div>
+            </div>
+            <div class="col-6">
+                <img src="img/star war rebels.jpg" class="rounded" alt="Cinque Terre" width="639" height="359"
+                    style="margin-left: 20px;">
+                <div>
+                    <a class="btn btn-info inicio" style="margin-left: 20px; margin-top: 16px; width: 70%;"  href="Series.html" role="button">Series</a>
+                </div>
+                
+            </div>
         </div>
     </div>
 </body>

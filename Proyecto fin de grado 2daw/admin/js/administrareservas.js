@@ -6,17 +6,52 @@ function cargareventos(ev) {
         var user = JSON.parse(localStorage.getItem("user"));
 
         document.getElementById("user").innerHTML = user.Nombre;
-        mostar();
 
-        document.getElementById("registrar").addEventListener("click", crear);
-        document.getElementById("Modificar").addEventListener("click", modificar);
+        if(user.usuario != "admin")
+        {
+            document.getElementById("nuevo").style.display = "none";
+            document.getElementById("tbmodificar").style.display = "none";
+            document.getElementById("tborrar").style.display = "none";
+            mostar();
+        }
+        else{
+            mostaradmin();
+            document.getElementById("registrar").addEventListener("click", crear);
+            document.getElementById("Modificar").addEventListener("click", modificar);
+            document.getElementById("borrar").addEventListener("click", borrar);
+        }
+
         document.getElementById("exit").addEventListener("click", function () {
             localStorage.removeItem("user");
         });
     }
 }
 
-function mostar() {
+function mostar() 
+{
+    const xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) 
+        {
+            datos = JSON.parse(this.responseText);
+            var htmlstr = '';
+
+            datos.forEach(element => {
+                htmlstr += '<tr>';
+                htmlstr += '<td>' + element["Titulo"] + '</td>';
+                htmlstr += '<td>' + element["Precio"] + '</td>';
+                htmlstr += '<td>' + element["Fecha_Salida"] + '</td>';
+                htmlstr += '</tr>';
+            });
+            document.getElementById('tAdmin').innerHTML = htmlstr; 
+        }
+    };
+
+    xhttp.open("GET", "php/mostrarreservas.php");
+    xhttp.send();
+}
+
+function mostaradmin() {
     const xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
@@ -29,6 +64,7 @@ function mostar() {
                 htmlstr += '<td>' + element["Precio"] + '</td>';
                 htmlstr += '<td>' + element["Fecha_Salida"] + '</td>';
                 htmlstr += '<td><button onclick="cargarModificacion(' + element["Id"] + ')" type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#modificarreserva"><i class="fas fa-user-edit"></i></button></td>';
+                htmlstr += '<td><button id="borrar" onclick="borrar(' + element["Id"] + ')" type="button" class="btn btn-danger"><i class="fas fa-user-edit"></i></button></td>';
                 htmlstr += '</tr>';
             });
             document.getElementById('tAdmin').innerHTML = htmlstr;
@@ -128,6 +164,53 @@ function modificar() {
     xhttp.open("GET", "php/modificareservas.php?enviar=" + myJSON);
     xhttp.send();
 }
+
+function borrar(id) 
+{
+    Swal.fire({
+        title: 'Estas seguro de borrar esta reserva?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Eliminar'
+      }).then((result) => {
+        if (result.isConfirmed) 
+        {
+            var enviar = new Object();
+            enviar.id = id;
+        
+            document.getElementById("borrar").disabled = true;
+        
+            var myJSON = JSON.stringify(enviar);
+        
+            const xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("borrar").disabled = false;
+                    var respuesta = this.responseText;
+                    if (respuesta == 1) {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Oops...',
+                            text: 'El producto no se puede borrar'
+                        });
+                    } else {
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Borrar',
+                            text: 'El Producto borrado'
+                        });
+                    }
+                }
+            };
+        
+            xhttp.open("GET", "php/borrarReservas.php?enviar=" + myJSON);
+            xhttp.send();
+        }
+      });
+}
+
 
 
 
