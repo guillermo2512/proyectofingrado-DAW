@@ -15,36 +15,29 @@
             background: rgb(191, 240, 221);
         }
 
-        .custom-control {
-            margin-left: 20px;
+        .nav-item {
+            margin-left: 0px;
         }
 
         .container {
             border: 1px solid rgb(119, 165, 172);
             margin-top: 30px;
         }
-
-        .nav-item {
-            margin-left: 20px;
-        }
     </style>
 </head>
 
 <body>
     <header>
-        <nav class="navbar-expand-sm navbar-dark"
-            style="background: #34ad0f;height: 60px; font-size:  32px;">
+        <nav class="navbar-expand-sm navbar-dark" style="height: 60px; font-size:  32px;">
             <ul class="navbar-nav">
-                <div class="row">
-                    <li class="nav-item">
-                        <a class="nav-link" href="La saga.html" style=" color: black;"><i
-                                class="fa fa-info-circle"></i>La saga</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="login.html" style=" display: flex; margin-left: 48em; color: black;">
-                            <i class="fa fa-user-circle"></i>Login</a>
-                    </li>
-                </div>
+                <li class="nav-item">
+                    <a class="nav-link" href="La saga.html" style=" color: black;"><i class="fa fa-info-circle"></i>La
+                        saga</a>
+                </li>
+                <li class="nav-item" style="margin-left: 85%;">
+                    <a data-bs-toggle="offcanvas" data-bs-target="#login" style=" display: flex; color: black;">
+                        <i class="fa fa-user-circle"></i>Login</a>
+                </li>
             </ul>
         </nav>
 
@@ -52,21 +45,33 @@
             <h1>Bienvenido a la tienda/wiki</h1>
         </div>
     </header>
+
+    <!--<div class="offcanvas offcanvas-end" id="login">
+        <div class="offcanvas-header">
+          <h1 class="offcanvas-title"></h1>
+          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+
+        </div>
+      </div>-->
+
     <div class="container-fluid">
         <div class="row">
             <div class="col-6">
                 <img src="img/star-wars-jedi-fallen-order.jpg" class="rounded" alt="Cinque Terre" width="255"
                     height="362" style="margin-left: 30em; ">
                 <div>
-                    <a class="btn btn-info inicio" style="margin-left: 30em; margin-top: 16px; width: 28%;" href="videojuegos.html"
-                        role="button">Videojuegos</a>
+                    <a class="btn btn-info inicio" style="margin-left: 30em; margin-top: 16px; width: 28%;"
+                        href="videojuegos.html" role="button">Videojuegos</a>
                 </div>
             </div>
             <div class="col-6">
                 <img src="img/jedisurvival.jpg" class="rounded" alt="Cinque Terre" width="479" height="269"
                     style="margin-left: 20px; margin-top: 16px;">
                 <div>
-                    <a class="btn btn-info inicio" style="margin-left: 20px; margin-top: 16px; width: 52%;" href="reservas.html" role="button">Reservas</a>
+                    <a class="btn btn-info inicio" style="margin-left: 20px; margin-top: 16px; width: 52%;"
+                        href="reservas.html" role="button">Reservas</a>
                 </div>
             </div>
         </div>
@@ -76,16 +81,18 @@
                 <img src="img/star war episodio 2.jpg" class="rounded" alt="Cinque Terre" width="255" height="297"
                     style="margin-left: 30em; margin-top: 16px;">
                 <div>
-                    <a class="btn btn-info inicio" style="margin-left: 30em; margin-top: 16px; width: 28%;" href="peliculas.html" role="button">Peliculas</a>
+                    <a class="btn btn-info inicio" style="margin-left: 30em; margin-top: 16px; width: 28%;"
+                        href="peliculas.html" role="button">Peliculas</a>
                 </div>
             </div>
             <div class="col-6">
                 <img src="img/star war rebels.jpg" class="rounded" alt="Cinque Terre" width="639" height="359"
                     style="margin-left: 20px;">
                 <div>
-                    <a class="btn btn-info inicio" style="margin-left: 20px; margin-top: 16px; width: 70%;"  href="Series.html" role="button">Series</a>
+                    <a class="btn btn-info inicio" style="margin-left: 20px; margin-top: 16px; width: 70%;"
+                        href="Series.html" role="button">Series</a>
                 </div>
-                
+
             </div>
         </div>
     </div>

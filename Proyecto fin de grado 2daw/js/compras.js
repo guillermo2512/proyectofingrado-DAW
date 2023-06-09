@@ -43,8 +43,12 @@ function cargarusuario() {
 function comprar() 
 {
     pagar();
-    //registrarReservas();
+    if (localStorage.getItem("articulosrese") != null) 
+    {
+        registrarReservas(); 
+    }
     var enviar = new Object();
+    enviar.idusuario = usuario.id;
     enviar.nombre = document.getElementById("nombre").value;
     enviar.apellidos = document.getElementById("apellidos").value;
     enviar.email = document.getElementById("mail1").value;
@@ -86,24 +90,32 @@ function comprar()
 
 function registrarReservas()
 {
-    var usuario;
-    if (localStorage.getItem("usuario") != null) 
-    {
-        usuario = JSON.parse(localStorage.getItem('usuario'));
-    }
     var enviar = new Object();
-    enviar.usuario = usuario.nombreusu;
+    enviar.idusuario = usuario.id;
     enviar.productos = localStorage.getItem("articulosrese");
-
-    document.getElementById("btn").disabled = true;
 
     var myJSON = JSON.stringify(enviar);
 
     const xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            document.getElementById("btn").disabled = false;
-            localStorage.removeItem("articulosrese");
+            var respuesta = this.responseText;
+            if (respuesta == 1) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'La reserva ha salido mal'
+                });
+            }else
+            {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Reserva',
+                    text: 'La reserva ha sido registrarda correctamente'
+                });
+                setInterval(function(){location.reload()},4000); 
+                localStorage.removeItem("articulosrese");
+            } 
         }
     };
     xhttp.open("GET", "PHP/reservasclientes.php?enviar=" + myJSON);

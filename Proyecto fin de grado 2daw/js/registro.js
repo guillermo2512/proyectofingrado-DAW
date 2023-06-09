@@ -41,7 +41,7 @@ function validarNombre()
 
 function registro() {
     var enviar1 = new Object();
-    enviar1.email = document.getElementById("email").value;
+    enviar1.usuario = document.getElementById("usuario").value;
 
     document.getElementById("boton").disabled = true;
 
@@ -65,6 +65,7 @@ function registro() {
                 enviar2.email = document.getElementById("email").value;
                 enviar2.pass = document.getElementById("pwd").value;
                 enviar2.nombre = document.getElementById("nombre").value;
+                enviar2.usuario = document.getElementById("usuario").value;
 
                 document.getElementById("boton").disabled = true;
 
@@ -91,7 +92,7 @@ function registro() {
                                 title: 'Registro',
                                 text: 'El registro se ha completo satisfactoriamente'
                             });
-                            setInterval(function(){window.location = "http://localhost/Proyecto%20fin%20de%20grado%20definitivo/login.html"}); 
+                            setInterval(function(){window.location = "login.html"}); 
                         }
                     }
                 }

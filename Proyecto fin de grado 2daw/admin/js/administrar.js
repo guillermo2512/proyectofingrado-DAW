@@ -5,7 +5,7 @@ function cargareventos(ev) {
 
         if (localStorage.getItem("user") == null) 
         {
-            window.location = "http://localhost/Proyecto%20fin%20de%20grado%20definitivo/admin/index.html";
+            window.location = "admin/index.html";
 
         }else if(user.usuario != "admin")
         {

@@ -11,33 +11,25 @@
         integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.16/dist/sweetalert2.all.min.js"></script>
-    <!--<script src="js/mostrar.js"></script>-->
+    <link rel="stylesheet" href="estilos.css">
     <style>
-        .jumbotron {
-            background: rgb(191, 240, 221);
+        .container-fluid {
+            margin-top: 14px;
         }
 
-        .custom-control {
-            margin-left: 20px;
+        .comen {
+            margin-left: 60%;
         }
 
-        nav {
-            margin: 14px;
-        }
-
-        .nav-item {
-            margin-left: 20px;
-        }
-
-        .card-text {
-            padding-top: 16em;
+        .insertan {
+            margin-left: 50%;
         }
     </style>
 </head>
 
 <body>
     <header>
-        <nav class="navbar-expand-sm navbar-dark" style="background: #34ad0f; height: 40px; border-radius: 7px ">
+        <nav class="navbar-expand-sm navbar-dark">
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link" style="margin-left: 20px;" href="home.html"><i class="fas fa-home"></i>Home</a>
@@ -104,8 +96,7 @@
                         style="height: 91%;">
                     <div class="card-img-overlay">
                         <button type="button" class="btn btn-info" data-bs-toggle="modal"
-                            data-bs-target="#descripcion-fallenorder" style="display: flex;">Descripcion</button>
-
+                            data-bs-target="#descripcion-fallenorder">Descripcion</button>
                         <div class="modal" id="descripcion-fallenorder">
                             <div class="modal-dialog ">
                                 <div class="modal-content">
@@ -131,7 +122,26 @@
                             </div>
                         </div>
 
-                        <h4 class="card-text text-danger d-flex" style=" padding-top: 0em;"></h4>
+                        <button type="button" id="idprod" class="btn btn-info comen" data-bs-toggle="modal"
+                            data-bs-target="#comentarios" data-id="1">Comentarios</button>
+                        <div class="modal" id="comentarios">
+                            <div class="modal-dialog ">
+                                <div class="modal-content">
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                    <h3>Introduce tu comentario de este producto</h3>
+                                    <div class="modal-body">
+                                        <textarea id="textcoment" cols="62" rows="10"></textarea>
+                                        <button type="button" name="comentario" id="insertar"
+                                            class="btn btn-success insertan" data-id="1">Insertar
+                                            cometario</button>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-danger"
+                                            data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="card-footer">
                         <h3>Precio: <p id="precio" style="display: inline-flex;">50€</p>
@@ -140,7 +150,7 @@
                 </div>
                 <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#fallen-order"
                     style="display: flex; margin-top: 20px; width: 49%; float: left;">Info</button>
-                <button type="button" id="1" class="btn btn-info boton" data-id="1" data-precio="50"
+                <button type="button" class="btn btn-info boton" data-id="1" data-precio="50"
                     data-titulo="Jedi Fallen Order" data-estado="activo"
                     style="display: flex; margin-top: 20px; width: 49%; float: left; margin-left: 0.4em;">Añadir</button>
             </div>
@@ -291,8 +301,7 @@
                     <img class="card-img-top" src="img/scuadrons.jpg" alt="Card image" style="height: 91%;">
                     <div class="card-img-overlay">
                         <button type="button" class="btn btn-info" data-bs-toggle="modal"
-                            data-bs-target="#descripcion-scuadrons" style="display: flex;">Descripcion</button>
-
+                            data-bs-target="#descripcion-scuadrons">Descripcion</button>
                         <div class="modal" id="descripcion-scuadrons">
                             <div class="modal-dialog ">
                                 <div class="modal-content">
@@ -341,7 +350,26 @@
                             </div>
                         </div>
 
-                        <h4 class="card-text text-danger d-flex" style=" padding-top: 0em;"></h4>
+                        <button type="button" id="idprod" class="btn btn-info comen" data-bs-toggle="modal"
+                            data-bs-target="#comentarios" data-id="2">Comentarios</button>
+                        <div class="modal" id="comentarios">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                    <h3>Introduce tu comentario de este producto</h3>
+                                    <div class="modal-body">
+                                        <textarea id="textcoment" cols="62" rows="10" data-id="2"></textarea>
+                                        <button type="button" id="insertar" name="comentario"
+                                            class="btn btn-success insertan2" data-id="2">Insertar
+                                            cometario</button>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-danger"
+                                            data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="card-footer">
                         <h3>Precio: <p id="precio" style="display: inline-flex;">35€</p>
@@ -497,10 +525,53 @@
                     <img class="card-img-top" src="img/star wars battlefront 2.jpg" alt="Card image"
                         style="height: 91%;">
                     <div class="card-img-overlay">
-                        <h4 class="card-text text-danger">Para PC es un juego de acción y disparos en el que el
-                            jugador debe abrirse paso a través del vasto universo de Star Wars con el apoyo de amigables
-                            alienígenas y Jedis, además de perseguir y combatir a los Siths, al Imperio y a otros
-                            enemigos.</h4>
+                        <button type="button" class="btn btn-info" data-bs-toggle="modal"
+                            data-bs-target="#descripcion-battlefront2">Descripcion</button>
+                        <div class="modal" id="descripcion-battlefront2">
+                            <div class="modal-dialog ">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <h3>Para PC es un juego de acción y disparos en el que el
+                                            jugador debe abrirse paso a través del vasto universo de Star Wars con el
+                                            apoyo de amigables
+                                            alienígenas y Jedis, además de perseguir y combatir a los Siths, al Imperio
+                                            y a otros
+                                            enemigos.</h3>
+                                    </div>
+
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-danger"
+                                            data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="button" id="idprod" class="btn btn-info comen" data-bs-toggle="modal"
+                            data-bs-target="#comentarios" data-id="3">Comentarios</button>
+                        <div class="modal" id="comentarios">
+                            <div class="modal-dialog ">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                        <h3>Introduce tu comentario de este producto</h3>
+                                    </div>
+                                    <div class="modal-body">
+                                        <textarea id="textcoment" cols="62" rows="10"></textarea>
+                                        <button type="button" id="insertar" class="btn btn-success insertan"
+                                            data-id="3">Insertar
+                                            cometario</button>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-danger"
+                                            data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="card-footer">
                         <h3>Precio: <p id="precio" style="display: inline-flex;">45€</p>
@@ -724,9 +795,7 @@
                         style="height: 91%;">
                     <div class="card-img-overlay">
                         <button type="button" class="btn btn-info" data-bs-toggle="modal"
-                            data-bs-target="#descripcion-battlefront"
-                            style="display: flex;">Descripcion</button>
-
+                            data-bs-target="#descripcion-battlefront">Descripcion</button>
                         <div class="modal" id="descripcion-battlefront">
                             <div class="modal-dialog ">
                                 <div class="modal-content">
@@ -736,9 +805,32 @@
                                     <div class="modal-body">
                                         <h3>Para PC es un juego de acción y aventuras basado en la popular y
                                             duradera franquicia de películas del mismo nombre.
-                                            Cronológicamente, el juego se sitúa justo después de los eventos del Episodio III
-                                            (La Venganza de los Sith) y cuenta con un conocido elenco de héroes, villanos, droides y
+                                            Cronológicamente, el juego se sitúa justo después de los eventos del
+                                            Episodio III
+                                            (La Venganza de los Sith) y cuenta con un conocido elenco de héroes,
+                                            villanos, droides y
                                             Jedis, todos luchando por el éxito de sus misiones.</h3>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-danger"
+                                            data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="button" id="idprod" class="btn btn-info comen" data-bs-toggle="modal"
+                            data-bs-target="#comentarios" data-id="4">Comentarios</button>
+                        <div class="modal" id="comentarios">
+                            <div class="modal-dialog ">
+                                <div class="modal-content">
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                    <h3>Introduce tu comentario de este producto</h3>
+                                    <div class="modal-body">
+                                        <textarea id="textcoment" cols="62" rows="10"></textarea>
+                                        <button type="button" id="insertar" class="btn btn-success insertan"
+                                            data-id="4">Insertar
+                                            cometario</button>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-danger"
@@ -859,8 +951,7 @@
                     <div class="card-img-overlay">
                         <div class="card-img-overlay">
                             <button type="button" class="btn btn-info" data-bs-toggle="modal"
-                                data-bs-target="#descripcion-elite"
-                                style="display: flex; margin-top: 3.2em;">Descripcion</button>
+                                data-bs-target="#descripcion-elite">Descripcion</button>
 
                             <div class="modal" id="descripcion-elite">
                                 <div class="modal-dialog ">
@@ -880,6 +971,27 @@
                                                 los confines del universo del modo que deseemos.</h3>
                                         </div>
 
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-danger"
+                                                data-bs-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button type="button" id="idprod" class="btn btn-info comen" data-bs-toggle="modal"
+                                data-bs-target="#comentarios" data-id="5">Comentarios</button>
+                            <div class="modal" id="comentarios">
+                                <div class="modal-dialog ">
+                                    <div class="modal-content">
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                        <h3>Introduce tu comentario de este producto</h3>
+                                        <div class="modal-body">
+                                            <textarea id="textcoment" cols="62" rows="10"></textarea>
+                                            <button type="button" id="insertar" class="btn btn-success insertan"
+                                                data-id="5">Insertar
+                                                cometario</button>
+                                        </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-danger"
                                                 data-bs-dismiss="modal">Close</button>
@@ -1089,8 +1201,7 @@
                     <img class="card-img-top" src="img/No Man's Sky 2.jpg" alt="Card image" style="height: 100%;">
                     <div class="card-img-overlay">
                         <button type="button" class="btn btn-info" data-bs-toggle="modal"
-                            data-bs-target="#descripcion-Sky" style="display: flex;">Descripcion</button>
-
+                            data-bs-target="#descripcion-Sky">Descripcion</button>
                         <div class="modal" id="descripcion-Sky">
                             <div class="modal-dialog ">
                                 <div class="modal-content">
@@ -1135,6 +1246,26 @@
                             </div>
                         </div>
 
+                        <button type="button" id="idprod" class="btn btn-info comen" data-bs-toggle="modal"
+                            data-bs-target="#comentarios" data-id="6">Comentarios</button>
+                        <div class="modal" id="comentarios">
+                            <div class="modal-dialog ">
+                                <div class="modal-content">
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                    <h3>Introduce tu comentario de este producto</h3>
+                                    <div class="modal-body">
+                                        <textarea id="textcoment" cols="62" rows="10"></textarea>
+                                        <button type="button" id="insertar" class="btn btn-success insertan"
+                                            data-id="6">Insertar
+                                            cometario</button>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-danger"
+                                            data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="card-footer">
                         <h3>Precio: <p id="precio" style="display: inline-flex;">58€</p>
@@ -1353,5 +1484,6 @@
 </footer>
 
 <script src="js/carrito.js"></script>
+<script src="js/comentariostienda.js"></script>
 
 </html>
