@@ -14,17 +14,19 @@ function cargareventos(ev) {
 function mostar() {
     const xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) 
-        {
+        if (this.readyState == 4 && this.status == 200) {
             var datos = JSON.parse(this.responseText);
 
             var htmlstr = '';
             datos.forEach(element => {
-                htmlstr += '<tr>';
-                htmlstr += '<td>' + element["Nombre"] + '</td>';
-                htmlstr += '<td>' + element["Email"] + '</td>';
-                htmlstr += '<td>' + element["carrito"] + '</td>';
-                htmlstr += '</tr>';
+                var articulo = JSON.parse(element["Articulos"]);
+                articulo.forEach(element2 => {
+                    htmlstr += `
+                <tr>
+                    <td>` + element2.titulo + `</td>
+                    <td>` + element2.cantidad + `</td>
+                </tr>`
+                })
             });
 
             document.getElementById('tAdmin').innerHTML = htmlstr;
@@ -33,11 +35,6 @@ function mostar() {
 
     xhttp.open("GET", "php/reservas.php");
     xhttp.send();
-}
-
-function crear()
-{
-
 }
 
 

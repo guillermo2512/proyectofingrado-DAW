@@ -5,7 +5,7 @@ function cargareventos(ev) {
 
         if (localStorage.getItem("user") == null) 
         {
-            window.location = "admin/index.html";
+            window.location = "index.html";
 
         }else if(user.usuario != "admin")
         {
@@ -121,7 +121,7 @@ function cargarModificacion(Id) {
         htmlstr += '<label for="idCodigo">Precio</label>';
         htmlstr += '<input type="text" class="form-control" id="Precio" placeholder="Precio" value="' + element["Precio"] + '">' + '<br>';
         htmlstr += '<label for="idCodigo">Cantidad</label>';
-        htmlstr += '<input type="text" class="form-control" id="cantidad" placeholder="fecha_salida" value="' + element["Cantidad"] + '">';
+        htmlstr += '<input type="text" class="form-control" id="cantidad" placeholder="Cantidad" value="' + element["Cantidad"] + '">';
     });
 
     document.getElementById('modificardatos').innerHTML = htmlstr;
@@ -133,7 +133,7 @@ function modificar() {
     enviar.id = document.getElementById("Id").value;
     enviar.titulo = document.getElementById("Titulo").value;
     enviar.precio = document.getElementById("Precio").value;
-    enviar.fecha = document.getElementById("cantidad").value;
+    enviar.cantidad = document.getElementById("cantidad").value;
 
     document.getElementById("Modificar").disabled = true;
 
@@ -156,6 +156,8 @@ function modificar() {
                     title: 'Modificar',
                     text: 'El producto modificado'
                 });
+
+                setInterval(function(){location.reload()},3000); 
             }
         }
     };
@@ -204,8 +206,8 @@ function borrar(id)
                 }
             };
         
-            //xhttp.open("GET", "php/borrar.php?enviar=" + myJSON);
-            //xhttp.send();
+            xhttp.open("GET", "php/borrar.php?enviar=" + myJSON);
+            xhttp.send();
         }
       });
 }
