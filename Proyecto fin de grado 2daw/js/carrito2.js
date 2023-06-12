@@ -4,6 +4,7 @@ function cargareventos(ev) {
         mostrarcarrito();
         document.getElementById("Vaciar").addEventListener("click", vaciarcarrito);
         document.getElementById("pagar").addEventListener("click", pagar);
+        //document.getElementById("añadir").addEventListener("click", sumarcantidad);
     }
 }
 
@@ -23,7 +24,7 @@ function mostrarcarrito() {
                 <td>` + element.titulo + `</td>
                 <td>` + element.precio + "€" + `</td>
                 <td>` + element.cantidad + `</td>
-                <td><button onclick="sumarcantidad(`+ element.id +`)" class="btn btn-primary">+</button></td>
+                <td><button class="btn btn-primary" " onclick="sumarcantidad(` + element.id + "," + "'" + element.estado + "'" + `);">+</button></td>
             </tr>`
         });
         document.getElementById("total_pagar").innerHTML = total + "€";
@@ -31,8 +32,7 @@ function mostrarcarrito() {
     } 
 }
 
-
-function sumarcantidad(id)
+function sumarcantidad(id, estado)
 {
     var array = JSON.parse(localStorage.getItem('articulos'));
 
@@ -40,7 +40,10 @@ function sumarcantidad(id)
     {
         if(dato.id == id)
         {
-          dato.cantidad++;
+            if(dato.estado == estado)
+            {
+                dato.cantidad++;
+            }
         }
     });
     localStorage.setItem("articulos", JSON.stringify(array));
@@ -55,10 +58,10 @@ function vaciarcarrito() {
 function pagar() {
     if (localStorage.getItem("articulos") != null) {
         if (localStorage.getItem("usuario") != null) {
-            window.location = "http://localhost/Proyecto%20fin%20de%20grado%20definitivo/pago.html";
+            window.location = "pago.html";
         }
         else {
-            window.location = "http://localhost/Proyecto%20fin%20de%20grado%20definitivo/login.html";
+            window.location = "login.html";
         }
     }
     else

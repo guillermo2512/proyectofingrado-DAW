@@ -46,7 +46,7 @@
                     <a class="nav-link" href="La saga.html"><i class="fa fa-info-circle"></i>La saga</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><span id="user">frigolto</span></a>
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><span id="user"></span></a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="gestion cuentas.html">Panel de control</a></li>
                         <li><a class="dropdown-item" href="gepedidos.html">Mis Pedidos</a></li>
@@ -58,8 +58,8 @@
             </ul>
         </nav>
         <div class="jumbotron text-center bg-success text-white">
-            <h3><span id="user">frigolto</span></h3>
-            <h4 id="user-date">Miembro desde:</h4>
+            <h3><span id="user2"></span></h3>
+            <h4 id="user-date"></h4>
         </div>
     </header>
 
@@ -83,28 +83,28 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-12 d-inline-flex p-4">
-                <div class="card" style="width:400px; margin-left: 8em;">
+                <div class="card" style="width:350px; margin-left: 22em;">
                     <h1 class="text-center">Vista general</h1>
                     <div class="card-body d-inline-flex">
                         <div class="stat">
-                            <div class="number" id="comentarios">5</div>
+                            <div class="number text-center" id="comentarios"></div>
                             <div class="text">
                                 Comentarios
                             </div>
                         </div>
                         <div class="stat">
-                            <div class="number" id="productos">10</div>
+                            <div class="number text-center" id="productos"></div>
                             <div class="text">
-                                Juegos
+                                Pedidos
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="card" style="width:600px; margin-left: 28em;">
-                    <div class="card-header">Reservas</div>
+                <div class="card" style="width:200px; margin-left: 34em;">
+                    <h1 class="text-center">Reservas</h1>
                     <div class="card-body d-inline-flex">
                         <div class="stat">
-                            <div class="number" id="comentarios">2</div>
+                            <div class="number text-center" id="reservas"></div>
                             <div class="text">
                                 Reservas
                             </div>
@@ -112,9 +112,6 @@
                     </div>
                 </div>
             </div>
-            <!--
-                    poner aqui el numero de productos comprados, cuantas reseñas has puesto y otro con los productos reservados
-                -->
         </div>
     </div>
 </body>
@@ -124,6 +121,6 @@
         <p>Creado por Guillermo Lopez<i class="fas fa-copyright"></i></p>
     </div>
 </footer>
-<script src="js/gestin.js"></script>
-
+<script src="js/gestion.js"></script>
+<script src="js/gestcontrol.js"></script>
 </html>

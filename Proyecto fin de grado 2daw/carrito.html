@@ -16,45 +16,63 @@
     <nav class="navbar-expand-sm navbar-dark">
         <ul class="navbar-nav">
             <div class="row">
-                <a class="nav-link" style="margin-left: 40px;" href="home.html"><i class="fas fa-home"></i>Home</a>
+                <a class="nav-link" href="home.html"><i class="fas fa-home"></i>Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="La saga.html"><i class="fa fa-info-circle"></i>La saga</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="login.html"><i class="fas fa-sign-in-alt"></i>Login</a>
+                    <a id="login" class="nav-link" data-bs-toggle="offcanvas" data-bs-target="#Login">
+                        <i class="fa fa-user-circle"></i>Login</a>
                 </li>
             </div>
         </ul>
     </nav>
-    
-        <div class="container px-4 px-lg-5">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="table-responsive">
-                        <table class="table table-hover">
-                            <thead>
-                                <tr>
-                                    <th>Producto</th>
-                                    <th>Precio</th>
-                                    <th>Cantidad</th>
-                                </tr>
-                            </thead>
-                            <tbody id="tCarrito">
 
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <div class="container">
-                    <h4>Total a Pagar: <span id="total_pagar">0.00€</span></h4>
-                    <div class="d-flex justify-content-between">
-                        <button class="btn btn-danger" type="button" id="Vaciar">Vaciar Carrito</button>
-                        <button class="btn btn-success" type="button" id="pagar">Pagar</button>
-                    </div>
+    <div class="offcanvas offcanvas-end" id="Login">
+        <div class="offcanvas-header">
+            <h1 class="offcanvas-title">LOGIN</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="container">
+                <div class="row">
+                    <a href="gestion cuentas.html" class="btn btn-info login">Panel de Control</a>
+                    <a href="gepedidos.html" class="btn btn-info login">Mis pedidos</a>
+                    <a href="gecomentarios.html" class="btn btn-info login">Mis comentarios</a>
+                    <a href="geconfiguracion.html" class="btn btn-info login">Configuracion</a>
                 </div>
             </div>
         </div>
+    </div>
+
+    <div class="container px-4 px-lg-5">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Producto</th>
+                                <th>Precio</th>
+                                <th>Cantidad</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tCarrito">
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="container">
+                <h4>Total a Pagar: <span id="total_pagar">0.00€</span></h4>
+                <div class="d-flex justify-content-between">
+                    <button class="btn btn-danger" type="button" id="Vaciar">Vaciar Carrito</button>
+                    <button class="btn btn-success" type="button" id="pagar">Pagar</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 <footer>
     <div class="jumbotron text-center" style="background: rgb(159, 247, 242); margin-top: 20px;">
@@ -63,5 +81,5 @@
     </div>
 </footer>
 <script src="js/carrito2.js"></script>
-
+<script src="js/controllogin.js"></script>
 </html>

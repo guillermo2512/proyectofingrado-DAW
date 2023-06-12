@@ -1,3 +1,13 @@
+document.addEventListener("readystatechange", cargareventos, false);
+function cargareventos(ev) {
+    if (document.readyState == "interactive") {
+        mostrarcarrito();
+        document.getElementById("ircarrito").addEventListener("click", function(){
+            window.location = "carrito.html";
+        });
+    }
+}
+
 var articulos = [];
 var articulo = {
     id: 0
@@ -18,22 +28,22 @@ Buttons.forEach(function (item) {
         const precio = item.dataset.precio;
         const titulo = item.dataset.titulo;
         const estado = item.dataset.estado;
+        var comprobarid = true;
 
         var array = JSON.parse(localStorage.getItem('articulos'));
 
         if (Array.isArray(array)) {
             array.map(function (dato) {
-                if (dato.id == id) {
+                if (dato.id == id) 
+                {
                     dato.cantidad++;
+                    comprobarid = false;
                 }
             });
-
             localStorage.setItem("articulos", JSON.stringify(array));
-            var confir = array.some((articu)=> {
-                return articu.id === id;
-            })
+
             
-            if(!confir)
+            if(comprobarid == true)
             {
                 articulo = {
                     id: id,
@@ -97,7 +107,7 @@ function mostrarcarrito() {
                 <td>` + element.cantidad + `</td>
             </tr>`
         });
-        //document.getElementById("total_pagar").innerHTML = total + "€";
+        document.getElementById("total_pagar").innerHTML = total + "€";
         document.getElementById("tCarrito").innerHTML = html;
     }
 }

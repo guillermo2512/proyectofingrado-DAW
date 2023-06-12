@@ -11,14 +11,6 @@
         integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link rel="stylesheet" href="estilos.css">
-    <style>
-        .custom-control {
-            margin-left: 20px;
-        }
-        .nav-item{
-            padding-left: 26px;
-        }
-    </style>
 </head>
 
 <body>
@@ -29,7 +21,8 @@
                     <a class="nav-link" href="home.html"><i class="fas fa-home"></i>Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="login.html"><i class="fas fa-sign-in-alt"></i>Login</a>
+                    <a id="login" class="nav-link" data-bs-toggle="offcanvas" data-bs-target="#Login">
+                        <i class="fa fa-user-circle"></i>Login</a>
                 </li>
             </ul>
         </nav>
@@ -45,6 +38,23 @@
             </h3>
         </div>
     </header>
+
+    <div class="offcanvas offcanvas-end" id="Login">
+        <div class="offcanvas-header">
+            <h1 class="offcanvas-title">LOGIN</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="container">
+                <div class="row">
+                        <a href="gestion cuentas.html" class="btn btn-info login">Panel de Control</a>
+                        <a href="gepedidos.html" class="btn btn-info login">Mis pedidos</a>
+                        <a href="gecomentarios.html" class="btn btn-info login">Mis comentarios</a>
+                        <a href="geconfiguracion.html" class="btn btn-info login">Configuracion</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="container-fluid">
         <div class="row">
@@ -141,5 +151,5 @@
         <p>Creado por Guillermo Lopez<i class="fas fa-copyright"></i></p>
     </div>
 </footer>
-
+<script src="js/controllogin.js"></script>
 </html>

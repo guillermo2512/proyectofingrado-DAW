@@ -1,3 +1,5 @@
+var usuario;
+
 document.addEventListener("readystatechange", cargareventos, false);
 function cargareventos(ev) {
     if (document.readyState == "interactive") 
@@ -33,7 +35,7 @@ function productos() {
 
 function cargarusuario() {
     if (localStorage.getItem("usuario") != null) {
-        var usuario = JSON.parse(localStorage.getItem('usuario'));
+        usuario = JSON.parse(localStorage.getItem('usuario'));
 
         document.getElementById("nombre").value = usuario.nombre;
         document.getElementById("mail1").value = usuario.email;

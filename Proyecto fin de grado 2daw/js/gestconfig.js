@@ -3,16 +3,16 @@ var usuario;
 document.addEventListener("readystatechange", cargareventos, false);
 function cargareventos(ev) {
     if (document.readyState == "interactive") {
+        usuario = JSON.parse(localStorage.getItem('usuario'));
         cargardatos();
         document.getElementById("guardar").addEventListener("click", actualizar);
         document.getElementById("eliminar").addEventListener("click", borrar);
     }
-    usuario = JSON.parse(localStorage.getItem('usuario'));
 }
 
 function cargardatos() {
     var enviar = new Object();
-    enviar.idusuario = usuario.id;
+    enviar.id = usuario.id;
 
     var myJSON = JSON.stringify(enviar);
 
@@ -26,7 +26,6 @@ function cargardatos() {
             else 
             {
                 document.getElementById("nombre").value = datos.Nombre;
-                document.getElementById("apellidos").value = datos.Apellidos;
                 document.getElementById("email").value = datos.Email;
                 document.getElementById("usuario").value = datos.Usuario;
                 document.getElementById("fecha").value = datos.Fecha_Alta;
@@ -42,9 +41,8 @@ function cargardatos() {
 function actualizar() 
 {
     var enviar = new Object();
-    enviar.idusuario = usuario.id;
+    enviar.id = usuario.id;
     enviar.nombre = document.getElementById("nombre").value;
-    enviar.apellidos = document.getElementById("apellidos").value;
     enviar.email = document.getElementById("email").value;
     enviar.usuario = document.getElementById("usuario").value;
     enviar.fecha = usuario.fecha;

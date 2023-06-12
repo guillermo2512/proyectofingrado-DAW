@@ -3,9 +3,9 @@ var usuario;
 document.addEventListener("readystatechange", cargareventos, false);
 function cargareventos(ev) {
     if (document.readyState == "interactive") {
+        usuario = JSON.parse(localStorage.getItem('usuario'));
         cargardatos();
     }
-    usuario = JSON.parse(localStorage.getItem('usuario'));
 }
 
 function cargardatos() {
@@ -17,26 +17,27 @@ function cargardatos() {
 
     const xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) 
-        {
+        if (this.readyState == 4 && this.status == 200) {
             var datos = JSON.parse(this.responseText);
-            if(datos == 1)
-            {
+            if (datos == 1) {
                 document.getElementById("tabla").style.display = none;
                 document.getElementsById("productos").innerHTML = "No ha realizado ninguna compra en nuestra tienda."
             }
-            else{
-                datos.forEach(element => 
-                {
-                    html += `
+            else {
+                datos.forEach(element => {
+                    var articulo = JSON.parse(element["carrito"]);
+                    articulo.forEach(element2 => {
+                        html += `
                     <tr>
-                        <td>` + element.titulo + `</td>
-                        <td>` + element.precio + "€" + `</td>
+                        <td>` + element2.titulo + `</td>
+                        <td>` + element2.precio + "€" + `</td>
                     </tr>`
+                    })
+
                 });
-                document.getElementsById("tbproduc").innerHTML = html;
+                document.getElementById('tbproduc').innerHTML = html;
             }
-            
+
         }
     };
 

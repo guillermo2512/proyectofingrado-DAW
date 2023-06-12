@@ -1,8 +1,17 @@
 nav {
-    background: #34ad0f; 
-    height: 40px;
+    background: #34ad0f;
+    height: 60px;
+    font-size: 32px;
 }
 
 .nav-item {
     margin-left: 20px;
+}
+
+.login {
+    margin-top: 20px;
+}
+
+#Login{
+    display: none;
 }

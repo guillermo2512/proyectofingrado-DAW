@@ -31,7 +31,7 @@ function login() {
                 var usuario = new Object();
                 usuario.email = json.Email;
                 usuario.nombre = json.Nombre;
-                usuario.user = json.Usuario;
+                usuario.usuario = json.Usuario;
                 usuario.id = json.Id;
                 usuario.fecha = json.Fecha_Alta;
 

@@ -2,10 +2,11 @@ var usuario;
 
 document.addEventListener("readystatechange", cargareventos, false);
 function cargareventos(ev) {
-    if (document.readyState == "interactive") {
+    if (document.readyState == "interactive") 
+    {
+        usuario = JSON.parse(localStorage.getItem('usuario'));
         cargardatos();
     }
-    usuario = JSON.parse(localStorage.getItem('usuario'));
 }
 
 function cargardatos() {

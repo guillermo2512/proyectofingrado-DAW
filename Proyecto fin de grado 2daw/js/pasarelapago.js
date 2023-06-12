@@ -6,19 +6,6 @@ function cargareventos(ev) {
     }
 }
 
-    /*function validarTarjeta() {
-        if (regextarjeta.test(tarjeta.value) === false) {
-            tarjeta.classList.remove("alert", "alert-success");
-            tarjeta.classList.add("alert", "alert-danger");
-            tarjeta.value = "";
-            tarjeta.placeholder = "Formato incorrecto.";
-        } else {
-            tarjeta.classList.remove("alert", "alert-danger");
-            tarjeta.classList.add("alert", "alert-success");
-            tarjeta.placeholder = "";
-        }
-    }*/
-
 function comprar() {
     var enviar = new Object();
     enviar.nombre = document.getElementById("nombre").value;

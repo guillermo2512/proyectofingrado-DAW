@@ -31,7 +31,7 @@ class Comprar {
             
             if ($consulta->rowCount() > 0)
             {
-                $almacen = $consulta->fetch();
+                $almacen = $consulta->fetchAll();
                 $envios = json_encode($almacen);
                 echo $envios;
             }
@@ -49,6 +49,6 @@ class Comprar {
 }
 
 $condb = new Comprar();
-$condb -> cargarproductos($enviar->id);
+$condb -> cargarproductos($enviar->idusuario);
 
 ?>
